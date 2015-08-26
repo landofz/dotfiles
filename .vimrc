@@ -39,7 +39,7 @@ filetype plugin indent on
 set modelines=0
 
 " Tabs/spaces
-set tabstop=8
+set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
@@ -50,9 +50,13 @@ set scrolloff=3
 set showmode
 set showcmd
 set number
+set relativenumber
 set ruler
+set laststatus=2
 set guioptions-=T
 set guioptions-=m
+set guioptions-=L
+set guioptions-=r
 set nobackup
 set noswapfile
 set visualbell
@@ -88,11 +92,12 @@ vnoremap k gk
 
 " Appearance
 syntax on
+set background=dark
 colorscheme blackboard
 if has("gui_macvim")
   set guifont=Menlo\ Regular:h16
 elseif has("gui_running")
-  set guifont=Monospace\ 14
+  set guifont=Monospace\ 12
 endif
 let g:airline_powerline_fonts = 1
 
