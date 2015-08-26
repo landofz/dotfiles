@@ -1,29 +1,38 @@
 " For installing vundle use:
-"   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"   git clone https://github.com/gmarik/Vundle.vim.git \
+"     ~/.vim/bundle/Vundle.vim
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 
 " Plugins
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'edsono/vim-matchit'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-surround'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-reload'
-Bundle 'landofz/focus.vim'
-" Colorschemes
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'vim-scripts/blackboard.vim'
-Bundle 'vim-scripts/phd'
-Bundle 'vim-scripts/xoria256.vim'
-Bundle 'wgibbs/vim-irblack'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'sjl/gundo.vim'
+"Plugin 'msanders/snipmate.vim'
+Plugin 'edsono/vim-matchit'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-reload'
+Plugin 'landofz/focus.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
 
+Plugin 'ervandew/supertab'
+"Plugin 'powerline/powerline'
+Plugin 'bling/vim-airline'
+" Colorschemes
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-scripts/blackboard.vim'
+Plugin 'vim-scripts/phd'
+Plugin 'vim-scripts/xoria256.vim'
+Plugin 'wgibbs/vim-irblack'
+
+call vundle#end()
 filetype plugin indent on
 
 " Security
@@ -67,6 +76,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Invoking plugins
 nnoremap <leader>cp :CtrlP<cr>
+nnoremap <leader>/ :Unite grep:.<cr>
+nnoremap <leader>s :Unite -quick-match buffer<cr>
 nmap <leader>fm <Plug>FocusModeToggle
 
 " Movement
@@ -83,6 +94,7 @@ if has("gui_macvim")
 elseif has("gui_running")
   set guifont=Monospace\ 14
 endif
+let g:airline_powerline_fonts = 1
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set list
