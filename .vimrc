@@ -114,3 +114,14 @@ set listchars=tab:▸\ ,eol:¬
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/]node_modules$',
     \ }
+
+" Paste doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
