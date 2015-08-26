@@ -78,6 +78,11 @@ inoremap jj <Esc>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" General bindings
+nnoremap <Leader>w :w<CR>
+nnoremap <CR> G
+nnoremap <BS> gg
+
 " Invoking plugins
 nnoremap <leader>cp :CtrlP<cr>
 nnoremap <leader>/ :Unite grep:.<cr>
