@@ -22,6 +22,7 @@ Plugin 'landofz/focus.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 
+Plugin 'isRuslan/vim-es6'
 Plugin 'ervandew/supertab'
 "Plugin 'powerline/powerline'
 Plugin 'bling/vim-airline'
@@ -109,6 +110,10 @@ let g:airline_powerline_fonts = 1
 " Use the same symbols as TextMate for tabstops and EOLs
 set list
 set listchars=tab:▸\ ,eol:¬
+
+" Filetype specific options
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
+autocmd FileType json setlocal shiftwidth=2 softtabstop=2
 
 " NERDTree
 let g:NERDTreeIgnore = ['\~$', '.pyc$[[file]]']
