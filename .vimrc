@@ -110,9 +110,13 @@ let g:airline_powerline_fonts = 1
 set list
 set listchars=tab:▸\ ,eol:¬
 
+" NERDTree
+let g:NERDTreeIgnore = ['\~$', '.pyc$[[file]]']
+
 " CtrlP
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/]node_modules$',
+    \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$',
+    \ 'file': '\v\.pyc$',
     \ }
 
 " Paste doesn't replace paste buffer
