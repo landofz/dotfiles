@@ -5,4 +5,4 @@ else
     export TERM='xterm-color'
 fi
 export WORKON_HOME=$HOME/virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
+[[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
