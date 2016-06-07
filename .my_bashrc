@@ -6,3 +6,5 @@ else
 fi
 export WORKON_HOME=$HOME/virtualenv
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
+[[ -s ~/.bash-powerline.sh ]] && source ~/.bash-powerline.sh
+[[ -s ~/.gvm/scripts/gvm ]] && source ~/.gvm/scripts/gvm
