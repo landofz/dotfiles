@@ -1,12 +1,12 @@
 " For installing vundle use:
-"   git clone https://github.com/gmarik/Vundle.vim.git \
+"   git clone https://github.com/VundleVim/Vundle.vim.git \
 "     ~/.vim/bundle/Vundle.vim
 set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
 Plugin 'scrooloose/nerdtree'
