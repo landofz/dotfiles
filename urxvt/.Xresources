@@ -15,7 +15,7 @@ URxvt.font:        xft:Ubuntu\ Mono\ derivative\ Powerline:size=13
 !URxvt.font:        xft:Roboto\ Mono\ for\ Powerline:size=14
 !URxvt.font:        xft:Inconsolata\ for\ Powerline:size=14
 !URxvt.font:        xft:Iosevka Medium:size=12
-!URxvt.letterSpace: -1
+URxvt.letterSpace: -1
 
 ! color scheme: Tango
 ! special
