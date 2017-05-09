@@ -42,14 +42,22 @@ volume master {
 
 battery 0 {
         format = "%status %percentage %remaining"
+        status_chr = "CHR 0"
         status_bat = "⚡0"
+        last_full_capacity = true
+        hide_seconds = true
         low_threshold = 25
+        threshold_type = percentage
 }
 
 battery 1 {
         format = "%status %percentage %remaining"
+        status_chr = "CHR 1"
         status_bat = "⚡1"
+        last_full_capacity = true
+        hide_seconds = true
         low_threshold = 25
+        threshold_type = percentage
 }
 
 run_watch DHCP {
