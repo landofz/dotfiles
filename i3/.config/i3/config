@@ -130,6 +130,14 @@ bindsym $mod+Shift+8 move container to workspace $work8
 bindsym $mod+Shift+9 move container to workspace $work9
 bindsym $mod+Shift+0 move container to workspace $work10
 
+# assign windows to workspaces
+assign [class="URxvt"] $work1
+assign [class="Google-chrome"] $work2
+assign [class="neovim"] $work3
+assign [class="Firefox"] $work4
+assign [class="Spacefm"] $work5
+assign [class="Slack"] $work9
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
