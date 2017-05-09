@@ -103,7 +103,7 @@ set $work6 "6: ?"
 set $work7 "7: ?"
 set $work8 "8: ?"
 set $work9 "9: "
-set $work0 "10: ?"
+set $work10 "10: ?"
 
 # switch to workspace
 bindsym $mod+1 workspace $work1
