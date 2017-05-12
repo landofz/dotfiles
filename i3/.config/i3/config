@@ -184,6 +184,7 @@ bar {
 # Startup applications
 exec redshift-gtk
 exec nm-applet
+exec --no-startup-id xautolock -time 5 -locker "i3lock -d" &
 
 # Pulse Audio controls
 set $sink 1
