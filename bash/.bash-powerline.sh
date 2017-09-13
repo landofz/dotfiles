@@ -104,7 +104,7 @@ __powerline() {
             any=1
         fi
         if [[ -n "$gvm_go_name" ]]; then
-            result+="(GO:${gvm_go_name##go}) "
+            result+="(GO:${gvm_go_name##go}:${gvm_pkgset_name}) "
             any=1
         fi
 
