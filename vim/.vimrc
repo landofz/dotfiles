@@ -12,7 +12,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'sjl/gundo.vim'
+"Plugin 'sjl/gundo.vim'
+Plugin 'mbbill/undotree'
 "Plugin 'msanders/snipmate.vim'
 "Plugin 'edsono/vim-matchit'
 Plugin 'scrooloose/nerdcommenter'
@@ -104,6 +105,7 @@ nnoremap <leader>s :Unite -quick-match buffer<cr>
 nnoremap <leader>nt :NERDTree<cr>
 nmap <leader>fm <Plug>FocusModeToggle
 nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>g :UndotreeToggle<CR>
 
 " Movement
 nnoremap j gj
