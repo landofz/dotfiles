@@ -132,7 +132,7 @@ __powerline() {
         PS1+="$BG_EXIT$FG_BASE3 $PS_SYMBOL $RESET "
 
         # manually added
-        PS1+="\n└➤"
+        PS1+="\n└➤ "
         # /manually added
     }
 
