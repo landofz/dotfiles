@@ -26,6 +26,7 @@ Plugin 'xolox/vim-reload'
 Plugin 'landofz/focus.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
+Plugin 'vimwiki/vimwiki'
 
 Plugin 'fatih/vim-go'
 Plugin 'isRuslan/vim-es6'
@@ -153,6 +154,13 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules|build|vendor)$',
     \ 'file': '\v\.pyc$',
     \ }
+
+" Wiki
+let g:vimwiki_list = [{
+    \ 'path': '~/storage/Notebook/',
+    \ 'syntax': 'markdown',
+    \ 'ext': '.txt',
+    \ }]
 
 " Paste doesn't replace paste buffer
 function! RestoreRegister()
