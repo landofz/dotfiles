@@ -1,3 +1,7 @@
+! disable Perl extensions
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+
 ! icon
 URxvt*iconFile: /usr/share/icons/HighContrast/256x256/apps/utilities-terminal.png
 
