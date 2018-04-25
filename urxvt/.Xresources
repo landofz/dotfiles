@@ -17,6 +17,13 @@ URxvt.font:        xft:Ubuntu\ Mono\ derivative\ Powerline:size=13
 !URxvt.font:        xft:Iosevka Medium:size=12
 URxvt.letterSpace: -1
 
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
 ! color scheme: Tango
 ! special
 *.foreground:   #fcfcfc
