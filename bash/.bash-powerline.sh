@@ -135,6 +135,7 @@ __powerline() {
         # alternatives:
         #   '\u25B6' (▶)
         #   '\u27A4' (➤)
+        #   '\uE0B0' ()
         #   '\uE602'
         PS1+="\n└➤ "
         # /manually added
