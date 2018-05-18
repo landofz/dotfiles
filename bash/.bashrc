@@ -54,8 +54,6 @@ if [ -d "$HOME/.local/bin" ]; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
-setxkbmap -layout hr,us -variant us, -option ctrl:nocaps
-
 man() {
     env \
     LESS_TERMCAP_mb="$(printf "\e[1;31m")" \
