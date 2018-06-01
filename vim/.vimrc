@@ -127,7 +127,7 @@ elseif has("gui_running")
 endif
 let g:airline_powerline_fonts = 1
 
-" Use the same symbols as TextMate for tabstops and EOLs
+" Show tabstops and EOLs
 set list
 set listchars=tab:▸\ ,eol:¬
 
