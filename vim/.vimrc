@@ -11,7 +11,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+"Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'sjl/gundo.vim'
 Plugin 'mbbill/undotree'
 "Plugin 'msanders/snipmate.vim'
@@ -100,9 +102,9 @@ nnoremap <BS> gg
 nnoremap <leader>l :b#<cr>
 
 " Invoking plugins
-nnoremap <leader>cpp :CtrlP<cr>
-nnoremap <leader>cpb :CtrlPBuffer<cr>
-nnoremap <leader>cpr :CtrlPClearCache<cr>
+nnoremap <leader>p :Files<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>f :Ag<space>
 nnoremap <leader>/ :Unite grep:.<cr>
 nnoremap <leader>s :Unite -quick-match buffer<cr>
 nnoremap <leader>nt :NERDTree<cr>
