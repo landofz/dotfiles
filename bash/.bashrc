@@ -46,6 +46,7 @@ export WORKON_HOME=$HOME/virtualenv
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 [[ -s ~/.bash-powerline.sh ]] && source ~/.bash-powerline.sh
 [[ -s ~/.gvm/scripts/gvm ]] && source ~/.gvm/scripts/gvm
+[[ -s ~/.config/fzf/fzf.bash ]] && source ~/.config/fzf/fzf.bash
 
 alias gnvim='NVIM_TUI_ENABLE_TRUE_COLOR= nvim-wrapper'
 alias psvim='ps aux | grep vim'
