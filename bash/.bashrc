@@ -42,7 +42,7 @@ export VISUAL=vim
 #fi
 export WORKON_HOME=$HOME/virtualenv
 
-[[ -s "~/lib/up/up.sh" ]] && source "~/lib/up/up.sh"
+[[ -s ~/lib/up/up.sh ]] && source ~/lib/up/up.sh
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 [[ -s ~/.bash-powerline.sh ]] && source ~/.bash-powerline.sh
 [[ -s ~/.gvm/scripts/gvm ]] && source ~/.gvm/scripts/gvm
