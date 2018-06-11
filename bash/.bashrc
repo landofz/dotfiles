@@ -1,10 +1,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-HISTCONTROL=ignoreboth
+HISTCONTROL='erasedups:ignoreboth'
+HISTIGNORE=?:??
 shopt -s histappend
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=9999
+HISTFILESIZE=9999
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
