@@ -40,6 +40,7 @@ fi
 
 export EDITOR=vim
 export VISUAL=vim
+export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 #if [[ -e /lib/terminfo/x/xterm-256color ]]; then
     #export TERM='xterm-256color'
 #else
