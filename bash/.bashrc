@@ -30,6 +30,10 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
 if [[ -f /usr/share/bash-completion/bash_completion ]]; then
     . /usr/share/bash-completion/bash_completion
 fi
