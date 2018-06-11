@@ -23,6 +23,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-eunuch'
+Plugin 'wellle/targets.vim'              " additional text objects like , . : =
+Plugin 'michaeljsmith/vim-indent-object' " text object based on indentation level
+Plugin 'rhysd/clever-f.vim'              " better repeat and marks for f and t mappings
+
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-reload'
 Plugin 'landofz/focus.vim'
