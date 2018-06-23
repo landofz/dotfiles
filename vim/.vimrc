@@ -138,9 +138,10 @@ set list
 set listchars=tab:▸\ ,eol:¬
 
 " Filetype specific options
-autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
-autocmd FileType json setlocal shiftwidth=2 softtabstop=2
-autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2
+augroup filetype_indents
+    autocmd!
+    autocmd FileType javascript,json,yaml,html,htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+augroup END
 
 " NERDTree
 let g:NERDTreeIgnore = ['\~$', '.pyc$[[file]]']
