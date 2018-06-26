@@ -15,7 +15,8 @@ URxvt.keysym.Control-Right: \033[1;5C
 URxvt.scrollBar: False
 
 ! font
-URxvt.font:        xft:Ubuntu\ Mono\ derivative\ Powerline:size=13
+URxvt.font:        xft:UbuntuMono\ Nerd\ Font\ Mono:style=Regular:size=14
+!URxvt.font:        xft:Ubuntu\ Mono\ derivative\ Powerline:size=13
 !URxvt.font:        xft:Roboto\ Mono\ for\ Powerline:size=14
 !URxvt.font:        xft:Inconsolata\ for\ Powerline:size=14
 !URxvt.font:        xft:Iosevka Medium:size=12
