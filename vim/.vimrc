@@ -180,3 +180,18 @@ function! s:Repl()
   return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
+
+" Deletes trailing whitespace
+function! StripTrailingWhitespace()
+  let l:_s=@/
+  let l:l = line('.')
+  let l:c = line('.')
+  %s/\s\+$//e
+  let @/=l:_s
+  call cursor(l:l, l:c)
+endfunction
+nnoremap <Leader>sw :call StripTrailingWhitespace()<CR>
+"augroup trailing_whitespace
+    "autocmd!
+    "autocmd FileType c,cpp,javascript,python,rust,xml,yml,perl,sql,sh autocmd BufWritePre <buffer> :call StripTrailingWhitespace()
+"augroup END
