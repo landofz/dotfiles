@@ -78,7 +78,10 @@ set guioptions-=T
 set guioptions-=m
 set guioptions-=L
 set guioptions-=r
+" don't write any backups
 set nobackup
+set nowritebackup
+" don't write swap files
 set noswapfile
 set visualbell
 set noerrorbells
