@@ -97,6 +97,7 @@ set smartcase
 " Keys
 let mapleader = ","
 inoremap jj <Esc>
+cnoremap jj <Esc>
 
 " Editing .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
