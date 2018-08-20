@@ -177,7 +177,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+z exec xset s activate
+bindsym $mod+z exec i3lock -d -I 10
 bindsym $mod+n move workspace to output left
 bindsym $mod+m move workspace to output right
 
