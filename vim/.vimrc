@@ -93,6 +93,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+set grepprg=ag
 
 " Keys
 let mapleader = ","
