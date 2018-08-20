@@ -183,6 +183,9 @@ bindsym $mod+x move workspace to output right
 bar {
         status_command i3status
         tray_output primary
+        position top
+        font pango:Ubuntu Mono derivative Powerline 13
+        separator_symbol "|"
 }
 
 # Startup applications
