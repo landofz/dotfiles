@@ -40,6 +40,7 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'ervandew/supertab'
 "Plugin 'powerline/powerline'
 Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'rking/ag.vim'
 " Colorschemes
 Plugin 'altercation/vim-colors-solarized'
