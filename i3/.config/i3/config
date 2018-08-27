@@ -208,6 +208,7 @@ exec --no-startup-id xss-lock -n dim-screen.sh -- i3lock -n -d -I 10
 bindsym XF86AudioRaiseVolume exec volume.sh up #increase sound volume
 bindsym XF86AudioLowerVolume exec volume.sh down #decrease sound volume
 bindsym XF86AudioMute exec volume.sh toggle # mute sound
+bindsym XF86AudioMicMute exec volume.sh mictoggle # mute mic
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec brightness.sh up # increase screen brightness
