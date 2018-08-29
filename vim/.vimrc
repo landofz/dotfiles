@@ -119,8 +119,6 @@ nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>f :Ag<space>
 nnoremap <leader>/ :Unite grep:.<cr>
 nnoremap <leader>s :Unite -quick-match buffer<cr>
-nnoremap <leader>nt :NERDTree<cr>
-nmap <leader>fm <Plug>FocusModeToggle
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>g :UndotreeToggle<CR>
