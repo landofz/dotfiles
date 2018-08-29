@@ -42,6 +42,8 @@ Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rking/ag.vim'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'majutsushi/tagbar'
 " Colorschemes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-scripts/blackboard.vim'
@@ -119,6 +121,7 @@ nnoremap <leader>/ :Unite grep:.<cr>
 nnoremap <leader>s :Unite -quick-match buffer<cr>
 nnoremap <leader>nt :NERDTree<cr>
 nmap <leader>fm <Plug>FocusModeToggle
+nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>g :UndotreeToggle<CR>
 
