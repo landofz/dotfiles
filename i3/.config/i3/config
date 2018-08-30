@@ -144,6 +144,7 @@ assign [class="Google-chrome"] $work2
 assign [class="neovim"] $work3
 assign [class="Firefox"] $work4
 assign [class="Spacefm"] $work5
+assign [class="Thunderbird"] $work8
 assign [class="Slack"] $work9
 
 # reload the configuration file
