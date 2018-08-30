@@ -180,7 +180,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+z exec i3lock -d -I 10
+bindsym $mod+z exec sleep 0.3 && i3lock -d -I 10
 bindsym $mod+x exec powermenu.sh
 bindsym $mod+n move workspace to output left
 bindsym $mod+m move workspace to output right
@@ -202,7 +202,7 @@ bar {
 # Startup applications
 exec redshift-gtk
 exec nm-applet
-exec --no-startup-id xset s 299 1
+exec --no-startup-id xset s 298 2
 exec --no-startup-id xss-lock -n dim-screen.sh -- i3lock -n -d -I 10
 
 # Pulse Audio controls
