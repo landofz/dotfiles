@@ -11,6 +11,15 @@ HISTFILESIZE=9999
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# smart cd command
+shopt -s autocd
+# autocorrect minor spelling errors
+shopt -s dirspell
+shopt -s cdspell
+# use vars as cd destinations
+shopt -s cdable_vars
+export dotfiles=$HOME/dotfiles
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
