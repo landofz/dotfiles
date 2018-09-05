@@ -1,7 +1,11 @@
 $include /etc/inputrc
 
+# case insensitive filename completion
 set completion-ignore-case on
+# treat hyphens and underscores as equivalent
+set completion-map-case on
 set completion-prefix-display-length 3
+# show completions on first tab
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
 
