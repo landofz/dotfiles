@@ -4,8 +4,12 @@
 HISTCONTROL='erasedups:ignoreboth'
 HISTIGNORE=?:??
 shopt -s histappend
+# save multi-line commands as one command
+shopt -s cmdhist
 HISTSIZE=9999
 HISTFILESIZE=9999
+# immediately record all commands
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
