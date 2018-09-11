@@ -42,8 +42,12 @@ volume master {
 
 battery 0 {
         format = "%status %percentage %remaining"
+        # (nf-fa-plug f1e6)
         status_chr = " 0"
-        status_bat = " 0"
+        # (nf-mdi-battery_60 f57e)
+        status_bat = " 0"
+        # (nf-mdi-battery_alert f582)
+        status_unk = " 0"
         last_full_capacity = true
         hide_seconds = true
         low_threshold = 25
@@ -52,8 +56,12 @@ battery 0 {
 
 battery 1 {
         format = "%status %percentage %remaining"
+        # (nf-fa-plug f1e6)
         status_chr = " 1"
-        status_bat = " 1"
+        # (nf-mdi-battery_60 f57e)
+        status_bat = " 1"
+        # (nf-mdi-battery_alert f582)
+        status_unk = " 1"
         last_full_capacity = true
         hide_seconds = true
         low_threshold = 25
