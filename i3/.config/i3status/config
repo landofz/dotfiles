@@ -35,9 +35,11 @@ ethernet _first_ {
 }
 
 volume master {
+        # (nf-fa-volume_up f028)
         format = " %volume"
-        format_muted = " muted (%volume)"
-        device = "pulse:1"
+        # (nf-fa-volume_off f026)
+        format_muted = " (%volume)"
+        device = "pulse:0"
 }
 
 battery 0 {
