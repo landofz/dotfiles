@@ -206,6 +206,7 @@ bar {
 }
 
 # Startup applications
+exec --no-startup-id dunst
 exec redshift-gtk
 exec nm-applet
 exec --no-startup-id xset s 300 5
