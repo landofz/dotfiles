@@ -186,6 +186,7 @@ floating_minimum_size 120 x 80
 
 bindsym $mod+z exec sleep 0.3 && xsecurelock
 bindsym $mod+x exec powermenu.sh
+bindsym $mod+c exec kill-app.sh
 bindsym $mod+n move workspace to output left
 bindsym $mod+m move workspace to output right
 
