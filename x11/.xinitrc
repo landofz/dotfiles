@@ -5,13 +5,8 @@ systemctl --user import-environment DISPLAY
 setxkbmap -layout hr,us -variant us, -option ctrl:nocaps
 xsetroot -cursor_name left_ptr &
 xset s 300 5
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
 
-function wm() {
-    [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-    exec $1
-}
-
-[[ -z $1 ]] && wm i3
-
-wm $1
+[[ -z $1 ]] && exec ssh-agent tdm --xstart
+exec $@
