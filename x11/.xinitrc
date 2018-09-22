@@ -1,5 +1,6 @@
 #!/bin/bash
 
+dbus-update-activation-environment --systemd DISPLAY
 systemctl --user import-environment DISPLAY
 setxkbmap -layout hr,us -variant us, -option ctrl:nocaps
 xsetroot -cursor_name left_ptr &
