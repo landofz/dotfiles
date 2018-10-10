@@ -97,7 +97,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-set grepprg=ag
+set grepprg=ag\ --nogroup\ --nocolor
 
 " Keys
 let mapleader = ","
