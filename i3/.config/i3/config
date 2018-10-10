@@ -211,6 +211,7 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id nm-applet
 exec --no-startup-id xset s 300 5
 exec --no-startup-id XSECURELOCK_BLANK_TIMEOUT=10 xss-lock -n /usr/local/libexec/xsecurelock/dimmer -l -- xsecurelock
+exec --no-startup-id update-notifier
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec volume.sh up #increase sound volume
