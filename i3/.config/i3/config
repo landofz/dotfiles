@@ -184,7 +184,7 @@ bindsym $mod+r mode "resize"
 floating_maximum_size 1200 x 800
 floating_minimum_size 120 x 80
 
-bindsym $mod+z exec sleep 0.3 && xsecurelock
+bindsym $mod+z exec sleep 0.3 && XSECURELOCK_BLANK_TIMEOUT=10 xsecurelock
 bindsym $mod+x exec powermenu.sh
 bindsym $mod+c exec kill-app.sh
 bindsym $mod+n move workspace to output left
@@ -210,7 +210,7 @@ exec --no-startup-id dunst
 exec --no-startup-id redshift-gtk
 exec --no-startup-id nm-applet
 exec --no-startup-id xset s 300 5
-exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
+exec --no-startup-id XSECURELOCK_BLANK_TIMEOUT=10 xss-lock -n /usr/local/libexec/xsecurelock/dimmer -l -- xsecurelock
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec volume.sh up #increase sound volume
