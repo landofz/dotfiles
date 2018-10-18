@@ -203,3 +203,9 @@ nnoremap <Leader>sw :call StripTrailingWhitespace()<CR>
     "autocmd!
     "autocmd FileType c,cpp,javascript,python,rust,xml,yml,perl,sql,sh autocmd BufWritePre <buffer> :call StripTrailingWhitespace()
 "augroup END
+
+" Command flubs
+command! WQ wq
+command! Wq wq
+command! W w
+command! Q q
