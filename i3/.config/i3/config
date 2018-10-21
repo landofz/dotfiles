@@ -142,6 +142,7 @@ bindsym $mod+Shift+0 move container to workspace $work10
 # assign windows to workspaces
 assign [class="URxvt"] $work1
 assign [class="Google-chrome"] $work2
+assign [class="Brave-browser"] $work2
 assign [class="neovim"] $work3
 assign [class="Firefox"] $work4
 assign [class="Spacefm"] $work5
