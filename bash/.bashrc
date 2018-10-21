@@ -64,6 +64,7 @@ export WORKON_HOME=$HOME/virtualenv
 
 alias gnvim='NVIM_TUI_ENABLE_TRUE_COLOR= nvim-wrapper'
 alias psvim='ps aux | grep -v grep | grep vim'
+alias psbg='ps aux | grep "pts/[0-9]\+ \+T" | grep -v grep'
 
 man() {
     env \
