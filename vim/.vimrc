@@ -10,11 +10,10 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
 Plugin 'tmux-plugins/vim-tmux-focus-events' " FocusGained and FocusLost autocommand events in terminal
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/nerdtree'                " a tree explorer plugin
+Plugin 'Xuyuanp/nerdtree-git-plugin'        " a plugin for NERDTree showing git status
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-"Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'sjl/gundo.vim'
 Plugin 'mbbill/undotree'
 "Plugin 'msanders/snipmate.vim'
@@ -24,27 +23,22 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-eunuch'
+Plugin 'gregsexton/gitv'                 " a repository viewer similar to gitk
 Plugin 'wellle/targets.vim'              " additional text objects like , . : =
 Plugin 'michaeljsmith/vim-indent-object' " text object based on indentation level
 Plugin 'rhysd/clever-f.vim'              " better repeat and marks for f and t mappings
 
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-reload'
-Plugin 'landofz/focus.vim'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/unite.vim'
-"Plugin 'vimwiki/vimwiki'
-Plugin 'vim-voom/voom'
+Plugin 'vim-voom/voom'                   " emulates a two-pane text outliner
 
 Plugin 'fatih/vim-go'
 Plugin 'isRuslan/vim-es6'
-Plugin 'ervandew/supertab'
-"Plugin 'powerline/powerline'
+Plugin 'ervandew/supertab'               " perform all insert mode completions with Tab
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rking/ag.vim'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'majutsushi/tagbar'
+
 " Colorschemes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-scripts/blackboard.vim'
