@@ -23,18 +23,8 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 pathadd "$HOME/.local/bin"
-#if [ -d "$HOME/.local/bin" ]; then
-    #export PATH="$HOME/.local/bin:$PATH"
-#fi
-
-# set PATH so it includes user's private bin if it exists
 pathadd "$HOME/bin"
-#if [ -d "$HOME/bin" ] ; then
-    #PATH="$HOME/bin:$PATH"
-#fi
-
 pathadd "$HOME/.cargo/bin:$PATH"
-#export PATH="$HOME/.cargo/bin:$PATH"
 
 # To avoid potential situation where tdm(1) crashes on every TTY, here we
 # default to execute tdm(1) on tty1 only, and leave other TTYs untouched.
