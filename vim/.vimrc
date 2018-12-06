@@ -14,7 +14,7 @@ Plugin 'scrooloose/nerdtree'                " a tree explorer plugin
 Plugin 'Xuyuanp/nerdtree-git-plugin'        " a plugin for NERDTree showing git status
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-Plugin 'mbbill/undotree'
+Plugin 'mbbill/undotree'                    " undo history visualizer
 "Plugin 'msanders/snipmate.vim'
 "Plugin 'edsono/vim-matchit'
 Plugin 'scrooloose/nerdcommenter'
@@ -67,14 +67,14 @@ set hidden
 set scrolloff=3
 set showmode
 set showcmd
-set number
-set relativenumber
+set number         " show line numbers
+set relativenumber " use relative line numbers
 set ruler
-set laststatus=2
-set guioptions-=T
-set guioptions-=m
-set guioptions-=L
-set guioptions-=r
+set laststatus=2   " always show status line
+set guioptions-=L  " no left-hand scrollbar
+set guioptions-=m  " no menu bar
+set guioptions-=r  " no right-hand scrollbar
+set guioptions-=T  " no toolbar
 " don't write any backups
 set nobackup
 set nowritebackup
