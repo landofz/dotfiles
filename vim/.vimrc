@@ -14,7 +14,6 @@ Plugin 'scrooloose/nerdtree'                " a tree explorer plugin
 Plugin 'Xuyuanp/nerdtree-git-plugin'        " a plugin for NERDTree showing git status
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-"Plugin 'sjl/gundo.vim'
 Plugin 'mbbill/undotree'
 "Plugin 'msanders/snipmate.vim'
 "Plugin 'edsono/vim-matchit'
@@ -112,8 +111,6 @@ nnoremap <leader>l :b#<cr>
 nnoremap <leader>p :Files<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>f :Ag<space>
-nnoremap <leader>/ :Unite grep:.<cr>
-nnoremap <leader>s :Unite -quick-match buffer<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>g :UndotreeToggle<CR>
@@ -158,19 +155,6 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ "Unknown"   : "?"
     \ }
-
-" CtrlP
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules|build|vendor)$',
-    \ 'file': '\v\.pyc$',
-    \ }
-
-" Wiki
-let g:vimwiki_list = [{
-    \ 'path': '~/storage/Notebook/',
-    \ 'syntax': 'markdown',
-    \ 'ext': '.txt',
-    \ }]
 
 " Paste doesn't replace paste buffer
 function! RestoreRegister()
