@@ -14,6 +14,8 @@ pathadd() {
     fi
 }
 
+eval $(keychain --eval --agents ssh id_rsa)
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
