@@ -35,7 +35,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec urxvt
+#bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -141,9 +142,9 @@ bindsym $mod+Shift+0 move container to workspace $work10
 
 # assign windows to workspaces
 assign [class="URxvt"] $work1
-assign [class="Google-chrome"] $work2
+assign [class="st-256color"] $work1
 assign [class="Brave-browser"] $work2
-assign [class="neovim"] $work3
+assign [class="Chromium-browser"] $work3
 assign [class="Firefox"] $work4
 assign [class="Spacefm"] $work5
 assign [class="Thunderbird"] $work8
