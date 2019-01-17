@@ -197,7 +197,7 @@ bindsym $mod+o exec outputmenu.sh
 # finds out, if available)
 set_from_resource $green i3wm.color10 #00ff00
 bar {
-        status_command i3status
+        status_command i3blocks
         tray_output primary
         tray_padding 0
         position top
