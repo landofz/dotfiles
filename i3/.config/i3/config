@@ -141,8 +141,6 @@ bindsym $mod+Shift+9 move container to workspace $work9
 bindsym $mod+Shift+0 move container to workspace $work10
 
 # assign windows to workspaces
-assign [class="URxvt"] $work1
-assign [class="st-256color"] $work1
 assign [class="Brave-browser"] $work2
 assign [class="Chromium-browser"] $work3
 assign [class="Firefox"] $work4
@@ -192,6 +190,7 @@ bindsym $mod+c exec kill-app.sh
 bindsym $mod+n move workspace to output left
 bindsym $mod+m move workspace to output right
 bindsym $mod+o exec outputmenu.sh
+bindsym $mod+period exec --no-startup-id nnn.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
