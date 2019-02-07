@@ -72,7 +72,7 @@ set showmode
 set showcmd
 set number         " show line numbers
 set relativenumber " use relative line numbers
-set ruler
+set ruler          " show cursor position
 set laststatus=2   " always show status line
 set guioptions-=L  " no left-hand scrollbar
 set guioptions-=m  " no menu bar
@@ -89,9 +89,9 @@ set wildmenu
 set showmatch
 
 " Search
-set incsearch
-set hlsearch
-set ignorecase
+set incsearch      " search dynamically while typing
+set hlsearch       " highlight searches
+set ignorecase     " ignore case during search
 set smartcase
 set grepprg=ag\ --nogroup\ --nocolor
 
@@ -128,16 +128,14 @@ vnoremap k gk
 syntax on
 set background=dark
 colorscheme blackboard
-if has("gui_macvim")
-  set guifont=Menlo\ Regular:h16
-elseif has("gui_running")
+if has("gui_running")
   set guifont=Monospace\ 12
 endif
 let g:airline_powerline_fonts = 1
 
-" Show tabstops and EOLs
+" Show tabstops, trailing spaces and EOLs
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,trail:·,eol:¬
 
 " Filetype specific options
 augroup filetype_indents
