@@ -224,7 +224,7 @@ bindsym XF86MonBrightnessUp exec brightness.sh up # increase screen brightness
 bindsym XF86MonBrightnessDown exec brightness.sh down # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+bindsym XF86TouchpadToggle exec toggletouchpad.sh # toggle touchpad
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
