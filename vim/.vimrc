@@ -12,31 +12,31 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tmux-plugins/vim-tmux-focus-events' " FocusGained and FocusLost autocommand events in terminal
 Plugin 'scrooloose/nerdtree'                " a tree explorer plugin
 Plugin 'Xuyuanp/nerdtree-git-plugin'        " a plugin for NERDTree showing git status
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/fzf'                       " fzf installation
+Plugin 'junegunn/fzf.vim'                   " use fzf in vim
 Plugin 'mbbill/undotree'                    " undo history visualizer
-"Plugin 'msanders/snipmate.vim'
-"Plugin 'edsono/vim-matchit'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-eunuch'
-Plugin 'gregsexton/gitv'                 " a repository viewer similar to gitk
-Plugin 'wellle/targets.vim'              " additional text objects like , . : =
-Plugin 'michaeljsmith/vim-indent-object' " text object based on indentation level
-Plugin 'rhysd/clever-f.vim'              " better repeat and marks for f and t mappings
+"Plugin 'garbas/vim-snipmate'                " snippets
+"Plugin 'edsono/vim-matchit'                 " extended '%' matchings
+Plugin 'scrooloose/nerdcommenter'           " commenting support
+Plugin 'tpope/vim-fugitive'                 " git wrapper
+Plugin 'tpope/vim-repeat'                   " repeat plugin maps with '.'
+Plugin 'tpope/vim-surround'                 " surrounding made easier
+Plugin 'tpope/vim-eunuch'                   " helpers for unix
+Plugin 'gregsexton/gitv'                    " a repository viewer similar to gitk
+Plugin 'wellle/targets.vim'                 " additional text objects like , . : =
+Plugin 'michaeljsmith/vim-indent-object'    " text object based on indentation level
+Plugin 'rhysd/clever-f.vim'                 " better repeat and marks for f and t mappings
 
-Plugin 'vim-voom/voom'                   " emulates a two-pane text outliner
+Plugin 'vim-voom/voom'                      " emulates a two-pane text outliner
 
-Plugin 'fatih/vim-go'
+Plugin 'fatih/vim-go'                       " Go development
 Plugin 'isRuslan/vim-es6'
-Plugin 'ervandew/supertab'               " perform all insert mode completions with Tab
-Plugin 'bling/vim-airline'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'ervandew/supertab'                  " perform all insert mode completions with Tab
+Plugin 'vim-airline/vim-airline'            " status/tabline
+Plugin 'airblade/vim-gitgutter'             " shows a git diff in the gutter
 Plugin 'rking/ag.vim'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'majutsushi/tagbar'
+Plugin 'ludovicchabant/vim-gutentags'       " manages tag files
+Plugin 'majutsushi/tagbar'                  " displays tags in a window, ordered by scope
 
 " Colorschemes
 Plugin 'altercation/vim-colors-solarized'
