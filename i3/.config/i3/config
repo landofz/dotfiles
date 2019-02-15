@@ -202,7 +202,7 @@ bar {
         tray_output primary
         tray_padding 0
         position top
-        font pango:UbuntuMono Nerd Font 13
+        font pango:UbuntuMono Nerd Font 11
         separator_symbol "|"
         colors {
             separator $green
