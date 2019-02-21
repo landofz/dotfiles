@@ -26,6 +26,7 @@ Plugin 'gregsexton/gitv'                    " a repository viewer similar to git
 Plugin 'wellle/targets.vim'                 " additional text objects like , . : =
 Plugin 'michaeljsmith/vim-indent-object'    " text object based on indentation level
 Plugin 'rhysd/clever-f.vim'                 " better repeat and marks for f and t mappings
+Plugin 'easymotion/vim-easymotion'          " simpler way to use motions
 
 Plugin 'vim-voom/voom'                      " emulates a two-pane text outliner
 
