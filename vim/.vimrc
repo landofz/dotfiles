@@ -35,7 +35,7 @@ Plugin 'plasticboy/vim-markdown'            " markdown mode
 Plugin 'ervandew/supertab'                  " perform all insert mode completions with Tab
 Plugin 'vim-airline/vim-airline'            " status/tabline
 Plugin 'airblade/vim-gitgutter'             " shows a git diff in the gutter
-Plugin 'rking/ag.vim'
+Plugin 'mhinz/vim-grepper'                  " asynchronous search
 Plugin 'ludovicchabant/vim-gutentags'       " manages tag files
 Plugin 'majutsushi/tagbar'                  " displays tags in a window, ordered by scope
 
@@ -94,7 +94,6 @@ set incsearch      " search dynamically while typing
 set hlsearch       " highlight searches
 set ignorecase     " ignore case during search
 set smartcase
-set grepprg=ag\ --nogroup\ --nocolor
 
 " Keys
 let mapleader = ","
@@ -114,7 +113,7 @@ nnoremap <leader>l :b#<cr>
 " Invoking plugins
 nnoremap <leader>p :Files<cr>
 nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>f :Ag<space>
+nnoremap <leader>f :Grepper<space><cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>g :UndotreeToggle<CR>
