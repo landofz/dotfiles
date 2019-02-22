@@ -28,10 +28,10 @@ Plugin 'michaeljsmith/vim-indent-object'    " text object based on indentation l
 Plugin 'rhysd/clever-f.vim'                 " better repeat and marks for f and t mappings
 Plugin 'easymotion/vim-easymotion'          " simpler way to use motions
 
-Plugin 'vim-voom/voom'                      " emulates a two-pane text outliner
 
 Plugin 'fatih/vim-go'                       " Go development
 Plugin 'isRuslan/vim-es6'
+Plugin 'plasticboy/vim-markdown'            " markdown mode
 Plugin 'ervandew/supertab'                  " perform all insert mode completions with Tab
 Plugin 'vim-airline/vim-airline'            " status/tabline
 Plugin 'airblade/vim-gitgutter'             " shows a git diff in the gutter
@@ -118,6 +118,7 @@ nnoremap <leader>f :Ag<space>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>g :UndotreeToggle<CR>
+nnoremap <leader>mt :Toc<CR>
 
 " Movement
 nnoremap j gj
