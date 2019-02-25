@@ -9,4 +9,4 @@ export FZF_DEFAULT_COMMAND='ag --files-with-matches --hidden --follow'
 # Key bindings
 # ------------
 [[ -s "$HOME/lib/fzf/shell/key-bindings.bash" ]] && source "$HOME/lib/fzf/shell/key-bindings.bash"
-bind -x '"\C-p": vim $(fzf);'
+bind -x '"\C-p": nvim $(fzf);'
