@@ -15,8 +15,6 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'        " a plugin for NERDTree showing git 
 Plugin 'junegunn/fzf'                       " fzf installation
 Plugin 'junegunn/fzf.vim'                   " use fzf in vim
 Plugin 'mbbill/undotree'                    " undo history visualizer
-"Plugin 'garbas/vim-snipmate'                " snippets
-"Plugin 'edsono/vim-matchit'                 " extended '%' matchings
 Plugin 'scrooloose/nerdcommenter'           " commenting support
 Plugin 'tpope/vim-fugitive'                 " git wrapper
 Plugin 'tpope/vim-repeat'                   " repeat plugin maps with '.'
@@ -27,6 +25,12 @@ Plugin 'wellle/targets.vim'                 " additional text objects like , . :
 Plugin 'michaeljsmith/vim-indent-object'    " text object based on indentation level
 Plugin 'rhysd/clever-f.vim'                 " better repeat and marks for f and t mappings
 Plugin 'easymotion/vim-easymotion'          " simpler way to use motions
+Plugin 'geoffharcourt/vim-matchit'          " extended '%' matchings
+" Snippets
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+"Plugin 'honza/vim-snippets'
 
 Plugin 'fatih/vim-go'                       " Go development
 Plugin 'isRuslan/vim-es6'
@@ -40,9 +44,11 @@ Plugin 'ludovicchabant/vim-gutentags'       " manages tag files
 Plugin 'majutsushi/tagbar'                  " displays tags in a window, ordered by scope
 
 " Colorschemes
+Plugin 'joshdick/onedark.vim'
+Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'KeitaNakamura/neodark.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-scripts/blackboard.vim'
-Plugin 'vim-scripts/phd'
+Plugin 'lisposter/vim-blackboard'
 Plugin 'vim-scripts/xoria256.vim'
 Plugin 'wgibbs/vim-irblack'
 Plugin 'sjl/badwolf'
