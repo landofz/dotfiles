@@ -14,7 +14,9 @@ pathadd() {
     fi
 }
 
-eval $(keychain --eval --agents ssh id_rsa)
+if command -v keychain > /dev/null; then
+    eval "$(keychain --eval --agents ssh)"
+fi
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
