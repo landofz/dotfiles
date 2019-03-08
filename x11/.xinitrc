@@ -11,6 +11,6 @@ fi
 XSECURELOCK_BLANK_TIMEOUT=10 xss-lock -n /usr/local/libexec/xsecurelock/dimmer -l -- xsecurelock &
 
 if [ -z "$1" ]; then
-    exec ssh-agent tdm --xstart
+    exec i3
 fi
 exec "$@"
