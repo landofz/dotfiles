@@ -28,7 +28,7 @@ fi
 
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/bin"
-pathadd "$HOME/.cargo/bin:$PATH"
+pathadd "$HOME/.cargo/bin"
 
 # To avoid potential situation where tdm(1) crashes on every TTY, here we
 # default to execute tdm(1) on tty1 only, and leave other TTYs untouched.
