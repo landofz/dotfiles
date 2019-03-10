@@ -9,8 +9,11 @@
 #umask 022
 
 pathadd() {
-    if [ -d "$1" ] && [ ":$PATH:" != *":$1:"* ]; then
-        PATH="$1${PATH:+":$PATH"}"
+    case ":$PATH:" in
+        *":$1:"*) return ;;
+    esac
+    if [ -d "$1" ]; then
+        PATH="$1:$PATH"
     fi
 }
 
@@ -20,7 +23,6 @@ fi
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
         . "$HOME/.bashrc"
     fi
