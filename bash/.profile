@@ -18,7 +18,9 @@ pathadd() {
 }
 
 if command -v keychain > /dev/null; then
-    eval "$(keychain --eval --agents ssh)"
+    if [ -z "$SSH_AUTH_SOCK" ]; then
+        eval "$(keychain --eval --agents ssh)"
+    fi
 fi
 
 # if running bash
