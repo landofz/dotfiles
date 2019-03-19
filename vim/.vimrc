@@ -147,6 +147,7 @@ if has("gui_running")
   set guifont=Monospace\ 12
 endif
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#gutentags#enabled = 1
 
 " Show tabstops, trailing spaces and EOLs
 set list
@@ -171,6 +172,9 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ "Unknown"   : "?"
     \ }
+
+" Gutentags
+let g:gutentags_exclude_filetypes = ['vim', 'markdown', 'text', 'config', 'yaml']
 
 " Paste doesn't replace paste buffer
 function! RestoreRegister()
