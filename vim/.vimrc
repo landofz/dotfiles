@@ -202,6 +202,10 @@ nnoremap <Leader>sw :call StripTrailingWhitespace()<CR>
     "autocmd FileType c,cpp,javascript,python,rust,xml,yml,perl,sql,sh autocmd BufWritePre <buffer> :call StripTrailingWhitespace()
 "augroup END
 
+" Don't interrupt v-mode due indent
+vnoremap < <gv
+vnoremap > >gv
+
 " Command flubs
 command! WQ wq
 command! Wq wq
