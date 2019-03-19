@@ -101,6 +101,14 @@ set hlsearch       " highlight searches
 set ignorecase     " ignore case during search
 set smartcase
 
+" Center view on search result
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+
 " Keys
 let mapleader = ","
 inoremap jj <Esc>
