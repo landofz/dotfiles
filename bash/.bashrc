@@ -73,6 +73,7 @@ alias psfg='ps aux | grep pts | grep -v "\-bash" | grep "\+" | grep -v tmux | gr
 alias vbrc="nvim $HOME/.bashrc"
 alias vi3c="nvim $HOME/.config/i3/config"
 alias ddgr="ddgr -n9"
+alias bat="bat -n --terminal-width=-1"
 
 man() {
     env \
