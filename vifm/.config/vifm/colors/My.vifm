@@ -1,0 +1,18 @@
+highlight Win cterm=none ctermfg=white ctermbg=16
+highlight CmdLine cterm=none ctermfg=white ctermbg=16
+highlight WildMenu cterm=underline,reverse ctermfg=white ctermbg=16
+highlight Border cterm=none ctermfg=white ctermbg=16
+
+" generic file types
+highlight BrokenLink cterm=bold ctermfg=red ctermbg=default
+highlight Device cterm=bold ctermfg=yellow ctermbg=default
+highlight Directory cterm=bold ctermfg=blue ctermbg=default
+highlight Executable cterm=bold ctermfg=green ctermbg=default
+highlight Fifo cterm=none ctermfg=yellow ctermbg=default
+highlight Link cterm=bold ctermfg=cyan ctermbg=default
+highlight Socket cterm=bold ctermfg=magenta ctermbg=default
+
+" file name specific highlight
+highlight /.*\.aac$|.*\.au$|.*\.flac$|.*\.m4a$|.*\.mid$|.*\.midi$|.*\.mka$|.*\.mp3$|.*\.mpc$|.*\.oga$|.*\.ogg$|.*\.opus$|.*\.ra$|.*\.spx$|.*\.wav$|.*\.xspf$/I cterm=none ctermfg=cyan ctermbg=default
+highlight /.*\.7z$|.*\.Z$|.*\.ace$|.*\.alz$|.*\.arc$|.*\.arj$|.*\.bz$|.*\.bz2$|.*\.cab$|.*\.cpio$|.*\.deb$|.*\.dwm$|.*\.dz$|.*\.ear$|.*\.esd$|.*\.gz$|.*\.jar$|.*\.lha$|.*\.lrz$|.*\.lz$|.*\.lz4$|.*\.lzh$|.*\.lzma$|.*\.lzo$|.*\.rar$|.*\.rpm$|.*\.rz$|.*\.sar$|.*\.swm$|.*\.t7z$|.*\.tar$|.*\.taz$|.*\.tbz$|.*\.tbz2$|.*\.tgz$|.*\.tlz$|.*\.txz$|.*\.tz$|.*\.tzo$|.*\.tzst$|.*\.war$|.*\.wim$|.*\.xz$|.*\.z$|.*\.zip$|.*\.zoo$|.*\.zst$/I cterm=bold ctermfg=red ctermbg=default
+highlight /.*\.asf$|.*\.avi$|.*\.bmp$|.*\.cgm$|.*\.dl$|.*\.emf$|.*\.flc$|.*\.fli$|.*\.flv$|.*\.gif$|.*\.gl$|.*\.jpeg$|.*\.jpg$|.*\.m2v$|.*\.m4v$|.*\.mjpeg$|.*\.mjpg$|.*\.mkv$|.*\.mng$|.*\.mov$|.*\.mp4$|.*\.mp4v$|.*\.mpeg$|.*\.mpg$|.*\.nuv$|.*\.ogm$|.*\.ogv$|.*\.ogx$|.*\.pbm$|.*\.pcx$|.*\.pgm$|.*\.png$|.*\.ppm$|.*\.qt$|.*\.rm$|.*\.rmvb$|.*\.svg$|.*\.svgz$|.*\.tga$|.*\.tif$|.*\.tiff$|.*\.vob$|.*\.webm$|.*\.wmv$|.*\.xbm$|.*\.xcf$|.*\.xpm$|.*\.xwd$|.*\.yuv$/I cterm=bold ctermfg=magenta ctermbg=default
