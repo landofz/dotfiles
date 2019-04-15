@@ -9,6 +9,9 @@ if [ -f ~/.Xresources ]; then
     xrdb -merge ~/.Xresources
 fi
 XSECURELOCK_BLANK_TIMEOUT=10 xss-lock -n /usr/local/libexec/xsecurelock/dimmer -l -- xsecurelock &
+if [ -e "$HOME/Pictures/wall.jpg" ]; then
+    xwallpaper --stretch "$HOME/Pictures/wall.jpg"
+fi
 
 if [ -z "$1" ]; then
     exec i3
