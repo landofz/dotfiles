@@ -69,18 +69,18 @@ signal=10
 
 # Network interface monitoring
 #
+[wifi]
+label=
+#instance=wlp3s0
+#label=直
+interval=10
+separator=false
+
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
 #instance=wlan0
 #color=#00FF00
-interval=10
-separator=false
-
-[wifi]
-label=
-#instance=wlp3s0
-#label=直
 interval=10
 #separator=false
 
