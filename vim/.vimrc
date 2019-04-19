@@ -142,7 +142,7 @@ vnoremap k gk
 " Appearance
 syntax on
 set background=dark
-colorscheme blackboard
+colorscheme default
 if has("gui_running")
   set guifont=Monospace\ 12
 endif
