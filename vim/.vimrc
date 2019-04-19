@@ -125,6 +125,10 @@ nnoremap <CR> G
 nnoremap <BS> gg
 nnoremap <leader>l :b#<cr>
 
+" Quickfix/location
+nnoremap <leader>qq :cclose<cr>
+nnoremap <leader>qc :exe "crewind " . v:count1<cr>
+
 " Invoking plugins
 nnoremap <leader>p :Files<cr>
 nnoremap <leader>b :Buffers<cr>
