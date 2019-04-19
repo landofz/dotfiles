@@ -145,10 +145,11 @@ bindsym $mod+Shift+0 move container to workspace $work10
 assign [class="Brave-browser"] $work2
 assign [class="Chromium-browser"] $work3
 assign [class="Firefox"] $work4
-assign [class="Spacefm"] $work5
+assign [instance="vifm"] $work5
 assign [class="Thunderbird"] $work8
 assign [class="neomutt"] $work8
 assign [class="Slack"] $work9
+assign [instance="weechat"] $work9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
