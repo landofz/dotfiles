@@ -34,6 +34,7 @@ Plugin 'geoffharcourt/vim-matchit'          " extended '%' matchings
 
 Plugin 'fatih/vim-go'                       " Go development
 Plugin 'isRuslan/vim-es6'
+Plugin 'mattn/emmet-vim'                    " HTML and CSS high speed coding
 Plugin 'plasticboy/vim-markdown'            " markdown mode
 
 Plugin 'ervandew/supertab'                  " perform all insert mode completions with Tab
