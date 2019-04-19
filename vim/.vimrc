@@ -68,6 +68,7 @@ set softtabstop=4
 set expandtab
 
 " General
+set shell=sh       " handle case when $SHELL is fish for example
 if !has("nvim")
     set encoding=utf-8
 endif
