@@ -8,6 +8,25 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+# Enforce correct locales from the beginning:
+# LC_ALL is unset since it overwrites everything
+# LC_MESSAGES=C never translates program output
+# LC_TIME=en_GB.UTF-8 leads to yyyy-mm-dd hh:mm date/time output
+unset LC_ALL
+export LANG="en_US.UTF-8"
+export LC_ADDRESS="hr_HR.UTF-8"
+export LC_COLLATE="hr_HR.UTF-8"
+export LC_CTYPE="en_GB.UTF-8"
+export LC_IDENTIFICATION="hr_HR.UTF-8"
+export LC_MEASUREMENT="hr_HR.UTF-8"
+export LC_MESSAGES="C"
+export LC_MONETARY="hr_HR.UTF-8"
+export LC_NAME="hr_HR.UTF-8"
+export LC_NUMERIC="hr_HR.UTF-8"
+export LC_PAPER="hr_HR.UTF-8"
+export LC_TELEPHONE="hr_HR.UTF-8"
+export LC_TIME="en_GB.UTF-8"
+
 pathadd() {
     case ":$PATH:" in
         *":$1:"*) return ;;
