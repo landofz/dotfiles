@@ -193,7 +193,7 @@ filextype *.djvu
 " Epub
 filextype *.epub
         \ {View in fbreader}
-        \ fbreader %f &,
+        \ fbreader %f 2> /dev/null &,
 
 " Audio
 filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
