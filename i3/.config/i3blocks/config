@@ -109,6 +109,7 @@ label=
 #label=⚡
 instance=0
 interval=30
+separator=false
 
 [battery]
 label=
