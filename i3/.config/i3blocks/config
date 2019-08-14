@@ -34,7 +34,8 @@ markup=none
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-command=/usr/share/i3blocks/volume 5 pulse
+#command=/usr/share/i3blocks/volume 5 pulse
+command=$HOME/lib/i3blocks/volume 5 pulse
 #label=VOL
 #label=♪
 label=
