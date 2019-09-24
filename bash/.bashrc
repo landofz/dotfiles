@@ -75,6 +75,12 @@ alias vi3c="nvim $HOME/.config/i3/config"
 alias ddgr="ddgr -n9"
 alias bat="bat -n --terminal-width=-1"
 
+alias gcm='git commit'
+alias gdf='git diff'
+alias gdm='git diff master'
+alias gds='git diff --staged'
+alias gst='git status'
+
 man() {
     env \
     LESS_TERMCAP_mb="$(printf "\e[1;31m")" \
