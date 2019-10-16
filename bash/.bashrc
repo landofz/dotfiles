@@ -53,7 +53,7 @@ fi
 
 export EDITOR=nvim
 export VISUAL=nvim
-export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
+export LESS='--quit-if-one-screen --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 export WORKON_HOME=$HOME/virtualenv
 
 [[ -s ~/lib/up/up.sh ]] && source ~/lib/up/up.sh
@@ -73,7 +73,7 @@ alias psfg='ps aux | grep pts | grep -v "\-bash" | grep "\+" | grep -v tmux | gr
 alias vbrc="nvim $HOME/.bashrc"
 alias vi3c="nvim $HOME/.config/i3/config"
 alias ddgr="ddgr -n9"
-alias bat="bat -n --terminal-width=-1"
+alias bat="bat -n"
 alias dpss='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
 
 alias gcm='git commit'
