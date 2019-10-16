@@ -74,6 +74,7 @@ alias vbrc="nvim $HOME/.bashrc"
 alias vi3c="nvim $HOME/.config/i3/config"
 alias ddgr="ddgr -n9"
 alias bat="bat -n --terminal-width=-1"
+alias dpss='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
 
 alias gcm='git commit'
 alias gdf='git diff'
