@@ -193,7 +193,8 @@ bindsym $mod+c exec kill-app.sh
 bindsym $mod+n move workspace to output left
 bindsym $mod+m move workspace to output right
 bindsym $mod+o exec outputmenu.sh
-bindsym $mod+period exec --no-startup-id nnn.sh
+bindsym $mod+b exec --no-startup-id nnn.sh
+bindsym $mod+period exec --no-startup-id notify-new-inbox-mail.sh
 bindsym $mod+slash exec --no-startup-id neomutt.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status
