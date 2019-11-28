@@ -215,7 +215,6 @@ bar {
 # Startup applications
 exec --no-startup-id dunst
 exec --no-startup-id redshift-gtk
-exec --no-startup-id update-notifier
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec volume.sh up #increase sound volume
