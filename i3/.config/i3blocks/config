@@ -47,10 +47,11 @@ signal=10
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
-#[memory]
+[memory]
 #label=MEM
+label=
 #separator=false
-#interval=30
+interval=30
 
 #[memory]
 #label=SWAP
