@@ -45,6 +45,7 @@ Plugin 'ludovicchabant/vim-gutentags'       " manages tag files
 Plugin 'majutsushi/tagbar'                  " displays tags in a window, ordered by scope
 
 " Colorschemes
+Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'KeitaNakamura/neodark.vim'
@@ -148,7 +149,8 @@ vnoremap k gk
 " Appearance
 syntax on
 set background=dark
-colorscheme default
+set termguicolors
+colorscheme gruvbox
 if has("gui_running")
   set guifont=Monospace\ 12
 endif
