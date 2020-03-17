@@ -81,6 +81,7 @@ alias gdf='git diff'
 alias gdm='git diff master'
 alias gds='git diff --staged'
 alias gst='git status'
+alias gpf='git push --force-with-lease'
 
 man() {
     env \
