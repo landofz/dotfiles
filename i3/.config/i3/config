@@ -190,7 +190,7 @@ floating_minimum_size 120 x 80
 bindsym $mod+Shift+z exec sleep 0.3 && XSECURELOCK_BLANK_TIMEOUT=10 xsecurelock
 bindsym $mod+x exec powermenu.sh
 bindsym $mod+c exec kill-app.sh
-bindsym $mod+n move workspace to output left
+bindsym $mod+n exec --no-startup-id open-note.sh
 bindsym $mod+m move workspace to output right
 bindsym $mod+o exec outputmenu.sh
 bindsym $mod+b exec --no-startup-id nnn.sh
