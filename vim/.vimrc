@@ -31,6 +31,7 @@ Plugin 'geoffharcourt/vim-matchit'          " extended '%' matchings
 "Plugin 'tomtom/tlib_vim'
 "Plugin 'garbas/vim-snipmate'
 "Plugin 'honza/vim-snippets'
+Plugin 'Shougo/deoplete.nvim'
 
 Plugin 'fatih/vim-go'                       " Go development
 Plugin 'isRuslan/vim-es6'
