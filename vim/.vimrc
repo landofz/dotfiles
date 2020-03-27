@@ -26,6 +26,7 @@ Plugin 'michaeljsmith/vim-indent-object'    " text object based on indentation l
 Plugin 'rhysd/clever-f.vim'                 " better repeat and marks for f and t mappings
 Plugin 'easymotion/vim-easymotion'          " simpler way to use motions
 Plugin 'geoffharcourt/vim-matchit'          " extended '%' matchings
+Plugin 'gerw/vim-HiLinkTrace'               " trace syntax highlight
 " Snippets
 "Plugin 'MarcWeber/vim-addon-mw-utils'
 "Plugin 'tomtom/tlib_vim'
