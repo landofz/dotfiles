@@ -1,0 +1,2 @@
+#!/bin/sh
+$HOME/lib/qutebrowser/bin/qutebrowser --temp-basedir --set content.private_browsing true --config-py "$HOME/.config/qutebrowser/config.py"
