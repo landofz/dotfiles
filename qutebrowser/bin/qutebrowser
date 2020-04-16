@@ -1,2 +1,2 @@
 #!/bin/sh
-$HOME/lib/qutebrowser/bin/python3 -m qutebrowser "$@"
+$HOME/lib/qutebrowser/bin/qutebrowser "$@"
