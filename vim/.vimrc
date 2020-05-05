@@ -20,6 +20,7 @@ Plugin 'tpope/vim-fugitive'                 " git wrapper
 Plugin 'tpope/vim-repeat'                   " repeat plugin maps with '.'
 Plugin 'tpope/vim-surround'                 " surrounding made easier
 Plugin 'tpope/vim-eunuch'                   " helpers for unix
+Plugin 'tpope/vim-unimpaired'               " handy bracket mappings
 Plugin 'gregsexton/gitv'                    " a repository viewer similar to gitk
 Plugin 'wellle/targets.vim'                 " additional text objects like , . : =
 Plugin 'michaeljsmith/vim-indent-object'    " text object based on indentation level
@@ -28,9 +29,7 @@ Plugin 'easymotion/vim-easymotion'          " simpler way to use motions
 Plugin 'geoffharcourt/vim-matchit'          " extended '%' matchings
 Plugin 'gerw/vim-HiLinkTrace'               " trace syntax highlight
 " Snippets
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
 "Plugin 'honza/vim-snippets'
 Plugin 'Shougo/deoplete.nvim'
 
