@@ -6,8 +6,8 @@ HISTIGNORE=?:??
 shopt -s histappend
 # save multi-line commands as one command
 shopt -s cmdhist
-HISTSIZE=9999
-HISTFILESIZE=9999
+HISTSIZE=999999
+HISTFILESIZE=999999
 # immediately record all commands
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
