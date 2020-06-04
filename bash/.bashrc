@@ -53,6 +53,7 @@ fi
 
 export EDITOR=nvim
 export VISUAL=nvim
+export BROWSER=qutebrowser
 export LESS='--quit-if-one-screen --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 export WORKON_HOME=$HOME/virtualenv
 
