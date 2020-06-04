@@ -70,13 +70,16 @@ alias gnvim='NVIM_TUI_ENABLE_TRUE_COLOR= nvim-wrapper'
 alias psvim='ps aux | grep -v grep | grep vim'
 alias psbg='ps aux | grep "pts/[0-9]\+ \+T" | grep -v grep'
 alias psfg='ps aux | grep pts | grep -v "\-bash" | grep "\+" | grep -v tmux | grep -v grep | grep -v "ps aux" | grep -v "pts/0"'
-alias vbrc="nvim $HOME/.bashrc"
-alias vi3c="nvim $HOME/.config/i3/config"
+alias vibash="nvim $HOME/.bashrc"
+alias vii3="nvim $HOME/.config/i3/config"
+alias vitmux="nvim $HOME/.tmux.conf"
+alias vialacritty="nvim $HOME/.config/alacritty/alacritty.yml"
 alias ddgr="ddgr -n9"
 alias bat="bat -n"
 alias dpss='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
 
 alias gcm='git commit'
+alias gco='git checkout'
 alias gdf='git diff'
 alias gdm='git diff master'
 alias gds='git diff --staged'
