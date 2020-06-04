@@ -58,7 +58,7 @@ export LESS='--quit-if-one-screen --ignore-case --LONG-PROMPT --RAW-CONTROL-CHAR
 export WORKON_HOME=$HOME/virtualenv
 
 [[ -s ~/lib/up/up.sh ]] && source ~/lib/up/up.sh
-[[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
+[[ -s ~/.local/bin/virtualenvwrapper.sh ]] && source ~/.local/bin/virtualenvwrapper.sh
 [[ -s ~/.bash-powerline.sh ]] && source ~/.bash-powerline.sh
 [[ -s ~/.config/fzf/fzf.bash ]] && source ~/.config/fzf/fzf.bash
 if [[ -z "$GVM_ROOT" ]]; then
