@@ -1,18 +1,22 @@
 # if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# don't record duplicate commands and ones starting with space
 HISTCONTROL='erasedups:ignoreboth'
+# don't record one and two letter commands
 HISTIGNORE=?:??
+# append to history file, don't overwrite
 shopt -s histappend
 # save multi-line commands as one command
 shopt -s cmdhist
+# big history
 HISTSIZE=999999
 HISTFILESIZE=999999
 # immediately record all commands
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 # check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
+# update the values of LINES and COLUMNS
 shopt -s checkwinsize
 
 # smart cd command
@@ -80,12 +84,18 @@ alias bat="bat -n"
 alias dpss='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
 
 alias gcm='git commit'
-alias gco='git checkout'
 alias gdf='git diff'
 alias gdm='git diff master'
 alias gds='git diff --staged'
 alias gst='git status'
+alias gbv='git branch -vv'
 alias gpf='git push --force-with-lease'
+alias gun='git add -A && git commit -m "Update notes"'
+
+alias gad='git status | fpp -c "git add"'
+alias grh='git status | fpp -c "git reset HEAD"'
+alias gco='git status | fpp -c "git checkout"'
+alias gadp='git status | fpp -c "git add -p"'
 
 man() {
     env \
