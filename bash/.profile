@@ -53,7 +53,7 @@ pathadd "$HOME/.local/bin"
 pathadd "$HOME/bin"
 pathadd "$HOME/.cargo/bin"
 
-if [ "x$(tty)" = 'x/dev/tty1' ]; then
+if [ "x$(tty)" = "x/dev/tty1" -a -z "${DISPLAY}" ]; then
     unicode_start
     if command -v startx > /dev/null; then
         startx
