@@ -430,7 +430,9 @@ nnoremap gb :file &<cr>l
 nnoremap yd :!echo %d | xclip %i<cr>
 
 " Yank current file path into the clipboard
-nnoremap yf :!echo %c:p | xclip %i<cr>
+" nnoremap yf :!echo %c:p | xclip %i<cr>
+nnoremap yf :!echo -n %c:p | xsel --input --primary %i &&
+            \ echo -n %c:p | xsel --clipboard --input %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>
