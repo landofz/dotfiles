@@ -155,6 +155,8 @@ assign [instance="weechat"] $work9
 
 for_window [class="qutebrowser"] border none
 for_window [instance="neomutt"] border none
+for_window [class="Firefox Developer Edition"] border none
+for_window [instance="Alacritty"] border none
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
