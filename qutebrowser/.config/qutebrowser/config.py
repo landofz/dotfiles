@@ -12,6 +12,8 @@ c.tabs.position = 'left'
 # c.window.hide_decoration = False
 c.completion.web_history.max_items = 10000
 
+c.colors.webpage.darkmode.enabled = True
+
 config.unbind("co")
 config.bind("xjt", "set content.javascript.enabled true")
 config.bind("xjf", "set content.javascript.enabled false")
