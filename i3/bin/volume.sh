@@ -7,11 +7,11 @@ icon_on="\uf028"
 icon_off="\uf026"
 
 function level() {
-    pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $sink + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'
+    pactl list sinks | awk 'BEGIN{v=0} /Volume: [^0-9]/{if (v==1){print $5;exit}} /alsa_output.*analog-stereo/{v=1}'
 }
 
 function muted() {
-    pactl list sinks | grep '^[[:space:]]Mute:' | head -n $(( $sink + 1 )) | tail -n 1 | sed -e 's#.* \([y,n][a-z]*\).*#\1#'
+    pactl list sinks | awk 'BEGIN{v=0} /Mute: [^0-9]/{if (v==1){print $2;exit}} /alsa_output.*analog-stereo/{v=1}'
 }
 
 is_mic=0
