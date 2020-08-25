@@ -14,6 +14,7 @@ HISTSIZE=999999
 HISTFILESIZE=999999
 # immediately record all commands
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+PROMPT_DIRTRIM=5
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS
@@ -45,6 +46,7 @@ fi
 
 alias ll='exa -lg'
 alias la='exa -a'
+alias lt='exa --tree'
 alias l='ls -CF'
 
 alias cp='cp -i'
