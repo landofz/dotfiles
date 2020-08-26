@@ -42,16 +42,16 @@ if command -v keychain > /dev/null; then
     fi
 fi
 
+pathadd "$HOME/.local/bin"
+pathadd "$HOME/bin"
+pathadd "$HOME/.cargo/bin"
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     if [ -f "$HOME/.bashrc" ]; then
         . "$HOME/.bashrc"
     fi
 fi
-
-pathadd "$HOME/.local/bin"
-pathadd "$HOME/bin"
-pathadd "$HOME/.cargo/bin"
 
 if [ "x$(tty)" = "x/dev/tty1" -a -z "${DISPLAY}" ]; then
     unicode_start
