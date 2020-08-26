@@ -150,7 +150,9 @@ vnoremap k gk
 " Appearance
 syntax on
 set background=dark
-set termguicolors
+if (has("termguicolors"))
+  set termguicolors
+endif
 colorscheme gruvbox
 if has("gui_running")
   set guifont=Monospace\ 12
