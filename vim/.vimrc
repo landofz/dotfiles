@@ -34,7 +34,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'Shougo/deoplete.nvim'
 
 Plugin 'fatih/vim-go'                       " Go development
-Plugin 'isRuslan/vim-es6'
+Plugin 'isRuslan/vim-es6'                   " JavaScript snippets
 Plugin 'mattn/emmet-vim'                    " HTML and CSS high speed coding
 Plugin 'plasticboy/vim-markdown'            " markdown mode
 
