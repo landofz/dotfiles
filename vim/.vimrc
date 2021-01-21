@@ -169,7 +169,9 @@ set listchars=tab:▸\ ,trail:·,eol:¬
 " Filetype specific options
 augroup filetype_indents
     autocmd!
-    autocmd FileType javascript,json,yaml,html,htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+    autocmd FileType javascript,typescript,typescriptreact,json,yaml,html,htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+    autocmd FileType scss setlocal et ts=2 sw=2
+    autocmd FileType yaml setlocal et ts=2 sw=2
 augroup END
 
 " NERDTree
