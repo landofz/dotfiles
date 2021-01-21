@@ -173,6 +173,7 @@ augroup filetype_indents
     autocmd FileType scss setlocal et ts=2 sw=2
     autocmd FileType yaml setlocal et ts=2 sw=2
 augroup END
+let g:vim_markdown_folding_disabled=1
 
 " NERDTree
 let g:NERDTreeIgnore = ['\~$', '.pyc$[[file]]']
