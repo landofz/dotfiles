@@ -72,6 +72,7 @@ if [[ -z "$GVM_ROOT" ]]; then
 else
     [[ -s ~/.gvm/scripts/env/gvm ]] && source "$HOME/.gvm/scripts/env/gvm"
 fi
+[[ -s ~/lib/goto/goto.sh ]] && source ~/lib/goto/goto.sh
 
 alias gnvim='NVIM_TUI_ENABLE_TRUE_COLOR= nvim-wrapper'
 alias psvim='ps aux | grep -v grep | grep vim'
