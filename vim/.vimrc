@@ -176,7 +176,7 @@ augroup END
 
 " NERDTree
 let g:NERDTreeIgnore = ['\~$', '.pyc$[[file]]']
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
