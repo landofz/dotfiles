@@ -214,3 +214,5 @@ command! Q q
 
 nnoremap <silent> <Leader>sw :call local#whitespace#stripTrailing()<CR>
 nnoremap <silent> <Leader>ce :call local#cscope#do('3', expand('<cword>'))<CR>
+" manually fixing syntax highlighting going out of sync
+nnoremap <Leader>fh :syntax sync fromstart<CR>
