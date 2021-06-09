@@ -100,6 +100,7 @@ set visualbell
 set noerrorbells
 set wildmenu
 set showmatch
+set lazyredraw
 
 " Search
 set incsearch      " search dynamically while typing
@@ -172,6 +173,10 @@ augroup filetype_indents
     autocmd FileType javascript,typescript,typescriptreact,json,yaml,html,htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
     autocmd FileType scss setlocal et ts=2 sw=2
     autocmd FileType yaml setlocal et ts=2 sw=2
+augroup END
+augroup filetype_generic
+    autocmd!
+    autocmd FileType mail setlocal spell
 augroup END
 let g:vim_markdown_folding_disabled=1
 
