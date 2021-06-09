@@ -12,6 +12,7 @@ XSECURELOCK_BLANK_TIMEOUT=10 xss-lock -n /usr/local/libexec/xsecurelock/dimmer -
 if [ -e "$HOME/Pictures/wall.jpg" ]; then
     xwallpaper --stretch "$HOME/Pictures/wall.jpg"
 fi
+xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
 if [ -z "$1" ]; then
     exec i3
