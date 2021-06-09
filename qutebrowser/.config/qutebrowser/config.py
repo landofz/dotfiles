@@ -22,6 +22,9 @@ c.colors.webpage.darkmode.enabled = True
 config.unbind("co")
 config.bind("xjt", "set content.javascript.enabled true")
 config.bind("xjf", "set content.javascript.enabled false")
+config.bind(";a", "hint links spawn archive-page.sh '{hint-url}'")
+config.bind(",A", "spawn archivebox-page.sh '{url}';; message-info 'Archiving <{url}>'")
+config.bind(",l", "tab-focus last")
 
 c.content.javascript.enabled = False
 js_whitelist = [
