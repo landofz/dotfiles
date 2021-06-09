@@ -1,5 +1,7 @@
 import os
 
+config.load_autoconfig(False)
+
 c.auto_save.session = True
 c.content.autoplay = False
 c.content.canvas_reading = False
@@ -13,6 +15,9 @@ c.tabs.position = 'left'
 c.completion.web_history.max_items = 10000
 
 c.colors.webpage.darkmode.enabled = True
+# c.content.user_stylesheets = [
+        # os.path.expanduser("~/.config/qutebrowser/stylesheet.css")
+# ]
 
 config.unbind("co")
 config.bind("xjt", "set content.javascript.enabled true")
