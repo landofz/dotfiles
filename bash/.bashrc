@@ -65,7 +65,8 @@ export WORKON_HOME=$HOME/virtualenv
 
 [[ -s ~/lib/up/up.sh ]] && source ~/lib/up/up.sh
 [[ -s ~/.local/bin/virtualenvwrapper.sh ]] && source ~/.local/bin/virtualenvwrapper.sh
-[[ -s ~/.bash-powerline.sh ]] && source ~/.bash-powerline.sh
+#[[ -s ~/.bash-powerline.sh ]] && source ~/.bash-powerline.sh
+eval "$(starship init bash)"
 [[ -s ~/.config/fzf/fzf.bash ]] && source ~/.config/fzf/fzf.bash
 if [[ -z "$GVM_ROOT" ]]; then
     [[ -s ~/.gvm/scripts/gvm ]] && source ~/.gvm/scripts/gvm
