@@ -72,6 +72,7 @@ set expandtab
 " General
 let g:python_host_prog = "/home/zoran/virtualenv/neovim_py2/bin/python"
 let g:python3_host_prog = "/home/zoran/virtualenv/neovim_py3/bin/python"
+let g:go_gopls_enabled = 0
 set shell=sh       " handle case when $SHELL is fish for example
 if !has("nvim")
     set encoding=utf-8
