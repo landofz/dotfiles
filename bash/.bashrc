@@ -35,8 +35,8 @@ export dotfiles=$HOME/dotfiles
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # enable color support of ls and also add handy aliases
-if [[ -x /usr/bin/dircolors ]]; then
-    [[ -r ~/.dircolors ]] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+if command -v dircolors > /dev/null; then
+    [[ -r ~/.config/dircolors ]] && eval "$(dircolors -b ~/.config/dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=always --classify -v --author --time-style=long-iso'
 
     alias grep='grep --color=auto'
