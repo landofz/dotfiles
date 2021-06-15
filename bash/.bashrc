@@ -61,6 +61,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=qutebrowser
 export LESS='--quit-if-one-screen --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
+export PAGER=less
 export WORKON_HOME=$HOME/virtualenv
 
 [[ -s ~/lib/up/up.sh ]] && source ~/lib/up/up.sh
