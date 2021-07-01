@@ -196,7 +196,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ }
 
 " Gutentags
-let g:gutentags_exclude_filetypes = ['vim', 'markdown', 'text', 'config', 'yaml', 'gitcommit', 'gitrebase']
+let g:gutentags_exclude_filetypes = ['vim', 'markdown', 'text', 'config', 'yaml', 'gitcommit', 'gitrebase', 'mail']
 
 " Paste doesn't replace paste buffer
 function! RestoreRegister()
