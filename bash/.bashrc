@@ -79,7 +79,7 @@ fi
 alias gnvim='NVIM_TUI_ENABLE_TRUE_COLOR= nvim-wrapper'
 alias psvim='ps aux | grep -v grep | grep vim'
 alias psbg='ps aux | grep "pts/[0-9]\+ \+T" | grep -v grep'
-alias psfg='ps aux | grep pts | grep -v "\-bash" | grep "\+" | grep -v tmux | grep -v grep | grep -v "ps aux"'
+alias psfg='ps aux | grep pts | grep -v "[/-]bash$" | grep "\+" | grep -v tmux | grep -v grep | grep -v "ps aux"'
 alias psall='echo "--- BG ---"; psbg; echo "--- FG ---"; psfg'
 alias vibash="nvim $HOME/.bashrc"
 alias vii3="nvim $HOME/.config/i3/config"
@@ -88,11 +88,13 @@ alias vialacritty="nvim $HOME/.config/alacritty/alacritty.yml"
 alias ddgr="ddgr -n9"
 alias bat="bat -n"
 alias dpss='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
+alias yt='YTFZF_PLAYER=/usr/bin/mpv YTFZF_PLAYER_FORMAT="/usr/bin/mpv --ytdl-format=" ytfzf -f'
 
 alias gcm='git commit'
 alias gdf='git diff'
 alias gdm='git diff master'
 alias glm='git log master..'
+alias gdo='git diff origin/$(git rev-parse --abbrev-ref HEAD)'
 alias gds='git diff --staged'
 alias gst='git status'
 alias gbv='git branch -vv'
