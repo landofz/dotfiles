@@ -22,6 +22,7 @@ c.colors.webpage.darkmode.enabled = True
 config.unbind("co")
 config.bind("xjt", "set content.javascript.enabled true")
 config.bind("xjf", "set content.javascript.enabled false")
+config.bind("ya", "yank inline {url}[{title}]")
 config.bind(";a", "hint links spawn archive-page.sh '{hint-url}'")
 config.bind(",A", "spawn archivebox-page.sh '{url}';; message-info 'Archiving <{url}>'")
 config.bind(",l", "tab-focus last")
@@ -43,3 +44,7 @@ if os.path.exists(private_whitelist):
 for site in js_whitelist:
     with config.pattern(site) as p:
         p.content.javascript.enabled = True
+
+redirectors_py = os.path.expanduser("~/.config/qutebrowser/redirectors.py")
+if os.path.exists(redirectors_py):
+    config.source('redirectors.py')
