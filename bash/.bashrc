@@ -30,7 +30,7 @@ shopt -s cdable_vars
 export dotfiles=$HOME/dotfiles
 
 # make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+if command -v lesspipe.sh > /dev/null; then eval "$(SHELL=/bin/sh lesspipe.sh)"; fi
 
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
