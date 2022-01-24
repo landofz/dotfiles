@@ -134,6 +134,7 @@ nnoremap <leader>w :w<CR>
 nnoremap <CR> G
 nnoremap <BS> gg
 nnoremap <leader>l :b#<cr>
+nnoremap <leader>% :let @" = expand("%")<cr>  " get current filename
 
 " Quickfix/location
 nnoremap <leader>qq :cclose<cr>
