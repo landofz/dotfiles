@@ -434,6 +434,10 @@ nnoremap yd :!echo %d | xclip %i<cr>
 nnoremap yf :!echo -n %c:p | xsel --input --primary %i &&
             \ echo -n %c:p | xsel --clipboard --input %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
 
+" Yank current file name into the clipboard
+nnoremap yn :!echo -n %c | xsel --input --primary %i &&
+            \ echo -n %c | xsel --clipboard --input %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
+
 " Mappings for faster renaming
 nnoremap I cw<c-a>
 nnoremap cc cw<c-u>
