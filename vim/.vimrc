@@ -228,3 +228,22 @@ nnoremap <silent> <Leader>sw :call local#whitespace#stripTrailing()<CR>
 nnoremap <silent> <Leader>ce :call local#cscope#do('3', expand('<cword>'))<CR>
 " manually fixing syntax highlighting going out of sync
 nnoremap <Leader>fh :syntax sync fromstart<CR>
+
+" handling .gpg files
+if !empty($GPG_KEYID)
+    augroup filetype_gpg
+        au!
+        " Use gpg2 to open a .gpg file
+        au  BufReadPre,FileReadPre  *.gpg       set nobackup
+        au  BufReadPre,FileReadPre  *.gpg       set noswapfile
+        au  BufReadPre,FileReadPre  *.gpg       set noundofile
+        au  BufReadPre,FileReadPre  *.gpg       set nowritebackup
+        au  BufReadPre,FileReadPre  *.gpg       set viminfo=
+        au  BufReadPre,FileReadPre  *.gpg       set sh=/bin/bash
+        au  BufReadPost             *.gpg       :%!gpg2 -q -d
+        au  BufReadPost             *.gpg       | redraw
+        au  BufWritePre             *.gpg       :%!gpg2 -q -e --no-encrypt-to --no-default-recipient -r $GPG_KEYID -a
+        au  BufWritePost            *.gpg       u
+        au  VimLeave                *.gpg       :!clear
+    augroup END
+endif
