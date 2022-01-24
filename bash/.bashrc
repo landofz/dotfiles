@@ -121,3 +121,5 @@ man() {
 zet() {
   nvim "+Zet $*"
 }
+
+eval "$(direnv hook bash)"
