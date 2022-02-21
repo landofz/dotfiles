@@ -36,6 +36,10 @@ pathadd() {
     fi
 }
 
+if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi # added by Nix installer
+# mostly for shell completions
+export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
+
 if command -v keychain > /dev/null; then
     if [ -z "$SSH_AUTH_SOCK" ]; then
         eval "$(keychain --eval --agents ssh)"
@@ -52,6 +56,15 @@ if [ -n "$BASH_VERSION" ]; then
         . "$HOME/.bashrc"
     fi
 fi
+
+# locales workaround because glibc 2.27 introduced breaking change in locales
+# binary data format, see
+# https://sourceware.org/glibc/wiki/Release/2.27#Statically_compiled_applications_using_locales
+# for more info
+#export LOCALE_ARCHIVE_2_27="$(nix-build --no-out-link "<nixpkgs>" -A glibcLocales)/lib/locale/locale-archive"
+LOCALE_ARCHIVE_2_27="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
+export LOCALE_ARCHIVE_2_27
+export LOCALE_ARCHIVE="/usr/lib/locale"
 
 if [ "$(tty)" = "/dev/tty1" ] && [ -z "${DISPLAY}" ]; then
     unicode_start
