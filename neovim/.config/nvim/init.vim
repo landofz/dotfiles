@@ -217,6 +217,10 @@ augroup filetype_generic
   autocmd!
   autocmd FileType mail setlocal spell
 augroup END
+augroup filetype_format
+  autocmd!
+  autocmd BufWritePre *.go :GoFmt
+augroup END
 let g:vim_markdown_folding_disabled=1
 
 " NERDTree
