@@ -70,10 +70,10 @@ let g:loaded_ruby_provider = 0
 let g:go_gopls_enabled = 0
 set shell=sh       " handle case when $SHELL is fish for example
 if !has("nvim")
-    set encoding=utf-8
+  set encoding=utf-8
 endif
 if has("nvim")
-    set guicursor=n-c:block,i-ci-ve:ver40,r-cr-v:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
+  set guicursor=n-c:block,i-ci-ve:ver40,r-cr-v:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
 endif
 set hidden
 set scrolloff=3
@@ -166,14 +166,14 @@ set listchars=tab:▸\ ,trail:·,eol:¬
 
 " Filetype specific options
 augroup filetype_indents
-    autocmd!
-    autocmd FileType javascript,typescript,typescriptreact,json,yaml,html,htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-    autocmd FileType scss setlocal et ts=2 sw=2
-    autocmd FileType yaml setlocal et ts=2 sw=2
+  autocmd!
+  autocmd FileType javascript,typescript,typescriptreact,json,yaml,html,htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+  autocmd FileType scss setlocal et ts=2 sw=2
+  autocmd FileType yaml setlocal et ts=2 sw=2
 augroup END
 augroup filetype_generic
-    autocmd!
-    autocmd FileType mail setlocal spell
+  autocmd!
+  autocmd FileType mail setlocal spell
 augroup END
 let g:vim_markdown_folding_disabled=1
 
@@ -228,21 +228,21 @@ augroup end
 
 " handling .gpg files
 if !empty($GPG_KEYID)
-    augroup filetype_gpg
-        au!
-        " Use gpg2 to open a .gpg file
-        au  BufReadPre,FileReadPre  *.gpg       set nobackup
-        au  BufReadPre,FileReadPre  *.gpg       set noswapfile
-        au  BufReadPre,FileReadPre  *.gpg       set noundofile
-        au  BufReadPre,FileReadPre  *.gpg       set nowritebackup
-        au  BufReadPre,FileReadPre  *.gpg       set viminfo=
-        au  BufReadPre,FileReadPre  *.gpg       set sh=/bin/bash
-        au  BufReadPost             *.gpg       :%!gpg2 -q -d
-        au  BufReadPost             *.gpg       | redraw
-        au  BufWritePre             *.gpg       :%!gpg2 -q -e --no-encrypt-to --no-default-recipient -r $GPG_KEYID -a
-        au  BufWritePost            *.gpg       u
-        au  VimLeave                *.gpg       :!clear
-    augroup END
+  augroup filetype_gpg
+    au!
+    " Use gpg2 to open a .gpg file
+    au  BufReadPre,FileReadPre  *.gpg       set nobackup
+    au  BufReadPre,FileReadPre  *.gpg       set noswapfile
+    au  BufReadPre,FileReadPre  *.gpg       set noundofile
+    au  BufReadPre,FileReadPre  *.gpg       set nowritebackup
+    au  BufReadPre,FileReadPre  *.gpg       set viminfo=
+    au  BufReadPre,FileReadPre  *.gpg       set sh=/bin/bash
+    au  BufReadPost             *.gpg       :%!gpg2 -q -d
+    au  BufReadPost             *.gpg       | redraw
+    au  BufWritePre             *.gpg       :%!gpg2 -q -e --no-encrypt-to --no-default-recipient -r $GPG_KEYID -a
+    au  BufWritePost            *.gpg       u
+    au  VimLeave                *.gpg       :!clear
+  augroup END
 endif
 
 func! MyStripTrailingWhitespace()
