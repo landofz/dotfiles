@@ -268,8 +268,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " General bindings
 nnoremap <leader>w :w<CR>
-nnoremap <CR> G
-nnoremap <BS> gg
+" nnoremap <CR> G
+" nnoremap <BS> gg
 nnoremap <leader>l :b#<cr>
 nnoremap <leader>% :let @" = expand("%")<cr>  " get current filename
 
@@ -283,7 +283,7 @@ nnoremap <leader>qc :exe "crewind " . v:count1<cr>
 nnoremap <leader>f :Grepper<space><cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>g :UndotreeToggle<CR>
+nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>mt :Toc<CR>
 nnoremap <leader>b :lua require('telescope.builtin').buffers()<CR>
 nnoremap <leader>p :lua require('telescope.builtin').find_files({hidden = true})<CR>
