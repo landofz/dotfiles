@@ -68,17 +68,17 @@ export LESS='--quit-if-one-screen --ignore-case --LONG-PROMPT --RAW-CONTROL-CHAR
 export PAGER=less
 export WORKON_HOME=$HOME/virtualenv
 
-[[ -s ~/lib/up/up.sh ]] && source ~/lib/up/up.sh
-[[ -s ~/.local/bin/virtualenvwrapper.sh ]] && source ~/.local/bin/virtualenvwrapper.sh
-#[[ -s ~/.bash-powerline.sh ]] && source ~/.bash-powerline.sh
+[[ -s $HOME/lib/up/up.sh ]] && source "$HOME/lib/up/up.sh"
+[[ -s $HOME/.local/bin/virtualenvwrapper.sh ]] && source "$HOME/.local/bin/virtualenvwrapper.sh"
+#[[ -s $HOME/bash-powerline.sh ]] && source "$HOME/bash-powerline.sh"
 eval "$(starship init bash)"
-[[ -s ~/.config/fzf/fzf.bash ]] && source ~/.config/fzf/fzf.bash
+[[ -s $HOME/.config/fzf/fzf.bash ]] && source "$HOME/.config/fzf/fzf.bash"
 if [[ -z "$GVM_ROOT" ]]; then
-    [[ -s ~/.gvm/scripts/gvm ]] && source ~/.gvm/scripts/gvm
+    [[ -s $HOME/.gvm/scripts/gvm ]] && source "$HOME/.gvm/scripts/gvm"
 else
-    [[ -s ~/.gvm/scripts/env/gvm ]] && source "$HOME/.gvm/scripts/env/gvm"
+    [[ -s $HOME/.gvm/scripts/env/gvm ]] && source "$HOME/.gvm/scripts/env/gvm"
 fi
-[[ -s ~/lib/goto/goto.sh ]] && source ~/lib/goto/goto.sh
+[[ -s $HOME/lib/goto/goto.sh ]] && source "$HOME/lib/goto/goto.sh"
 
 alias gnvim='NVIM_TUI_ENABLE_TRUE_COLOR= nvim-wrapper'
 alias psvim='ps aux | grep -v grep | grep vim'
