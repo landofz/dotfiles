@@ -1,10 +1,5 @@
-set nocompatible
-filetype off
-
-lua require('plugins')
-filetype plugin indent on
-
 lua <<EOF
+require('user.plugins')
 require('nvim-treesitter.configs').setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of
   -- languages
