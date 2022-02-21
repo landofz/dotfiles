@@ -53,7 +53,7 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-if [ "x$(tty)" = "x/dev/tty1" -a -z "${DISPLAY}" ]; then
+if [ "$(tty)" = "/dev/tty1" ] && [ -z "${DISPLAY}" ]; then
     unicode_start
     if command -v startx > /dev/null; then
         startx
