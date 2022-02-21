@@ -26,6 +26,8 @@ return require('packer').startup(function()
 
   use "lukas-reineke/indent-blankline.nvim" -- show indentation guides
   use 'numToStr/Comment.nvim'               -- commenting support
+  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- git info in the signs column
+
   -- Plugins
   use 'scrooloose/nerdtree'                -- a tree explorer plugin
   use 'Xuyuanp/nerdtree-git-plugin'        -- a plugin for NERDTree showing git status
@@ -50,7 +52,6 @@ return require('packer').startup(function()
   use 'plasticboy/vim-markdown'            -- markdown mode
 
   use 'vim-airline/vim-airline'            -- status/tabline
-  use 'airblade/vim-gitgutter'             -- shows a git diff in the gutter
   use 'mhinz/vim-grepper'                  -- asynchronous search
   use 'ludovicchabant/vim-gutentags'       -- manages tag files
   use 'majutsushi/tagbar'                  -- displays tags in a window, ordered by scope

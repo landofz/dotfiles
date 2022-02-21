@@ -84,6 +84,15 @@ require("indent_blankline").setup {
 }
 
 require('Comment').setup()
+require('gitsigns').setup({
+  signs = {
+    add = { text = '+' },
+  },
+  on_attach = function(bufnr)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', ']c', [[<cmd>lua require('gitsigns').next_hunk()<CR>]], {})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '[c', [[<cmd>lua require('gitsigns').prev_hunk()<CR>]], {})
+  end
+})
 EOF
 " Security
 set modelines=0
@@ -173,6 +182,7 @@ nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>g :UndotreeToggle<CR>
 nnoremap <leader>mt :Toc<CR>
+nnoremap <leader>gs :lua require('gitsigns').stage_hunk()<CR>
 
 " Movement
 nnoremap j gj
