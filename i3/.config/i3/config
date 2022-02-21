@@ -146,11 +146,8 @@ assign [class="Brave-browser"] $work2
 assign [class="qutebrowser"] $work2
 assign [class="Chromium-browser"] $work3
 assign [class="Firefox"] $work4
-assign [class="Firefox Developer Edition"] $work4
 assign [instance="vifm"] $work5
-assign [class="Thunderbird"] $work8
 assign [instance="neomutt"] $work8
-assign [class="Slack"] $work9
 assign [instance="weechat"] $work9
 
 for_window [class="qutebrowser"] border none
