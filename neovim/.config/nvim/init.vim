@@ -92,6 +92,23 @@ require('gitsigns').setup({
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '[c', [[<cmd>lua require('gitsigns').prev_hunk()<CR>]], {})
   end
 })
+local tactions = require("telescope.actions")
+require('telescope').setup({
+  defaults = {
+    mappings = {
+      i = {
+        ["<esc>"] = tactions.close,
+        ["<C-j>"] = tactions.move_selection_next,
+        ["<C-k>"] = tactions.move_selection_previous,
+      }
+    },
+    file_ignore_patterns = { "^[.]git/" },
+  },
+})
+require('telescope').load_extension('fzf')
+vim.api.nvim_set_keymap('n', '<leader>b', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>p', [[<cmd>lua require('telescope.builtin').find_files({hidden = true, follow = true})<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fg', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
 EOF
 " Security
 set modelines=0
@@ -174,13 +191,15 @@ nnoremap <leader>qq :cclose<cr>
 nnoremap <leader>qc :exe "crewind " . v:count1<cr>
 
 " Invoking plugins
-nnoremap <leader>p :Files<cr>
-nnoremap <leader>b :Buffers<cr>
+" nnoremap <leader>p :Files<cr>
+" nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>f :Grepper<space><cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>g :UndotreeToggle<CR>
 nnoremap <leader>mt :Toc<CR>
+nnoremap <leader>b :lua require('telescope.builtin').buffers()<CR>
+nnoremap <leader>p :lua require('telescope.builtin').find_files({hidden = true})<CR>
 nnoremap <leader>gs :lua require('gitsigns').stage_hunk()<CR>
 
 " Movement

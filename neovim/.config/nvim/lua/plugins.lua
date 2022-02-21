@@ -27,12 +27,12 @@ return require('packer').startup(function()
   use "lukas-reineke/indent-blankline.nvim" -- show indentation guides
   use 'numToStr/Comment.nvim'               -- commenting support
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- git info in the signs column
+  use { 'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'} } -- generic picker
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Plugins
   use 'scrooloose/nerdtree'                -- a tree explorer plugin
   use 'Xuyuanp/nerdtree-git-plugin'        -- a plugin for NERDTree showing git status
-  use 'junegunn/fzf'                       -- fzf installation
-  use 'junegunn/fzf.vim'                   -- use fzf in vim
   use 'mbbill/undotree'                    -- undo history visualizer
   use 'tpope/vim-fugitive'                 -- git wrapper
   use 'tpope/vim-repeat'                   -- repeat plugin maps with '.'
