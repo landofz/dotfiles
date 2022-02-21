@@ -81,6 +81,7 @@ require('nvim-treesitter.configs').setup {
 require("indent_blankline").setup {
   show_end_of_line = true,
 }
+vim.g.indent_blankline_char = '┊'
 
 require('Comment').setup()
 require('gitsigns').setup({
