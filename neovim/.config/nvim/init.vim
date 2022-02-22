@@ -4,16 +4,8 @@ require('user.plugins')
 require('user.treesitter')
 require('user.comment')
 require('user.indentline')
+require('user.gitsigns')
 
-require('gitsigns').setup({
-  signs = {
-    add = { text = '+' },
-  },
-  on_attach = function(bufnr)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', ']c', [[<cmd>lua require('gitsigns').next_hunk()<CR>]], {})
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '[c', [[<cmd>lua require('gitsigns').prev_hunk()<CR>]], {})
-  end
-})
 local tactions = require("telescope.actions")
 require('telescope').setup({
   defaults = {
