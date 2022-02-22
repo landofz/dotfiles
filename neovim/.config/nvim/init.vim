@@ -2,11 +2,7 @@ lua <<EOF
 require('user.plugins')
 require('user.treesitter')
 require('user.comment')
-
-require("indent_blankline").setup {
-  show_end_of_line = true,
-}
-vim.g.indent_blankline_char = '┊'
+require('user.indentline')
 
 require('gitsigns').setup({
   signs = {
