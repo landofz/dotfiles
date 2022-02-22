@@ -35,12 +35,10 @@ return packer.startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- tree-sitter based highlighting
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
+  -- treesitter
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- popup displaying possible key bindings
   use {
@@ -53,15 +51,20 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim" -- show indentation guides
   use 'numToStr/Comment.nvim'               -- commenting support
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- git info in the signs column
+
+  -- fuzzy finder
   use { 'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'} } -- generic picker
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
+  -- lsp
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
+  use 'simrat39/symbols-outline.nvim' -- display symbols using LSP
+
+  -- completions
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
-  use 'simrat39/symbols-outline.nvim' -- display symbols using LSP
 
   -- Plugins
   use 'scrooloose/nerdtree'                -- a tree explorer plugin
