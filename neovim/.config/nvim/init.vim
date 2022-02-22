@@ -1,4 +1,5 @@
 lua <<EOF
+require('user.options')
 require('user.plugins')
 require('user.treesitter')
 require('user.comment')
@@ -73,15 +74,6 @@ end
 require('user.cmp')
 EOF
 
-" Security
-set modelines=0
-
-" Tabs/spaces
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-
 " General
 let g:python_host_prog = "/home/zoran/virtualenv/neovim_py2/bin/python"
 let g:python3_host_prog = "/home/zoran/virtualenv/neovim_py3/bin/python"
@@ -89,41 +81,6 @@ let g:loaded_node_provider = 0
 let g:loaded_perl_provider = 0
 let g:loaded_ruby_provider = 0
 let g:go_gopls_enabled = 0
-set shell=sh       " handle case when $SHELL is fish for example
-if !has("nvim")
-  set encoding=utf-8
-endif
-if has("nvim")
-  set guicursor=n-c:block,i-ci-ve:ver40,r-cr-v:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
-endif
-set hidden
-set scrolloff=3
-set showmode
-set showcmd
-set number         " show line numbers
-set relativenumber " use relative line numbers
-set ruler          " show cursor position
-set laststatus=2   " always show status line
-set guioptions-=L  " no left-hand scrollbar
-set guioptions-=m  " no menu bar
-set guioptions-=r  " no right-hand scrollbar
-set guioptions-=T  " no toolbar
-" don't write any backups
-set nobackup
-set nowritebackup
-" don't write swap files
-set noswapfile
-set visualbell
-set noerrorbells
-set wildmenu
-set showmatch
-set lazyredraw
-
-" Search
-set incsearch      " search dynamically while typing
-set hlsearch       " highlight searches
-set ignorecase     " ignore case during search
-set smartcase
 
 " Center view on search result
 nmap n nzz
