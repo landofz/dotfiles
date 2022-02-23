@@ -127,21 +127,10 @@ vnoremap j gj
 vnoremap k gk
 
 " Appearance
-syntax on
 set background=dark
-if (has("termguicolors"))
-  set termguicolors
-endif
 colorscheme gruvbox
-if has("gui_running")
-  set guifont=Monospace\ 12
-endif
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#gutentags#enabled = 1
-
-" Show tabstops, trailing spaces and EOLs
-set list
-set listchars=tab:▸\ ,trail:·,eol:¬
 
 " Filetype specific options
 augroup filetype_indents

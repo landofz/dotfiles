@@ -14,6 +14,7 @@ local options = {
   -- appearance
   guicursor="n-c:block,i-ci-ve:ver40,r-cr-v:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175",
   guifont = "monospace:h15", -- the font used in graphical interfaces
+  termguicolors = true,
   -- info
   number = true,             -- show line numbers
   relativenumber = true,     -- use relative line numbers
@@ -22,6 +23,8 @@ local options = {
   signcolumn = "yes",        -- always show the sign column
   showmode = true,
   showcmd = true,
+  list = true,
+  listchars = "tab:▸ ,trail:·,eol:¬",
   -- ui
   pumheight = 10,            -- popup menu height
   splitbelow = true,         -- force all horizontal splits to go below current window
