@@ -142,7 +142,7 @@ bindsym $mod+Shift+9 move container to workspace $work9
 bindsym $mod+Shift+0 move container to workspace $work10
 
 # assign windows to workspaces
-assign [class="Brave-browser"] $work2
+assign [class="Brave-browser"] $work3
 assign [class="qutebrowser"] $work2
 assign [class="Chromium-browser"] $work3
 assign [class="Firefox"] $work4
