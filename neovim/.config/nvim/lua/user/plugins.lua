@@ -64,10 +64,15 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim"
 
   -- completions
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  use 'hrsh7th/nvim-cmp' -- autocompletion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-  use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  use 'hrsh7th/cmp-nvim-lua' -- neovim Lua API
+  use 'saadparwaiz1/cmp_luasnip' -- snippets source for nvim-cmp
+  use 'L3MON4D3/LuaSnip' -- snippets plugin
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- Plugins
   use 'scrooloose/nerdtree'                -- a tree explorer plugin
