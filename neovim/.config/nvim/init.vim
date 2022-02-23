@@ -34,7 +34,7 @@ nmap g# g#zz
 " nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>f :Grepper<space><cr>
 nnoremap <leader>t :TagbarToggle<cr>
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :Lexplore<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>mt :Toc<CR>
 
@@ -48,20 +48,6 @@ augroup filetype_format
   autocmd BufWritePre *.go :GoFmt
 augroup END
 let g:vim_markdown_folding_disabled=1
-
-" NERDTree
-let g:NERDTreeIgnore = ['\~$', '.pyc$[[file]]']
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ "Unknown"   : "?"
-    \ }
 
 " Gutentags
 let g:gutentags_exclude_filetypes = ['vim', 'markdown', 'text', 'config', 'yaml', 'gitcommit', 'gitrebase', 'diff', 'mail']
