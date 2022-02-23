@@ -10,5 +10,6 @@ gitsigns.setup({
   on_attach = function(bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', ']c', [[<cmd>lua require('gitsigns').next_hunk()<CR>]], {})
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '[c', [[<cmd>lua require('gitsigns').prev_hunk()<CR>]], {})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>gs', [[<cmd>lua require('gitsigns').stage_hunk()<CR>]], {})
   end
 })

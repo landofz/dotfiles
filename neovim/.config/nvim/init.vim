@@ -1,6 +1,9 @@
 lua <<EOF
 require('user.options')
+require('user.keymaps')
 require('user.plugins')
+require('user.colorscheme')
+require('user.autocommands')
 require('user.treesitter')
 require('user.comment')
 require('user.indentline')
@@ -26,26 +29,6 @@ nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
 
-" Keys
-let mapleader = ","
-inoremap jj <Esc>
-cnoremap jj <Esc>
-
-" Editing .vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" General bindings
-nnoremap <leader>w :w<CR>
-" nnoremap <CR> G
-" nnoremap <BS> gg
-nnoremap <leader>l :b#<cr>
-nnoremap <leader>% :let @" = expand("%")<cr>  " get current filename
-
-" Quickfix/location
-nnoremap <leader>qq :cclose<cr>
-nnoremap <leader>qc :exe "crewind " . v:count1<cr>
-
 " Invoking plugins
 " nnoremap <leader>p :Files<cr>
 " nnoremap <leader>b :Buffers<cr>
@@ -54,33 +37,12 @@ nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>mt :Toc<CR>
-nnoremap <leader>b :lua require('telescope.builtin').buffers()<CR>
-nnoremap <leader>p :lua require('telescope.builtin').find_files({hidden = true})<CR>
-nnoremap <leader>gs :lua require('gitsigns').stage_hunk()<CR>
-
-" Movement
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
 
 " Appearance
-set background=dark
-colorscheme gruvbox
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#gutentags#enabled = 1
 
 " Filetype specific options
-augroup filetype_indents
-  autocmd!
-  autocmd FileType javascript,typescript,typescriptreact,json,yaml,html,htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-  autocmd FileType scss setlocal et ts=2 sw=2
-  autocmd FileType yaml setlocal et ts=2 sw=2
-augroup END
-augroup filetype_generic
-  autocmd!
-  autocmd FileType mail setlocal spell
-augroup END
 augroup filetype_format
   autocmd!
   autocmd BufWritePre *.go :GoFmt
@@ -116,9 +78,6 @@ function! s:Repl()
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
-" Don't interrupt v-mode due indent
-vnoremap < <gv
-vnoremap > >gv
 
 " Command flubs
 command! WQ wq
@@ -130,11 +89,6 @@ nnoremap <silent> <Leader>sw :call MyStripTrailingWhitespace()<CR>
 nnoremap <silent> <Leader>ce :call local#cscope#do('3', expand('<cword>'))<CR>
 " manually fixing syntax highlighting going out of sync
 nnoremap <Leader>fh :syntax sync fromstart<CR>
-
-augroup yank_highlight
-  autocmd!
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank({timeout=250})
-augroup end
 
 " handling .gpg files
 if !empty($GPG_KEYID)

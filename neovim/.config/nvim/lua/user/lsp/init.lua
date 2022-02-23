@@ -8,4 +8,5 @@ require("user.lsp.handlers").setup()
 -- require "user.lsp.null-ls"
 
 local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', '<leader>di', '<cmd>LspInstallInfo<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>dii', '<cmd>LspInstallInfo<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>dig', '<cmd>LspInfo<CR>', opts)
