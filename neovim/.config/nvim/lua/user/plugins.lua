@@ -57,8 +57,11 @@ return packer.startup(function(use)
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- lsp
-  use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
+  use 'neovim/nvim-lspconfig' -- collection of configurations for built-in LSP client
+  use "williamboman/nvim-lsp-installer" -- language server installer
   use 'simrat39/symbols-outline.nvim' -- display symbols using LSP
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "antoinemadec/FixCursorHold.nvim"
 
   -- completions
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
