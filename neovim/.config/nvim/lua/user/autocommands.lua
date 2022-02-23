@@ -13,6 +13,7 @@ augroup _my_filetype_indents
   autocmd!
   autocmd FileType javascript,typescript,typescriptreact setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
   autocmd FileType json,html,htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+  autocmd FileType terraform setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
   autocmd FileType lua setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
   autocmd FileType scss setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
   autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
