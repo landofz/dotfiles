@@ -50,7 +50,7 @@ augroup END
 let g:vim_markdown_folding_disabled=1
 
 " Gutentags
-let g:gutentags_exclude_filetypes = ['vim', 'markdown', 'text', 'config', 'yaml', 'gitcommit', 'gitrebase', 'diff', 'mail']
+let g:gutentags_exclude_filetypes = ['vim', 'markdown', 'text', 'config', 'yaml', 'gitcommit', 'gitrebase', 'diff', 'mail', 'beancount']
 let g:gutentags_ctags_exclude = ['node_modules/*']
 
 " Paste doesn't replace paste buffer
