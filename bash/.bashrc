@@ -111,6 +111,10 @@ alias grh='git status | fpp -c "git reset HEAD"'
 alias gco='git status | fpp -c "git checkout"'
 alias gadp='git status | fpp -c "git add -p"'
 
+if [[ -f $HOME/.config/bash/private_aliases.sh ]]; then
+    . $HOME/.config/bash/private_aliases.sh
+fi
+
 man() {
     env \
     LESS_TERMCAP_mb="$(printf "\e[1;31m")" \
