@@ -14,7 +14,7 @@ ts_conf.setup {
   sync_install = false,
 
   -- List of parsers to ignore installing
-  ignore_install = {},
+  ignore_install = { "markdown" },
 
   highlight = {
     -- `false` will disable the whole extension
