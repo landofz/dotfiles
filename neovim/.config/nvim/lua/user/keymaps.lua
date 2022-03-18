@@ -14,6 +14,9 @@ keymap("c", "jj", "<Esc>", opts)
 keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 keymap("n", "<leader>l", "<cmd>b#<CR>", opts)
 keymap("n", "<leader>%", [[<cmd>let @" = expand("%")<CR>]], opts) -- get current filename
+keymap("x", "<leader>p", [["_dP]], opts) -- paste without touching registers
+keymap("n", "<leader>y", [["+y]], opts) -- yank to system clipboard
+keymap("v", "<leader>y", [["+y]], opts) -- yank to system clipboard
 
 -- movement
 keymap("n", "j", "gj", opts)
@@ -32,3 +35,5 @@ keymap("n", "<leader>vs", "<cmd>source $MYVIMRC<CR>", opts)
 -- quickfix/location
 keymap("n", "<leader>qq", "<cmd>cclose<CR>", opts)
 keymap("n", "<leader>qc", [[<cmd>exe "crewind " . v:count1<CR>]], opts)
+keymap("n", "<C-k>", [[:cnext<CR>zz]], opts)
+keymap("n", "<C-j>", [[:cprev<CR>zz]], opts)
