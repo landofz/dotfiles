@@ -35,5 +35,6 @@ keymap("n", "<leader>vs", "<cmd>source $MYVIMRC<CR>", opts)
 -- quickfix/location
 keymap("n", "<leader>qq", "<cmd>cclose<CR>", opts)
 keymap("n", "<leader>qc", [[<cmd>exe "crewind " . v:count1<CR>]], opts)
-keymap("n", "<C-k>", [[:cnext<CR>zz]], opts)
-keymap("n", "<C-j>", [[:cprev<CR>zz]], opts)
+keymap("n", "<C-j>", [[:cnext<CR>zz]], opts)
+keymap("n", "<C-k>", [[:cprev<CR>zz]], opts)
+keymap("n", "<C-q>", "<cmd>cclose<CR>", opts)
