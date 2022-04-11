@@ -1,2 +1,5 @@
 #!/bin/sh
-$HOME/lib/qutebrowser/bin/qutebrowser "$@"
+if [ -x "/usr/bin/qutebrowser" ]; then
+    exec /usr/bin/qutebrowser "$@"
+fi
+exec "$HOME/lib/qutebrowser/bin/qutebrowser" "$@"
