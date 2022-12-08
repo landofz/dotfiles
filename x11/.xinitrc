@@ -2,6 +2,8 @@
 
 dbus-update-activation-environment --systemd DISPLAY
 systemctl --user import-environment DISPLAY
+# /usr/bin/gnome-keyring-daemon --start --components=secrets
+lxqt-policykit-agent &
 setxkbmap -layout hr,us -variant us, -option ctrl:nocaps
 xsetroot -cursor_name left_ptr &
 xset s 300 5
