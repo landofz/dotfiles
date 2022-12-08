@@ -11,6 +11,7 @@ c.content.webrtc_ip_handling_policy = 'default-public-interface-only'
 c.session.lazy_restore = True
 c.tabs.background = True
 c.tabs.position = 'left'
+c.qt.highdpi = True
 # c.window.hide_decoration = False
 c.completion.web_history.max_items = 10000
 
