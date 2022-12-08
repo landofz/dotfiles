@@ -24,7 +24,7 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
-command=/usr/share/i3blocks/$BLOCK_NAME
+command=$HOME/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
@@ -38,7 +38,7 @@ markup=none
 command=$HOME/lib/i3blocks/volume 5 pulse
 #label=VOL
 #label=♪
-label=
+label= 
 instance=Master
 #instance=PCM
 interval=once
@@ -49,7 +49,7 @@ signal=10
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 #label=MEM
-label=
+label= 
 #separator=false
 interval=30
 
@@ -72,8 +72,8 @@ interval=30
 # Network interface monitoring
 #
 [wifi]
-label=
-#instance=wlp3s0
+label= 
+instance=wlp3s0
 #label=直
 interval=10
 separator=false
@@ -107,23 +107,26 @@ interval=10
 #
 # The battery instance defaults to 0.
 [battery]
-label=
+label= 
 #label=⚡
-instance=0
+BAT_NUMBER=0
 interval=30
 separator=false
 
 [battery]
-label=
+label= 
 #label=⚡
-instance=1
+BAT_NUMBER=1
 interval=30
 
-[apt-upgrades]
-command=$HOME/lib/i3blocks/apt-upgrades
+[battery-poly]
+interval=30
+
+# [apt-upgrades]
+# command=$HOME/lib/i3blocks/apt-upgrades
 #signal=1
 #interval=once
-interval=3600
+# interval=3600
 #PENDING_SYMBOL="\uf021 "
 #SYMBOL_ONLY=0
 #ALWAYS_PRINT=1
