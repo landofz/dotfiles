@@ -10,6 +10,7 @@ set show-all-if-ambiguous on
 set show-all-if-unmodified on
 
 set colored-stats on
+# suffix each returned file completion with a character denoting its type
 set visible-stats on
 set mark-symlinked-directories on
 set enable-bracketed-paste on

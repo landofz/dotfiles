@@ -14,6 +14,7 @@ HISTSIZE=999999
 HISTFILESIZE=999999
 # immediately record all commands
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+# shorten \w and \W escapes
 PROMPT_DIRTRIM=5
 
 # check the window size after each command and, if necessary,
