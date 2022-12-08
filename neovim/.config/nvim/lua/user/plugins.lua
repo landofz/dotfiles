@@ -58,7 +58,8 @@ return packer.startup(function(use)
 
   -- lsp
   use 'neovim/nvim-lspconfig' -- collection of configurations for built-in LSP client
-  use "williamboman/nvim-lsp-installer" -- language server installer
+  use { 'williamboman/mason.nvim' } -- external dependencies installer
+  use { "williamboman/mason-lspconfig.nvim" } -- bridges mason.nvim with lspconfig
   use 'simrat39/symbols-outline.nvim' -- display symbols using LSP
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "antoinemadec/FixCursorHold.nvim"

@@ -1,20 +1,18 @@
 return {
-  settings = {
-    Lua = {
-      diagnostics = {
-        -- get the language server to recognize the `vim` global
-        globals = { "vim" },
+  Lua = {
+    diagnostics = {
+      -- get the language server to recognize the `vim` global
+      globals = { "vim" },
+    },
+    workspace = {
+      library = {
+        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+        [vim.fn.stdpath("config") .. "/lua"] = true,
       },
-      workspace = {
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.stdpath("config") .. "/lua"] = true,
-        },
-      },
-      -- do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
+    },
+    -- do not send telemetry data containing a randomized but unique identifier
+    telemetry = {
+      enable = false,
     },
   },
 }
