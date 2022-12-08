@@ -17,6 +17,7 @@ augroup _my_filetype_indents
   autocmd FileType lua setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
   autocmd FileType scss setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
   autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+  autocmd FileType purescript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 augroup END
 
 augroup _my_filetype_generic

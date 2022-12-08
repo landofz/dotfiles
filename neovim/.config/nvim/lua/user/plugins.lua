@@ -92,6 +92,7 @@ return packer.startup(function(use)
   use 'isRuslan/vim-es6'                   -- JavaScript snippets
   use 'mattn/emmet-vim'                    -- HTML and CSS high speed coding
   use 'plasticboy/vim-markdown'            -- markdown mode
+  use 'purescript-contrib/purescript-vim'  -- purescript highlighting and indentation
 
   use 'vim-airline/vim-airline'            -- status/tabline
   use 'mhinz/vim-grepper'                  -- asynchronous search
