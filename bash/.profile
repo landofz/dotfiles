@@ -13,18 +13,9 @@ umask 027
 # LC_MESSAGES=C.UTF-8 never translates program output
 # LC_TIME=en_GB.UTF-8 leads to yyyy-mm-dd hh:mm date/time output
 unset LC_ALL
-export LANG="en_US.UTF-8"
-export LC_ADDRESS="hr_HR.UTF-8"
-export LC_COLLATE="hr_HR.UTF-8"
+export LANG="hr_HR.UTF-8"
 export LC_CTYPE="C.UTF-8"
-export LC_IDENTIFICATION="hr_HR.UTF-8"
-export LC_MEASUREMENT="hr_HR.UTF-8"
 export LC_MESSAGES="C.UTF-8"
-export LC_MONETARY="hr_HR.UTF-8"
-export LC_NAME="hr_HR.UTF-8"
-export LC_NUMERIC="hr_HR.UTF-8"
-export LC_PAPER="hr_HR.UTF-8"
-export LC_TELEPHONE="hr_HR.UTF-8"
 export LC_TIME="en_GB.UTF-8"
 
 pathadd() {
