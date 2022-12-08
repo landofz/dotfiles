@@ -1,6 +1,6 @@
 #!/bin/bash
 
-res=$(echo -e "suspend\nlogout\nreboot\nshutdown\nhibernate\nsuspend-hibernate" | rofi -dmenu -p "power:")
+res=$(echo -e "suspend\nlogout\nreboot\nshutdown\nhibernate\nsuspend-hibernate" | rofi -dmenu -p "power:" -dpi 1)
 
 function logout() {
     # TODO: close all windows

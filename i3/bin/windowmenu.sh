@@ -1,2 +1,2 @@
 #!/bin/sh
-rofi -show window -show-icons
+rofi -show window -show-icons -dpi 1
