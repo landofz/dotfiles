@@ -66,18 +66,18 @@ export VISUAL=nvim
 export BROWSER=qutebrowser
 export LESS='--quit-if-one-screen --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 export PAGER=less
-export WORKON_HOME=$HOME/virtualenv
+# export WORKON_HOME=$HOME/virtualenv
 
 [[ -s $HOME/lib/up/up.sh ]] && source "$HOME/lib/up/up.sh"
-[[ -s $HOME/.local/bin/virtualenvwrapper.sh ]] && source "$HOME/.local/bin/virtualenvwrapper.sh"
+# [[ -s $HOME/.local/bin/virtualenvwrapper.sh ]] && source "$HOME/.local/bin/virtualenvwrapper.sh"
 #[[ -s $HOME/bash-powerline.sh ]] && source "$HOME/bash-powerline.sh"
 eval "$(starship init bash)"
 [[ -s $HOME/.config/fzf/fzf.bash ]] && source "$HOME/.config/fzf/fzf.bash"
-if [[ -z "$GVM_ROOT" ]]; then
-    [[ -s $HOME/.gvm/scripts/gvm ]] && source "$HOME/.gvm/scripts/gvm"
-else
-    [[ -s $HOME/.gvm/scripts/env/gvm ]] && source "$HOME/.gvm/scripts/env/gvm"
-fi
+# if [[ -z "$GVM_ROOT" ]]; then
+#     [[ -s $HOME/.gvm/scripts/gvm ]] && source "$HOME/.gvm/scripts/gvm"
+# else
+#     [[ -s $HOME/.gvm/scripts/env/gvm ]] && source "$HOME/.gvm/scripts/env/gvm"
+# fi
 [[ -s $HOME/lib/goto/goto.sh ]] && source "$HOME/lib/goto/goto.sh"
 
 alias gnvim='NVIM_TUI_ENABLE_TRUE_COLOR= nvim-wrapper'
@@ -130,5 +130,29 @@ man() {
 zet() {
   nvim "+Zet $*"
 }
+
+pathadd() {
+    case ":$PATH:" in
+        *":$1:"*) return ;;
+    esac
+    if [ -d "$1" ]; then
+        PATH="$1:$PATH"
+    fi
+}
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+pathadd "$PYENV_ROOT/bin"
+pathadd "$PYENV_ROOT/shims"
+# goenv
+export GOENV_ROOT="$HOME/.goenv"
+pathadd "$GOENV_ROOT/bin"
+pathadd "$GOENV_ROOT/shims"
+# plenv
+pathadd "$HOME/.plenv/bin"
+pathadd "$HOME/.plenv/shims"
+# nodenv
+pathadd "$HOME/.nodenv/bin"
+pathadd "$HOME/.nodenv/shims"
+source "$HOME/.nodenv/completions/nodenv.bash"
 
 eval "$(direnv hook bash)"
