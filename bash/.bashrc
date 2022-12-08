@@ -41,7 +41,7 @@ if command -v dircolors > /dev/null; then
     else
         eval "$(dircolors -b)"
     fi
-    alias ls='ls --color=always --classify -v --author --time-style=long-iso'
+    alias ls='ls --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -53,9 +53,9 @@ alias la='exa -a'
 alias lt='exa --tree'
 alias l='ls -CF'
 
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
+# alias cp='cp -i'
+# alias mv='mv -i'
+# alias rm='rm -i'
 
 if [[ -f /usr/share/bash-completion/bash_completion ]]; then
     . /usr/share/bash-completion/bash_completion
