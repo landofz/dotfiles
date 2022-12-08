@@ -42,6 +42,12 @@ local kind_icons = {
 }
 
 cmp.setup {
+  -- completion = {
+  --   autocomplete = false
+  -- },
+  performance = {
+    debounce = 500
+  },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -60,7 +66,7 @@ cmp.setup {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     },
-    ['<CR>'] = cmp.mapping.confirm { select = true },
+    ['<CR>'] = cmp.mapping.confirm(),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
