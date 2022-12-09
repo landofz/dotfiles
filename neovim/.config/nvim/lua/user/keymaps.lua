@@ -1,5 +1,6 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 
 -- leader key
 keymap("", ",", "<Nop>", opts)
@@ -38,3 +39,11 @@ keymap("n", "<leader>qc", [[<cmd>exe "crewind " . v:count1<CR>]], opts)
 keymap("n", "<C-j>", [[:cnext<CR>zz]], opts)
 keymap("n", "<C-k>", [[:cprev<CR>zz]], opts)
 keymap("n", "<C-q>", "<cmd>cclose<CR>", opts)
+
+-- center view on search result
+map("n", "n", "nzz")
+map("n", "N", "Nzz")
+map("n", "*", "*zz")
+map("n", "#", "#zz")
+map("n", "g*", "g*zz")
+map("n", "g#", "g#zz")

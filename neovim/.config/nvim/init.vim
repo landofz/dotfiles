@@ -22,26 +22,12 @@ let g:loaded_perl_provider = 0
 let g:loaded_ruby_provider = 0
 let g:go_gopls_enabled = 0
 
-" Center view on search result
-nmap n nzz
-nmap N Nzz
-nmap * *zz
-nmap # #zz
-nmap g* g*zz
-nmap g# g#zz
-
 " Invoking plugins
-" nnoremap <leader>p :Files<cr>
-" nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>f :Grepper<space><cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>n :Lexplore<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>mt :Toc<CR>
-
-" Appearance
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#gutentags#enabled = 1
 
 " Filetype specific options
 augroup filetype_format
