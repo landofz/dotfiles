@@ -17,3 +17,14 @@ lspconfig.tsserver.setup {
   on_attach = require("user.lsp.handlers").on_attach,
   -- capabilities = require("user.lsp.handlers").capabilities,
 }
+lspconfig.gopls.setup {
+  on_attach = require("user.lsp.handlers").on_attach,
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+    },
+  },
+}
