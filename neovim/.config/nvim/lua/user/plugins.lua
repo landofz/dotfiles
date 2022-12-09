@@ -95,7 +95,10 @@ return packer.startup(function(use)
   use 'plasticboy/vim-markdown'            -- markdown mode
   use 'purescript-contrib/purescript-vim'  -- purescript highlighting and indentation
 
-  use 'vim-airline/vim-airline'            -- status/tabline
+  use {
+    'nvim-lualine/lualine.nvim',           -- status/tabline
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
   use 'mhinz/vim-grepper'                  -- asynchronous search
   use 'ludovicchabant/vim-gutentags'       -- manages tag files
   use 'majutsushi/tagbar'                  -- displays tags in a window, ordered by scope
