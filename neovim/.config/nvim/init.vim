@@ -73,7 +73,6 @@ command! Wq wq
 command! W w
 command! Q q
 
-nnoremap <silent> <Leader>sw :call MyStripTrailingWhitespace()<CR>
 nnoremap <silent> <Leader>ce :call local#cscope#do('3', expand('<cword>'))<CR>
 " manually fixing syntax highlighting going out of sync
 nnoremap <Leader>fh :syntax sync fromstart<CR>
@@ -96,15 +95,6 @@ if !empty($GPG_KEYID)
     au  VimLeave                *.gpg       :!clear
   augroup END
 endif
-
-func! MyStripTrailingWhitespace()
-  let l:_s=@/
-  let l:l = line('.')
-  let l:c = line('.')
-  %s/\s\+$//e
-  let @/=l:_s
-  call cursor(l:l, l:c)
-endfunction
 
 func! MyNewZettel(...)
   " build the file name

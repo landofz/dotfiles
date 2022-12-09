@@ -1,3 +1,13 @@
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+
+local strip_whitespace = augroup('strip_whitespace', {})
+autocmd({"BufWritePre"}, {
+    group = strip_whitespace,
+    pattern = "*",
+    command = "%s/\\s\\+$//e",
+})
+
 vim.cmd [[
 augroup _my_auto_resize
   autocmd!
