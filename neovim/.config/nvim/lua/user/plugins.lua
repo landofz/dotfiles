@@ -62,7 +62,7 @@ return packer.startup(function(use)
   use { "williamboman/mason-lspconfig.nvim" } -- bridges mason.nvim with lspconfig
   use 'simrat39/symbols-outline.nvim' -- display symbols using LSP
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "antoinemadec/FixCursorHold.nvim"
+  use { 'onsails/lspkind.nvim' } -- shows pictograms describing completion item category
 
   -- completions
   use 'hrsh7th/nvim-cmp' -- autocompletion plugin
