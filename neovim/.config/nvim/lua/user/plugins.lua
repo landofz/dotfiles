@@ -102,7 +102,7 @@ return packer.startup(function(use)
   use 'mhinz/vim-grepper'                  -- asynchronous search
 
   -- Colorschemes
-  use 'morhetz/gruvbox'
+  use 'gruvbox-community/gruvbox'
   use 'joshdick/onedark.vim'
   use 'drewtempelmeyer/palenight.vim'
   use 'KeitaNakamura/neodark.vim'
