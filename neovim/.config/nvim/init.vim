@@ -36,11 +36,6 @@ augroup filetype_format
 augroup END
 let g:vim_markdown_folding_disabled=1
 
-" Gutentags
-let g:gutentags_enabled = 0
-let g:gutentags_exclude_filetypes = ['vim', 'markdown', 'text', 'config', 'yaml', 'gitcommit', 'gitrebase', 'diff', 'mail', 'beancount']
-let g:gutentags_ctags_exclude = ['node_modules/*']
-
 " Command flubs
 command! WQ wq
 command! Wq wq

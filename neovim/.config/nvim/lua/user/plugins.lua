@@ -100,8 +100,6 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   use 'mhinz/vim-grepper'                  -- asynchronous search
-  use 'ludovicchabant/vim-gutentags'       -- manages tag files
-  use 'majutsushi/tagbar'                  -- displays tags in a window, ordered by scope
 
   -- Colorschemes
   use 'morhetz/gruvbox'
