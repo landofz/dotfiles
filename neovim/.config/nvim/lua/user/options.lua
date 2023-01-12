@@ -48,3 +48,12 @@ for k, v in pairs(options) do
 end
 
 vim.opt.shortmess:append "c"
+
+vim.g.python_host_prog = "/home/zoran/virtualenv/neovim_py2/bin/python"
+vim.g.python3_host_prog = "/home/zoran/virtualenv/neovim_py3/bin/python"
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.go_gopls_enabled = 0
+
+vim.g.vim_markdown_folding_disabled = 1

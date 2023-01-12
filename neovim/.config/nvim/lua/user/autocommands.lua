@@ -3,20 +3,34 @@ local autocmd = vim.api.nvim_create_autocmd
 
 local strip_whitespace = augroup('strip_whitespace', {})
 autocmd({"BufWritePre"}, {
-    group = strip_whitespace,
-    pattern = "*",
-    command = "%s/\\s\\+$//e",
+  group = strip_whitespace,
+  pattern = "*",
+  command = "%s/\\s\\+$//e",
+})
+
+local yank_group = augroup('HighlightYank', {})
+autocmd('TextYankPost', {
+  group = yank_group,
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank({
+      higroup = 'IncSearch',
+      timeout = 250,
+    })
+  end,
+})
+
+local gofmt_group = augroup('GoFormat', {})
+autocmd('BufWritePre', {
+  group = gofmt_group,
+  pattern = '*.go',
+  command = 'GoFmt',
 })
 
 vim.cmd [[
 augroup _my_auto_resize
   autocmd!
   autocmd VimResized * tabdo wincmd =
-augroup end
-
-augroup _my_yank_highlight
-  autocmd!
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank({timeout=250})
 augroup end
 
 augroup _my_filetype_indents
@@ -38,3 +52,10 @@ augroup _my_filetype_generic
   autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
 augroup END
 ]]
+
+local command = vim.api.nvim_create_user_command
+-- command flubs
+command('WQ', 'wq', {})
+command('Wq', 'wq', {})
+command('W', 'w', {})
+command('Q', 'q', {})

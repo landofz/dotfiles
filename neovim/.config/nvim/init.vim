@@ -14,38 +14,6 @@ require('user.lsp')
 require('user.cmp')
 EOF
 
-" General
-let g:python_host_prog = "/home/zoran/virtualenv/neovim_py2/bin/python"
-let g:python3_host_prog = "/home/zoran/virtualenv/neovim_py3/bin/python"
-let g:loaded_node_provider = 0
-let g:loaded_perl_provider = 0
-let g:loaded_ruby_provider = 0
-let g:go_gopls_enabled = 0
-
-" Invoking plugins
-nnoremap <leader>f :Grepper<space><cr>
-nnoremap <leader>t :TagbarToggle<cr>
-nnoremap <leader>n :Lexplore<CR>
-nnoremap <leader>u :UndotreeToggle<CR>
-nnoremap <leader>mt :Toc<CR>
-
-" Filetype specific options
-augroup filetype_format
-  autocmd!
-  autocmd BufWritePre *.go :GoFmt
-augroup END
-let g:vim_markdown_folding_disabled=1
-
-" Command flubs
-command! WQ wq
-command! Wq wq
-command! W w
-command! Q q
-
-nnoremap <silent> <Leader>ce :call local#cscope#do('3', expand('<cword>'))<CR>
-" manually fixing syntax highlighting going out of sync
-nnoremap <Leader>fh :syntax sync fromstart<CR>
-
 func! MyNewZettel(...)
   " build the file name
   let l:sep = ''
