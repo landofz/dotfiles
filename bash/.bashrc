@@ -111,6 +111,7 @@ alias gad='git status | fpp -c "git add"'
 alias grh='git status | fpp -c "git reset HEAD"'
 alias gco='git status | fpp -c "git checkout"'
 alias gadp='git status | fpp -c "git add -p"'
+alias grs='git status | fpp -c "git restore"'
 
 if [[ -f $HOME/.config/bash/private_aliases.sh ]]; then
     . $HOME/.config/bash/private_aliases.sh
