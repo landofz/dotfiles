@@ -59,3 +59,20 @@ command('WQ', 'wq', {})
 command('Wq', 'wq', {})
 command('W', 'w', {})
 command('Q', 'q', {})
+
+local new_zettel = function(opts)
+  local dashed_title = string.gsub(opts.args, ' ', '-')
+  local now = os.time()
+  local id = os.date('%Y%m%d%H%M%S', now)
+  local filename = vim.fn.expand('~/storage/Notebook/') .. id .. '_' .. dashed_title .. '.adoc'
+  vim.api.nvim_cmd({ cmd = 'e', args = { filename } }, {})
+  local buf = vim.api.nvim_get_current_buf()
+  local time = os.date('%Y-%m-%d %H:%M:%S', now)
+  vim.api.nvim_buf_set_lines(buf, 0, 1, false, {
+    '= ' .. opts.args,
+    ':id: ' .. id,
+    ':time: ' .. time,
+    ':tags:',
+  })
+end
+command('Zet', new_zettel, { nargs = '+' })
