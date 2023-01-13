@@ -1,4 +1,3 @@
-lua <<EOF
 require('user.plugins')
 require('user.options')
 require('user.keymaps')
@@ -13,4 +12,3 @@ require('user.gitsigns')
 require('user.telescope')
 require('user.lsp')
 require('user.cmp')
-EOF
