@@ -6,9 +6,9 @@ end
 ts_conf.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of
   -- languages
-  ensure_installed = { "bash", "beancount", "c", "css", "dockerfile", "erlang",
-    "hcl", "go", "gomod", "html", "javascript", "json", "lua", "make", "nix",
-    "python", "scss", "tsx", "typescript", "vim", "vue", "yaml" },
+  ensure_installed = { "bash", "c", "css", "dockerfile", "erlang",
+    "hcl", "go", "gomod", "help", "html", "javascript", "json", "lua", "make",
+    "nix", "python", "scss", "tsx", "typescript", "vim", "vue", "yaml" },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
