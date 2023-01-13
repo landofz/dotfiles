@@ -1,9 +1,10 @@
 lua <<EOF
+require('user.plugins')
 require('user.options')
 require('user.keymaps')
-require('user.plugins')
 require('user.colorscheme')
 require('user.autocommands')
+
 require('user.statusline')
 require('user.treesitter')
 require('user.comment')
