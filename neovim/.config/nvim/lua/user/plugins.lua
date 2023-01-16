@@ -36,9 +36,10 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- treesitter
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Tresitter configurations and abstraction layer
+  use 'nvim-treesitter/nvim-treesitter-textobjects' -- syntax aware text-objects, select, move, swap, and peek support
+  use 'nvim-treesitter/nvim-treesitter-context' -- show code context
+  use 'JoosepAlviste/nvim-ts-context-commentstring' -- set the commentstring based on cursor location
 
   -- popup displaying possible key bindings
   use {
@@ -54,7 +55,7 @@ return packer.startup(function(use)
 
   -- fuzzy finder
   use { 'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'} } -- generic picker
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } -- native FZF sorter for telescope
 
   -- lsp
   use 'neovim/nvim-lspconfig' -- collection of configurations for built-in LSP client
@@ -89,6 +90,7 @@ return packer.startup(function(use)
   use 'geoffharcourt/vim-matchit'          -- extended '%' matchings
   use 'gerw/vim-HiLinkTrace'               -- trace syntax highlight
 
+  -- Language specific
   use 'fatih/vim-go'                       -- Go development
   use 'isRuslan/vim-es6'                   -- JavaScript snippets
   use 'mattn/emmet-vim'                    -- HTML and CSS high speed coding
@@ -96,22 +98,14 @@ return packer.startup(function(use)
   use 'purescript-contrib/purescript-vim'  -- purescript highlighting and indentation
 
   use {
-    'nvim-lualine/lualine.nvim',           -- status/tabline
+    'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-  use 'mhinz/vim-grepper'                  -- asynchronous search
+  } -- status/tabline
 
   -- Colorschemes
-  use 'gruvbox-community/gruvbox'
-  use 'joshdick/onedark.vim'
-  use 'drewtempelmeyer/palenight.vim'
-  use 'KeitaNakamura/neodark.vim'
-  use 'altercation/vim-colors-solarized'
-  use 'lisposter/vim-blackboard'
-  use 'vim-scripts/xoria256.vim'
-  use 'wgibbs/vim-irblack'
-  use 'sjl/badwolf'
-  use 'tomasr/molokai'
+  use 'ellisonleao/gruvbox.nvim'
+  use 'folke/tokyonight.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
