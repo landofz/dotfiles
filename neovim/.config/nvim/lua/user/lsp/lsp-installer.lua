@@ -28,3 +28,6 @@ lspconfig.gopls.setup {
     },
   },
 }
+lspconfig.purescriptls.setup {
+  on_attach = require("user.lsp.handlers").on_attach,
+}
