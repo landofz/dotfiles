@@ -38,7 +38,7 @@ keymap("n", "<leader>qq", "<cmd>cclose<CR>", opts)
 keymap("n", "<leader>qc", [[<cmd>exe "crewind " . v:count1<CR>]], opts)
 keymap("n", "<C-j>", [[:cnext<CR>zz]], opts)
 keymap("n", "<C-k>", [[:cprev<CR>zz]], opts)
-keymap("n", "<C-q>", "<cmd>cclose<CR>", opts)
+keymap("n", "<C-q>", "<cmd>cclose | helpclose | lclose<CR>", opts)
 
 -- center view on search result
 map("n", "n", "nzz")
@@ -52,8 +52,6 @@ map("n", "g#", "g#zz")
 map("n", "<Leader>fh", [[:syntax sync fromstart<CR>]])
 
 -- invoking plugins
-map("n", "<leader>f", [[:Grepper<space><cr>]])
-map("n", "<leader>t", [[:TagbarToggle<cr>]])
 map("n", "<leader>n", [[:Lexplore<CR>]])
 map("n", "<leader>u", [[:UndotreeToggle<CR>]])
-map("n", "<leader>mt", [[:Toc<CR>]])
+map("n", "<leader>mt", [[:Toc<CR>]]) -- for markdown
