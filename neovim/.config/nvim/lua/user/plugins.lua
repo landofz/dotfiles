@@ -83,12 +83,13 @@ return packer.startup(function(use)
   use 'tpope/vim-surround'                 -- surrounding made easier
   use 'tpope/vim-eunuch'                   -- helpers for unix
   use 'tpope/vim-unimpaired'               -- handy bracket mappings
-  use 'wellle/targets.vim'                 -- additional text objects like , . : =
-  use 'michaeljsmith/vim-indent-object'    -- text object based on indentation level
+  -- use 'wellle/targets.vim'                 -- additional text objects like , . : =
+  -- use 'michaeljsmith/vim-indent-object'    -- text object based on indentation level
   use 'rhysd/clever-f.vim'                 -- better repeat and marks for f and t mappings
-  use 'easymotion/vim-easymotion'          -- simpler way to use motions
-  use 'geoffharcourt/vim-matchit'          -- extended '%' matchings
-  use 'gerw/vim-HiLinkTrace'               -- trace syntax highlight
+  -- use 'easymotion/vim-easymotion'          -- simpler way to use motions
+  -- use 'geoffharcourt/vim-matchit'          -- extended '%' matchings
+  -- use 'gerw/vim-HiLinkTrace'               -- trace syntax highlight
+  use 'ggandor/leap.nvim'                  -- make on-screen navigation quicker and more natural
 
   -- Language specific
   use 'fatih/vim-go'                       -- Go development
