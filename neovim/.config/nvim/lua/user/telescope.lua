@@ -33,3 +33,5 @@ vim.api.nvim_set_keymap('n', '<leader>sh', [[<cmd>lua require('telescope.builtin
 vim.api.nvim_set_keymap('n', '<leader>st', [[<cmd>lua require('telescope.builtin').treesitter()<CR>]], { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>sm', builtin.keymaps, { desc = '[s]earch [m]appings' })
 vim.keymap.set('n', '<leader>ss', builtin.git_files, { desc = '[s]earch git file[s]' })
+vim.keymap.set('n', '<leader>sy', builtin.lsp_document_symbols, { desc = '[s]earch document s[y]mbols' })
+vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = '[s]earch [c]ommands' })
