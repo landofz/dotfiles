@@ -90,6 +90,7 @@ return packer.startup(function(use)
   -- use 'geoffharcourt/vim-matchit'          -- extended '%' matchings
   -- use 'gerw/vim-HiLinkTrace'               -- trace syntax highlight
   use 'ggandor/leap.nvim'                  -- make on-screen navigation quicker and more natural
+  use 'anuvyklack/hydra.nvim'              -- custom submodes and menus
 
   -- Language specific
   use 'fatih/vim-go'                       -- Go development
