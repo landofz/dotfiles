@@ -141,10 +141,12 @@ pathadd() {
 export PYENV_ROOT="$HOME/.pyenv"
 pathadd "$PYENV_ROOT/bin"
 pathadd "$PYENV_ROOT/shims"
+source "$PYENV_ROOT/completions/pyenv.bash"
 # goenv
 export GOENV_ROOT="$HOME/.goenv"
 pathadd "$GOENV_ROOT/bin"
 pathadd "$GOENV_ROOT/shims"
+source "$GOENV_ROOT/completions/goenv.bash"
 # plenv
 pathadd "$HOME/.plenv/bin"
 pathadd "$HOME/.plenv/shims"
