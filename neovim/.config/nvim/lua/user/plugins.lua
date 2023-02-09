@@ -64,6 +64,7 @@ return packer.startup(function(use)
   use 'simrat39/symbols-outline.nvim' -- display symbols using LSP
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use { 'onsails/lspkind.nvim' } -- shows pictograms describing completion item category
+  use "folke/neodev.nvim" -- setup for init.lua and plugin development
 
   -- completions
   use 'hrsh7th/nvim-cmp' -- autocompletion plugin

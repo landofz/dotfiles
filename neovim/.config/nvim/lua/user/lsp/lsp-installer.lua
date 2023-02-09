@@ -4,20 +4,31 @@ if not status_ok then
 end
 mason.setup {}
 require("mason-lspconfig").setup {
-  ensure_installed = { "sumneko_lua" },
+  ensure_installed = {
+    "sumneko_lua",
+    "tsserver",
+    "gopls",
+    "purescriptls",
+    "rust_analyzer",
+    "pyright",
+  },
 }
+
+-- neodev needs to be set up before lspconfig
+require("neodev").setup({})
 
 local lspconfig = require("lspconfig")
 lspconfig.sumneko_lua.setup {
+  capabilities = require("user.lsp.handlers").capabilities,
   on_attach = require("user.lsp.handlers").on_attach,
-  -- capabilities = require("user.lsp.handlers").capabilities,
-  settings = require("user.lsp.settings.sumneko_lua")
+  settings = require("user.lsp.settings.sumneko_lua"),
 }
 lspconfig.tsserver.setup {
+  capabilities = require("user.lsp.handlers").capabilities,
   on_attach = require("user.lsp.handlers").on_attach,
-  -- capabilities = require("user.lsp.handlers").capabilities,
 }
 lspconfig.gopls.setup {
+  capabilities = require("user.lsp.handlers").capabilities,
   on_attach = require("user.lsp.handlers").on_attach,
   settings = {
     gopls = {
@@ -29,5 +40,14 @@ lspconfig.gopls.setup {
   },
 }
 lspconfig.purescriptls.setup {
+  capabilities = require("user.lsp.handlers").capabilities,
+  on_attach = require("user.lsp.handlers").on_attach,
+}
+lspconfig.rust_analyzer.setup {
+  capabilities = require("user.lsp.handlers").capabilities,
+  on_attach = require("user.lsp.handlers").on_attach,
+}
+lspconfig.pyright.setup {
+  capabilities = require("user.lsp.handlers").capabilities,
   on_attach = require("user.lsp.handlers").on_attach,
 }
