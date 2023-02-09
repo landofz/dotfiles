@@ -6,6 +6,7 @@ end
 require "user.lsp.lsp-installer"
 require("user.lsp.handlers").setup()
 -- require "user.lsp.null-ls"
+require("fidget").setup({})
 
 local opts = { noremap=true, silent=true }
 vim.api.nvim_set_keymap('n', '<leader>dii', '<cmd>LspInstallInfo<CR>', opts)
