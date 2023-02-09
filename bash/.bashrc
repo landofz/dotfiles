@@ -70,15 +70,10 @@ export PAGER=less
 # export WORKON_HOME=$HOME/virtualenv
 
 [[ -s $HOME/lib/up/up.sh ]] && source "$HOME/lib/up/up.sh"
-# [[ -s $HOME/.local/bin/virtualenvwrapper.sh ]] && source "$HOME/.local/bin/virtualenvwrapper.sh"
+#[[ -s $HOME/.local/bin/virtualenvwrapper.sh ]] && source "$HOME/.local/bin/virtualenvwrapper.sh"
 #[[ -s $HOME/bash-powerline.sh ]] && source "$HOME/bash-powerline.sh"
 eval "$(starship init bash)"
 [[ -s $HOME/.config/fzf/fzf.bash ]] && source "$HOME/.config/fzf/fzf.bash"
-# if [[ -z "$GVM_ROOT" ]]; then
-#     [[ -s $HOME/.gvm/scripts/gvm ]] && source "$HOME/.gvm/scripts/gvm"
-# else
-#     [[ -s $HOME/.gvm/scripts/env/gvm ]] && source "$HOME/.gvm/scripts/env/gvm"
-# fi
 [[ -s $HOME/lib/goto/goto.sh ]] && source "$HOME/lib/goto/goto.sh"
 
 alias gnvim='NVIM_TUI_ENABLE_TRUE_COLOR= nvim-wrapper'
