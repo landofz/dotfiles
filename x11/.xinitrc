@@ -1,7 +1,9 @@
 #!/bin/bash
 
+# update environment used for D-Bus session services
 dbus-update-activation-environment --systemd DISPLAY
 systemctl --user import-environment DISPLAY
+
 # /usr/bin/gnome-keyring-daemon --start --components=secrets
 lxqt-policykit-agent &
 setxkbmap -layout hr,us -variant us, -option ctrl:nocaps
@@ -15,6 +17,8 @@ if [ -e "$HOME/Pictures/wall.jpg" ]; then
     xwallpaper --stretch "$HOME/Pictures/wall.jpg"
 fi
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+
+dunst &
 
 if [ -z "$1" ]; then
     exec i3
