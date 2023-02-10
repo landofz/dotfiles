@@ -112,6 +112,9 @@ alias grs='git status | fpp -c "git restore"'
 if [[ -f $HOME/.config/bash/private_aliases.sh ]]; then
     . $HOME/.config/bash/private_aliases.sh
 fi
+if [[ -f $HOME/.config/bash/private_env.sh ]]; then
+    . $HOME/.config/bash/private_env.sh
+fi
 
 man() {
     env \
