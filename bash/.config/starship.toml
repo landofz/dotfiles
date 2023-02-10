@@ -4,3 +4,21 @@ error_symbol = "[](bold red)"
 
 [gcloud]
 disabled = true
+
+[c]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rust]
+symbol = " "
