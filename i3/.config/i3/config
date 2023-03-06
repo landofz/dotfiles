@@ -152,6 +152,9 @@ assign [instance="vifm"] $work5
 assign [instance="neomutt"] $work8
 assign [instance="weechat"] $work9
 
+for_window [class="(?i)firefox-aurora" window_role="page-info"] floating enable, border normal 2
+for_window [class="(?i)firefox-aurora" window_role="About"] floating enable, border normal 2
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
