@@ -89,9 +89,31 @@ local function lsp_keymaps(bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
+-- for formatting on save
+local lsp_formatting = function(bufnr)
+  vim.lsp.buf.format({
+    filter = function(client)
+      return client.name ~= "tsserver" and client.name ~= "lua_ls"
+    end,
+    bufnr = bufnr,
+  })
+end
+local formattingAugroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
+
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = formattingAugroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = formattingAugroup,
+      buffer = bufnr,
+      callback = function()
+        lsp_formatting(bufnr)
+      end,
+    })
+  end
 end
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
