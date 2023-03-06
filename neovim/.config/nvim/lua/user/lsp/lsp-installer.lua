@@ -5,7 +5,7 @@ end
 mason.setup {}
 require("mason-lspconfig").setup {
   ensure_installed = {
-    "sumneko_lua",
+    "lua_ls",
     "tsserver",
     "gopls",
     "purescriptls",
@@ -18,7 +18,7 @@ require("mason-lspconfig").setup {
 require("neodev").setup({})
 
 local lspconfig = require("lspconfig")
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
   capabilities = require("user.lsp.handlers").capabilities,
   on_attach = require("user.lsp.handlers").on_attach,
   settings = require("user.lsp.settings.sumneko_lua"),
