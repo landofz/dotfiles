@@ -18,6 +18,7 @@ if [ -e "$HOME/Pictures/wall.jpg" ]; then
 fi
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
+picom &
 dunst &
 
 if [ -z "$1" ]; then
