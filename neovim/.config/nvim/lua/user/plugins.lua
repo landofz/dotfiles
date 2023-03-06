@@ -94,6 +94,7 @@ return packer.startup(function(use)
   -- use 'gerw/vim-HiLinkTrace'               -- trace syntax highlight
   use 'ggandor/leap.nvim'                  -- make on-screen navigation quicker and more natural
   use 'anuvyklack/hydra.nvim'              -- custom submodes and menus
+  use 'windwp/nvim-autopairs'
 
   -- Language specific
   use 'fatih/vim-go'                       -- Go development
