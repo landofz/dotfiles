@@ -8,7 +8,7 @@ ts_conf.setup {
   -- languages
   ensure_installed = { "bash", "c", "css", "dockerfile", "erlang",
     "hcl", "go", "gomod", "help", "html", "htmldjango", "javascript", "json", "lua", "make",
-    "nix", "python", "scss", "sql", "tsx", "typescript", "vim", "vue", "yaml" },
+    "nix", "python", "scss", "sql", "terraform", "tsx", "typescript", "vim", "vue", "yaml" },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
