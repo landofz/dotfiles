@@ -103,6 +103,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# new containers on workspace level start in tabbed layout
 workspace_layout tabbed
 
 # workspaces
@@ -129,6 +130,7 @@ bindsym $mod+8 workspace $work8
 bindsym $mod+9 workspace $work9
 bindsym $mod+0 workspace $work10
 
+# switch to last used workspace
 bindsym $mod+comma workspace back_and_forth
 
 # move focused container to workspace
@@ -186,7 +188,9 @@ bindsym $mod+r mode "resize"
 floating_maximum_size 1200 x 800
 floating_minimum_size 120 x 80
 
-bindsym $mod+Shift+z exec sleep 0.3 && XSECURELOCK_BLANK_TIMEOUT=10 xsecurelock
+# Activate screen lock according to recommendation from
+# https://github.com/google/xsecurelock#automatic-locking
+bindsym $mod+Shift+z exec sleep 0.3 && xset s activate
 bindsym $mod+x exec powermenu.sh
 bindsym $mod+c exec kill-app.sh
 bindsym $mod+n exec --no-startup-id open-note.sh
