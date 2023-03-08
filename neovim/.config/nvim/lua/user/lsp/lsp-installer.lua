@@ -5,6 +5,7 @@ end
 mason.setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = {
+		"elmls",
 		"gopls",
 		"lua_ls",
 		"purescriptls",
@@ -18,6 +19,10 @@ require("mason-lspconfig").setup({
 require("neodev").setup({})
 
 local lspconfig = require("lspconfig")
+lspconfig.elmls.setup({
+	capabilities = require("user.lsp.handlers").capabilities,
+	on_attach = require("user.lsp.handlers").on_attach,
+})
 lspconfig.lua_ls.setup({
 	capabilities = require("user.lsp.handlers").capabilities,
 	on_attach = require("user.lsp.handlers").on_attach,

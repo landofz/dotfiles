@@ -11,6 +11,7 @@ ts_conf.setup({
 		"c",
 		"css",
 		"dockerfile",
+		"elm",
 		"erlang",
 		"hcl",
 		"go",
