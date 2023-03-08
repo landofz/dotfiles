@@ -1,3 +1,3 @@
-require('lualine').setup({
-  theme = 'gruvbox',
+require("lualine").setup({
+	theme = "gruvbox",
 })

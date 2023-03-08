@@ -1,33 +1,33 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
-local strip_whitespace = augroup('strip_whitespace', {})
-autocmd({"BufWritePre"}, {
-  group = strip_whitespace,
-  pattern = "*",
-  command = "%s/\\s\\+$//e",
+local strip_whitespace = augroup("strip_whitespace", {})
+autocmd({ "BufWritePre" }, {
+	group = strip_whitespace,
+	pattern = "*",
+	command = "%s/\\s\\+$//e",
 })
 
-local yank_group = augroup('HighlightYank', {})
-autocmd('TextYankPost', {
-  group = yank_group,
-  pattern = '*',
-  callback = function()
-    vim.highlight.on_yank({
-      higroup = 'IncSearch',
-      timeout = 250,
-    })
-  end,
+local yank_group = augroup("HighlightYank", {})
+autocmd("TextYankPost", {
+	group = yank_group,
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({
+			higroup = "IncSearch",
+			timeout = 250,
+		})
+	end,
 })
 
-local gofmt_group = augroup('GoFormat', {})
-autocmd('BufWritePre', {
-  group = gofmt_group,
-  pattern = '*.go',
-  command = 'GoFmt',
+local gofmt_group = augroup("GoFormat", {})
+autocmd("BufWritePre", {
+	group = gofmt_group,
+	pattern = "*.go",
+	command = "GoFmt",
 })
 
-vim.cmd [[
+vim.cmd([[
 augroup _my_auto_resize
   autocmd!
   autocmd VimResized * tabdo wincmd =
@@ -51,28 +51,28 @@ augroup _my_filetype_generic
   autocmd FileType qf set nobuflisted
   autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
 augroup END
-]]
+]])
 
 local command = vim.api.nvim_create_user_command
 -- command flubs
-command('WQ', 'wq', {})
-command('Wq', 'wq', {})
-command('W', 'w', {})
-command('Q', 'q', {})
+command("WQ", "wq", {})
+command("Wq", "wq", {})
+command("W", "w", {})
+command("Q", "q", {})
 
 local new_zettel = function(opts)
-  local dashed_title = string.gsub(opts.args, ' ', '-')
-  local now = os.time()
-  local id = os.date('%Y%m%d%H%M%S', now)
-  local filename = vim.fn.expand('~/storage/Notebook/') .. id .. '_' .. dashed_title .. '.adoc'
-  vim.api.nvim_cmd({ cmd = 'e', args = { filename } }, {})
-  local buf = vim.api.nvim_get_current_buf()
-  local time = os.date('%Y-%m-%d %H:%M:%S', now)
-  vim.api.nvim_buf_set_lines(buf, 0, 1, false, {
-    '= ' .. opts.args,
-    ':id: ' .. id,
-    ':time: ' .. time,
-    ':tags:',
-  })
+	local dashed_title = string.gsub(opts.args, " ", "-")
+	local now = os.time()
+	local id = os.date("%Y%m%d%H%M%S", now)
+	local filename = vim.fn.expand("~/storage/Notebook/") .. id .. "_" .. dashed_title .. ".adoc"
+	vim.api.nvim_cmd({ cmd = "e", args = { filename } }, {})
+	local buf = vim.api.nvim_get_current_buf()
+	local time = os.date("%Y-%m-%d %H:%M:%S", now)
+	vim.api.nvim_buf_set_lines(buf, 0, 1, false, {
+		"= " .. opts.args,
+		":id: " .. id,
+		":time: " .. time,
+		":tags:",
+	})
 end
-command('Zet', new_zettel, { nargs = '+' })
+command("Zet", new_zettel, { nargs = "+" })
