@@ -91,6 +91,9 @@ end
 
 -- for formatting on save
 local lsp_formatting = function(bufnr)
+	if vim.api.nvim_buf_get_option(bufnr, "filetype") == "markdown" then
+		return
+	end
 	vim.lsp.buf.format({
 		filter = function(client)
 			return client.name ~= "tsserver" and client.name ~= "lua_ls"

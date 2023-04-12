@@ -10,8 +10,9 @@ local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
 	debug = false,
+	on_attach = require("user.lsp.handlers").on_attach,
 	sources = {
-		formatting.prettier,
+		formatting.prettierd,
 		formatting.black,
 		formatting.stylua,
 		formatting.elm_format,
