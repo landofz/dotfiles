@@ -20,13 +20,6 @@ autocmd("TextYankPost", {
 	end,
 })
 
-local gofmt_group = augroup("GoFormat", {})
-autocmd("BufWritePre", {
-	group = gofmt_group,
-	pattern = "*.go",
-	command = "GoFmt",
-})
-
 vim.cmd([[
 augroup _my_auto_resize
   autocmd!

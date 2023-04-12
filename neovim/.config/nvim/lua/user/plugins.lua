@@ -97,7 +97,7 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- autoclose parens and similar constructs
 
 	-- Language specific
-	use("fatih/vim-go") -- Go development
+	-- use("fatih/vim-go") -- Go development
 	use("isRuslan/vim-es6") -- JavaScript snippets
 	use("mattn/emmet-vim") -- HTML and CSS high speed coding
 	use("plasticboy/vim-markdown") -- markdown mode
