@@ -88,7 +88,7 @@ return packer.startup(function(use)
 	use("tpope/vim-unimpaired") -- handy bracket mappings
 	-- use 'wellle/targets.vim'                 -- additional text objects like , . : =
 	-- use 'michaeljsmith/vim-indent-object'    -- text object based on indentation level
-	use("rhysd/clever-f.vim") -- better repeat and marks for f and t mappings
+	use("rhysd/clever-f.vim") -- better repeat and marks for f and t mappings (https://github.com/ggandor/flit.nvim)
 	-- use 'easymotion/vim-easymotion'          -- simpler way to use motions
 	-- use 'geoffharcourt/vim-matchit'          -- extended '%' matchings
 	-- use 'gerw/vim-HiLinkTrace'               -- trace syntax highlight
@@ -109,9 +109,9 @@ return packer.startup(function(use)
 	}) -- status/tabline
 
 	-- Colorschemes
-	use("ellisonleao/gruvbox.nvim")
+	use("ellisonleao/gruvbox.nvim") -- has tresitter support, customizable
 	use("folke/tokyonight.nvim")
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({ "catppuccin/nvim", as = "catppuccin" }) -- has integrations with many plugins
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
