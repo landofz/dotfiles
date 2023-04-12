@@ -9,6 +9,7 @@ lxqt-policykit-agent &
 setxkbmap -layout hr,us -variant us, -option ctrl:nocaps
 xsetroot -cursor_name left_ptr &
 xset s 300 5
+xset dpms 600 600 600
 if [ -f ~/.Xresources ]; then
     xrdb -merge ~/.Xresources
 fi
