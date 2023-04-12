@@ -9,6 +9,7 @@ ts_conf.setup({
 	ensure_installed = {
 		"bash",
 		"c",
+		"cpp",
 		"css",
 		"dockerfile",
 		"elm",
@@ -25,6 +26,8 @@ ts_conf.setup({
 		"make",
 		"nix",
 		"python",
+		"ruby",
+		"rust",
 		"scss",
 		"sql",
 		"terraform",
