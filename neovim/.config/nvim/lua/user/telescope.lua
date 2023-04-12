@@ -60,3 +60,4 @@ vim.keymap.set("n", "<leader>sm", builtin.keymaps, { desc = "[s]earch [m]appings
 vim.keymap.set("n", "<leader>ss", builtin.git_files, { desc = "[s]earch git file[s]" })
 vim.keymap.set("n", "<leader>sy", builtin.lsp_document_symbols, { desc = "[s]earch document s[y]mbols" })
 vim.keymap.set("n", "<leader>sc", builtin.commands, { desc = "[s]earch [c]ommands" })
+vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[s]earch [w]ord under cursor" })
