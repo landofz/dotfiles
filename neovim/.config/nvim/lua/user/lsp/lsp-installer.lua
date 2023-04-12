@@ -5,12 +5,14 @@ end
 mason.setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = {
+		"dockerls",
 		"elmls",
 		"gopls",
 		"lua_ls",
 		"purescriptls",
 		"pyright",
 		"rust_analyzer",
+		"terraformls",
 		"tsserver",
 	},
 })
@@ -19,6 +21,10 @@ require("mason-lspconfig").setup({
 require("neodev").setup({})
 
 local lspconfig = require("lspconfig")
+lspconfig.dockerls.setup({
+	capabilities = require("user.lsp.handlers").capabilities,
+	on_attach = require("user.lsp.handlers").on_attach,
+})
 lspconfig.elmls.setup({
 	capabilities = require("user.lsp.handlers").capabilities,
 	on_attach = require("user.lsp.handlers").on_attach,
@@ -27,6 +33,10 @@ lspconfig.lua_ls.setup({
 	capabilities = require("user.lsp.handlers").capabilities,
 	on_attach = require("user.lsp.handlers").on_attach,
 	settings = require("user.lsp.settings.sumneko_lua"),
+})
+lspconfig.terraformls.setup({
+	capabilities = require("user.lsp.handlers").capabilities,
+	on_attach = require("user.lsp.handlers").on_attach,
 })
 lspconfig.tsserver.setup({
 	capabilities = require("user.lsp.handlers").capabilities,
