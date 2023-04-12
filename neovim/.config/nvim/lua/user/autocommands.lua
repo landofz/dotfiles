@@ -52,6 +52,7 @@ command("WQ", "wq", {})
 command("Wq", "wq", {})
 command("W", "w", {})
 command("Q", "q", {})
+command("E", "e", {})
 
 local new_zettel = function(opts)
 	local dashed_title = string.gsub(opts.args, " ", "-")
