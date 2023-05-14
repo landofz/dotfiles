@@ -13,7 +13,8 @@ null_ls.setup({
 	on_attach = require("user.lsp.handlers").on_attach,
 	sources = {
 		formatting.prettierd,
-		formatting.black,
+		-- formatting.standardjs,
+		-- formatting.black,
 		formatting.stylua,
 		formatting.elm_format,
 		-- diagnostics.flake8,

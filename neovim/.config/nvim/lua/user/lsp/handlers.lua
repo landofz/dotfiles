@@ -59,6 +59,21 @@ local function lsp_highlight_document(client)
 	end
 end
 
+-- for formatting on save
+local lsp_formatting = function(bufnr)
+	if vim.api.nvim_buf_get_option(bufnr, "filetype") == "markdown" then
+		return
+	end
+	vim.lsp.buf.format({
+		filter = function(client)
+			return client.name ~= "tsserver" and client.name ~= "lua_ls"
+		end,
+		bufnr = bufnr,
+		timeout_ms = 2000, -- needed for standardjs
+	})
+end
+local formattingAugroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 local function lsp_keymaps(bufnr)
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -86,22 +101,10 @@ local function lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>dq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+	vim.api.nvim_create_user_command("Format", function()
+		lsp_formatting(bufnr)
+	end, {})
 end
-
--- for formatting on save
-local lsp_formatting = function(bufnr)
-	if vim.api.nvim_buf_get_option(bufnr, "filetype") == "markdown" then
-		return
-	end
-	vim.lsp.buf.format({
-		filter = function(client)
-			return client.name ~= "tsserver" and client.name ~= "lua_ls"
-		end,
-		bufnr = bufnr,
-	})
-end
-local formattingAugroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
