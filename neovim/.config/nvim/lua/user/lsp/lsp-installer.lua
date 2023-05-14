@@ -5,6 +5,7 @@ end
 mason.setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = {
+		"ansiblels",
 		"dockerls",
 		"elmls",
 		"gopls",
@@ -21,6 +22,10 @@ require("mason-lspconfig").setup({
 require("neodev").setup({})
 
 local lspconfig = require("lspconfig")
+lspconfig.ansiblels.setup({
+	capabilities = require("user.lsp.handlers").capabilities,
+	on_attach = require("user.lsp.handlers").on_attach,
+})
 lspconfig.dockerls.setup({
 	capabilities = require("user.lsp.handlers").capabilities,
 	on_attach = require("user.lsp.handlers").on_attach,
