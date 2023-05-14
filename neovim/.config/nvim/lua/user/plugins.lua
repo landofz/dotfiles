@@ -84,8 +84,8 @@ return packer.startup(function(use)
 	use("tpope/vim-fugitive") -- git wrapper
 	use("tpope/vim-repeat") -- repeat plugin maps with '.'
 	use("tpope/vim-surround") -- surrounding made easier
-	use("tpope/vim-eunuch") -- helpers for unix
-	use("tpope/vim-unimpaired") -- handy bracket mappings
+	-- use("tpope/vim-eunuch") -- helpers for unix
+	-- use("tpope/vim-unimpaired") -- handy bracket mappings
 	-- use 'wellle/targets.vim'                 -- additional text objects like , . : =
 	-- use 'michaeljsmith/vim-indent-object'    -- text object based on indentation level
 	use("rhysd/clever-f.vim") -- better repeat and marks for f and t mappings (https://github.com/ggandor/flit.nvim)
@@ -98,9 +98,9 @@ return packer.startup(function(use)
 
 	-- Language specific
 	-- use("fatih/vim-go") -- Go development
-	use("isRuslan/vim-es6") -- JavaScript snippets
-	use("mattn/emmet-vim") -- HTML and CSS high speed coding
-	use("plasticboy/vim-markdown") -- markdown mode
+	-- use("isRuslan/vim-es6") -- JavaScript snippets
+	-- use("mattn/emmet-vim") -- HTML and CSS high speed coding
+	-- use("plasticboy/vim-markdown") -- markdown mode
 	use("purescript-contrib/purescript-vim") -- purescript highlighting and indentation
 
 	use({
