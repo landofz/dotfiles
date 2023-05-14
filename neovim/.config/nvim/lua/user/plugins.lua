@@ -75,6 +75,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline") -- cmdline completions
 	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
 	use("hrsh7th/cmp-nvim-lua") -- neovim Lua API
+	use("hrsh7th/cmp-nvim-lsp-signature-help") -- displaying function signatures with the current parameter emphasized
 	use("saadparwaiz1/cmp_luasnip") -- snippets source for nvim-cmp
 	use("L3MON4D3/LuaSnip") -- snippets plugin
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
