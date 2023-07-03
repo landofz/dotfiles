@@ -28,6 +28,7 @@ ts_conf.setup({
 		"markdown_inline",
 		"nix",
 		"python",
+		"regex",
 		"ruby",
 		"rust",
 		"scss",
