@@ -5,6 +5,8 @@ set completion-ignore-case on
 # treat hyphens and underscores as equivalent
 set completion-map-case on
 set completion-prefix-display-length 3
+# only ask if there are more than 200 completion items
+set completion-query-items 200
 # show completions on first tab
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
