@@ -1,6 +1,6 @@
+require("user.keymaps") -- leader key should be set as a first thing so plugins set correct mappings
 require("user.plugins")
 require("user.options")
-require("user.keymaps")
 require("user.colorscheme")
 require("user.autocommands")
 
