@@ -63,6 +63,9 @@ alias l='ls -CF'
 # alias mv='mv -i'
 # alias rm='rm -i'
 
+if [[ -f $HOME/.nix-profile/share/bash-completion/bash_completion ]]; then
+    . $HOME/.nix-profile/share/bash-completion/bash_completion
+fi
 if [[ -f /usr/share/bash-completion/bash_completion ]]; then
     . /usr/share/bash-completion/bash_completion
 fi
