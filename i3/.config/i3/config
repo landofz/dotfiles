@@ -107,16 +107,16 @@ bindsym $mod+a focus parent
 workspace_layout tabbed
 
 # workspaces
-set $work1 "1: "
-set $work2 "2: "
-set $work3 "3: "
-set $work4 "4: "
-set $work5 "5: "
-set $work6 "6: "
-set $work7 "7: "
-set $work8 "8: "
-set $work9 "9: "
-set $work10 "10: ?"
+set $work1 "1:  "
+set $work2 "2:  "
+set $work3 "3:  "
+set $work4 "4:  "
+set $work5 "5:  "
+set $work6 "6:  "
+set $work7 "7:  "
+set $work8 "8:  "
+set $work9 "9:  "
+set $work10 "10: ? "
 
 # switch to workspace
 bindsym $mod+1 workspace $work1
