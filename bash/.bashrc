@@ -49,9 +49,14 @@ if command -v dircolors > /dev/null; then
     alias egrep='egrep --color=auto'
 fi
 
-alias ll='exa -lg'
-alias la='exa -a'
-alias lt='exa --tree'
+if command -v exa > /dev/null; then
+    alias ll='exa -lg'
+    alias la='exa -a'
+    alias lt='exa --tree'
+else
+    alias ll='ls -lg'
+    alias la='ls -a'
+fi
 alias l='ls -CF'
 
 # alias cp='cp -i'
@@ -72,7 +77,9 @@ export PAGER=less
 [[ -s $HOME/lib/up/up.sh ]] && source "$HOME/lib/up/up.sh"
 #[[ -s $HOME/.local/bin/virtualenvwrapper.sh ]] && source "$HOME/.local/bin/virtualenvwrapper.sh"
 #[[ -s $HOME/bash-powerline.sh ]] && source "$HOME/bash-powerline.sh"
-eval "$(starship init bash)"
+if command -v starship > /dev/null; then
+    eval "$(starship init bash)"
+fi
 [[ -s $HOME/.config/fzf/fzf.bash ]] && source "$HOME/.config/fzf/fzf.bash"
 [[ -s $HOME/lib/goto/goto.sh ]] && source "$HOME/lib/goto/goto.sh"
 
@@ -142,20 +149,30 @@ pathadd() {
 }
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-pathadd "$PYENV_ROOT/bin"
-pathadd "$PYENV_ROOT/shims"
-source "$PYENV_ROOT/completions/pyenv.bash"
+if [[ -d $PYENV_ROOT ]]; then
+    pathadd "$PYENV_ROOT/bin"
+    pathadd "$PYENV_ROOT/shims"
+    source "$PYENV_ROOT/completions/pyenv.bash"
+fi
 # goenv
 export GOENV_ROOT="$HOME/.goenv"
-pathadd "$GOENV_ROOT/bin"
-pathadd "$GOENV_ROOT/shims"
-source "$GOENV_ROOT/completions/goenv.bash"
+if [[ -d $GOENV_ROOT ]]; then
+    pathadd "$GOENV_ROOT/bin"
+    pathadd "$GOENV_ROOT/shims"
+    source "$GOENV_ROOT/completions/goenv.bash"
+fi
 # plenv
-pathadd "$HOME/.plenv/bin"
-pathadd "$HOME/.plenv/shims"
+if [[ -d $HOME/.plenv ]]; then
+    pathadd "$HOME/.plenv/bin"
+    pathadd "$HOME/.plenv/shims"
+fi
 # nodenv
-pathadd "$HOME/.nodenv/bin"
-pathadd "$HOME/.nodenv/shims"
-source "$HOME/.nodenv/completions/nodenv.bash"
+if [[ -d $HOME/.nodenv ]]; then
+    pathadd "$HOME/.nodenv/bin"
+    pathadd "$HOME/.nodenv/shims"
+    source "$HOME/.nodenv/completions/nodenv.bash"
+fi
 
-eval "$(direnv hook bash)"
+if command -v direnv > /dev/null; then
+    eval "$(direnv hook bash)"
+fi
