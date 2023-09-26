@@ -85,9 +85,13 @@ bindsym $mod+Shift+semicolon split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
+# scratchpad
+bindsym $mod+g move scratchpad
+bindsym $mod+s scratchpad show
+
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+t layout splith
-bindsym $mod+s layout stacking
+bindsym $mod+Shift+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -188,7 +192,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-floating_maximum_size 1200 x 800
+# floating_maximum_size 1200 x 800
 floating_minimum_size 120 x 80
 
 # Activate screen lock according to recommendation from
