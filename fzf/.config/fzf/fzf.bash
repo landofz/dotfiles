@@ -1,6 +1,10 @@
 # General settings
 # ----------------
-export FZF_DEFAULT_COMMAND='ag --files-with-matches --hidden --follow'
+if command -v fd > /dev/null; then
+    export FZF_DEFAULT_COMMAND='fd --hidden --follow'
+elif command -v ag > /dev/null; then
+    export FZF_DEFAULT_COMMAND='ag --files-with-matches --hidden --follow'
+fi
 
 # Auto-completion
 # ---------------
