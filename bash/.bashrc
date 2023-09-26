@@ -37,8 +37,8 @@ PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # enable color support of ls and also add handy aliases
 if command -v dircolors > /dev/null; then
-    if [[ -r ~/config/dircolors ]]; then
-        eval "$(dircolors -b ~/config/dircolors)"
+    if [[ -r $HOME/.config/dircolors ]]; then
+        eval "$(dircolors -b $HOME/.config/dircolors)"
     else
         eval "$(dircolors -b)"
     fi
