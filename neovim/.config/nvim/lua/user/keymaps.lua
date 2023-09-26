@@ -12,9 +12,9 @@ keymap("i", "jj", "<Esc>", opts)
 keymap("c", "jj", "<Esc>", opts)
 
 -- general
-keymap("n", "<leader>w", "<cmd>w<CR>", opts)
-keymap("n", "<leader>l", "<cmd>b#<CR>", opts)
-keymap("n", "<leader>%", [[<cmd>let @" = expand("%")<CR>]], opts) -- get current filename
+keymap("n", "<leader>w", "<cmd>w<CR>", opts) -- write buffer
+keymap("n", "<leader>l", "<cmd>b#<CR>", opts) -- switch to last used buffer
+keymap("n", "<leader>%", [[<cmd>let @" = expand("%:t")<CR>]], opts) -- get current filename
 keymap("x", "<leader>p", [["_dP]], opts) -- paste without touching registers
 keymap("n", "<leader>y", [["+y]], opts) -- yank to system clipboard
 keymap("v", "<leader>y", [["+y]], opts) -- yank to system clipboard
@@ -54,4 +54,3 @@ map("n", "<Leader>fh", [[:syntax sync fromstart<CR>]])
 -- invoking plugins
 map("n", "<leader>n", [[:Lexplore<CR>]])
 map("n", "<leader>u", [[:UndotreeToggle<CR>]])
-map("n", "<leader>do", [[:SymbolsOutline<CR>]])

@@ -38,12 +38,14 @@ vim.api.nvim_set_keymap(
 	[[<cmd>lua require('telescope.builtin').find_files({hidden = true, follow = true})<CR>]],
 	{ noremap = true, silent = true }
 )
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>sg",
-	[[<cmd>lua require('telescope.builtin').live_grep()<CR>]],
-	{ noremap = true, silent = true }
-)
+vim.keymap.set("n", "<leader>sg", function()
+	local cd = vim.fn.getcwd()
+	if vim.fs.normalize("~/.config/nvim") == cd then
+		builtin.live_grep({ additional_args = { "--follow" } })
+	else
+		builtin.live_grep()
+	end
+end, { desc = "[s]earch by [g]repping" })
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>sh",
