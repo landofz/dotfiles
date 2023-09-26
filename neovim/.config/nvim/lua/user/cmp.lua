@@ -47,7 +47,7 @@ cmp.setup({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		}),
-		["<CR>"] = cmp.mapping.confirm(),
+		["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -85,13 +85,14 @@ cmp.setup({
 		end,
 	},
 	sources = {
-		{ name = "nvim_lsp", keyword_length = 3 },
 		{ name = "nvim_lua", keyword_length = 2 },
+		{ name = "nvim_lsp", keyword_length = 3 },
 		{ name = "nvim_lsp_signature_help" },
 		{ name = "luasnip", keyword_length = 2 },
+		{ name = "path" },
 		{
 			name = "buffer",
-			keyword_length = 2,
+			keyword_length = 5,
 			option = {
 				get_bufnrs = function()
 					-- get words from all buffers
@@ -99,7 +100,6 @@ cmp.setup({
 				end,
 			},
 		},
-		{ name = "path" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
