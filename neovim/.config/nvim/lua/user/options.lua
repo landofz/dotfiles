@@ -41,6 +41,8 @@ local options = {
 	hlsearch = true, -- highlight searches
 	ignorecase = true, -- ignore case during search
 	smartcase = true,
+	-- diff
+	diffopt = "vertical,filler,context:3,indent-heuristic,algorithm:patience,internal",
 }
 
 for k, v in pairs(options) do
