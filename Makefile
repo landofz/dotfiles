@@ -21,3 +21,11 @@ urxvt:
 	mkdir -p $(HOME)/.local/share/applications
 	stow -t $(HOME) urxvt
 .PHONY: urxvt
+
+neovim:
+	mkdir -p $(HOME)/bin
+	mkdir -p $(HOME)/.config/nvim
+	mkdir -p $(HOME)/.local/share/applications
+	mkdir -p $(HOME)/.local/share/icons
+	stow -t $(HOME) neovim
+.PHONY: neovim
