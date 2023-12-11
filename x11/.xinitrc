@@ -21,6 +21,7 @@ xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
 # picom &
 dunst &
+unclutter &
 
 if [ -z "$1" ]; then
     exec i3
