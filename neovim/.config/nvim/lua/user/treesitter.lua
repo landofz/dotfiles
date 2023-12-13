@@ -107,8 +107,8 @@ ts_conf.setup({
 			},
 		},
 	},
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
+})
+
+require("ts_context_commentstring").setup({
+	enable_autocmd = false,
 })
