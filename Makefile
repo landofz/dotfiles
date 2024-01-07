@@ -7,6 +7,11 @@ bash:
 	stow -t $(HOME) bash
 .PHONY: bash
 
+alacritty:
+	mkdir -p $(HOME)/.config/alacritty
+	stow -t $(HOME) alacritty
+.PHONY: alacritty
+
 fzf:
 	mkdir -p $(HOME)/.config/fzf
 	stow -t $(HOME) fzf
