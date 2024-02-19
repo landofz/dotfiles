@@ -21,6 +21,7 @@ telescope.setup({
 			},
 		},
 		file_ignore_patterns = { "^[.]git/" },
+		path_display = { "truncate" },
 	},
 })
 telescope.load_extension("fzf")
