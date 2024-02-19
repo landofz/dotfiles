@@ -14,7 +14,8 @@ null_ls.setup({
 	sources = {
 		formatting.prettierd,
 		-- formatting.standardjs,
-		-- formatting.black,
+		formatting.black,
+		formatting.isort,
 		formatting.stylua,
 		formatting.elm_format,
 		-- diagnostics.flake8,
