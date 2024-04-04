@@ -3,6 +3,7 @@ local options = {
 	backup = false,
 	writebackup = false,
 	swapfile = false,
+	undofile = true, -- save undo history
 	-- security
 	modelines = 0,
 	shell = "sh",
@@ -21,21 +22,24 @@ local options = {
 	ruler = true, -- show cursor position
 	laststatus = 2, -- always show the status line
 	signcolumn = "yes", -- always show the sign column
-	showmode = true,
+	showmode = false, -- mode is already shown in the status line
 	showcmd = true,
 	list = true,
-	listchars = "tab:▸ ,trail:·,eol:¬",
+	listchars = { tab = "▸ ", trail = "·", eol = "¬", nbsp = "␣" },
 	-- ui
 	pumheight = 10, -- popup menu height
 	splitbelow = true, -- force all horizontal splits to go below current window
 	splitright = true, -- force all vertical splits to go to the right of current window
-	scrolloff = 3,
+	scrolloff = 3, -- minimal number of lines to keep above and below cursor
 	hidden = true,
 	visualbell = true, -- use visual bell instead of beeping
 	errorbells = false, -- don't ring the bell for error messages
 	wildmenu = true,
 	showmatch = true,
 	lazyredraw = true,
+	updatetime = 250, -- decrease update time
+	timeoutlen = 300, -- decreate mapped sequence wait time, display which-key popup sooner
+	inccommand = "split", -- preview substitutions live
 	-- search
 	incsearch = true, -- search dynamically while typing
 	hlsearch = true, -- highlight searches
