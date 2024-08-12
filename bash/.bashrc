@@ -176,6 +176,8 @@ if [[ -d $HOME/.nodenv ]]; then
     source "$HOME/.nodenv/completions/nodenv.bash"
 fi
 
+unset -f pathadd
+
 if command -v direnv > /dev/null; then
     eval "$(direnv hook bash)"
 fi

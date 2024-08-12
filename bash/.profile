@@ -43,6 +43,8 @@ pathadd "$HOME/.local/bin"
 pathadd "$HOME/bin"
 pathadd "$HOME/.cargo/bin"
 
+unset -f pathadd
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     if [ -f "$HOME/.bashrc" ]; then
