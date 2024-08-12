@@ -175,6 +175,8 @@ if [[ -d $HOME/.nodenv ]]; then
     pathadd "$HOME/.nodenv/shims"
     source "$HOME/.nodenv/completions/nodenv.bash"
 fi
+# ghcup
+export GHCUP_USE_XDG_DIRS=true
 
 unset -f pathadd
 
