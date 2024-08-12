@@ -8,7 +8,7 @@
 # for ssh logins, install and configure the libpam-umask package.
 umask 027
 
-# Enforce correct locales from the beginning:
+# Enforce correct locales from the beginning (man 7 locale):
 # LC_ALL is unset since it overwrites everything
 # LC_MESSAGES=C.UTF-8 never translates program output
 # LC_TIME=en_GB.UTF-8 leads to yyyy-mm-dd hh:mm date/time output
@@ -17,6 +17,8 @@ export LANG="hr_HR.UTF-8"
 export LC_CTYPE="C.UTF-8"
 export LC_MESSAGES="C.UTF-8"
 export LC_TIME="en_GB.UTF-8"
+# use machine's default time zone (man timezone)
+unset TZ
 
 pathadd() {
     case ":$PATH:" in
