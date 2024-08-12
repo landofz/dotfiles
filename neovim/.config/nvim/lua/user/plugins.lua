@@ -111,7 +111,7 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("ellisonleao/gruvbox.nvim") -- has tresitter support, customizable
-	use("folke/tokyonight.nvim") -- support for lsp, treesitter and a lot of plugins
+	use("folke/tokyonight.nvim") -- support for lsp, treesitter and a lot of plugins, has color definitions for terminals, tmux and the like
 	use({ "catppuccin/nvim", as = "catppuccin" }) -- has integrations with many plugins
 
 	-- Automatically set up your configuration after cloning packer.nvim

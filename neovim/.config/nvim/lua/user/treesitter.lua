@@ -32,6 +32,7 @@ ts_conf.setup({
 		"markdown",
 		"markdown_inline",
 		"nix",
+		"norg",
 		"python",
 		"regex",
 		"ruby",
