@@ -25,7 +25,7 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=$HOME/lib/i3blocks/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=35
 markup=none
 
 # Volume indicator
@@ -77,11 +77,12 @@ instance=wlp3s0
 #label=直
 interval=10
 separator=false
+separator_block_width=15
 
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
-label=󱂇  
+label=󱂇 
 #instance=wlan0
 #color=#00FF00
 interval=10
@@ -113,6 +114,7 @@ label=
 BAT_NUMBER=0
 interval=30
 separator=false
+separator_block_width=15
 
 [battery]
 label= 
@@ -138,6 +140,7 @@ interval=30
 #
 [time]
 command=date '+%Y-%m-%d %H:%M, %a'
+label= 
 interval=10
 
 # Generic media player support
