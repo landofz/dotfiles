@@ -22,6 +22,13 @@ xdg:
 	stow -t $(HOME) xdg
 .PHONY: xdg
 
+i3:
+	mkdir -p $(HOME)/.config
+	mkdir -p $(HOME)/bin
+	mkdir -p $(HOME)/lib
+	stow -t $(HOME) i3
+.PHONY: i3
+
 urxvt:
 	mkdir -p $(HOME)/.local/share/applications
 	stow -t $(HOME) urxvt
