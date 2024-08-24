@@ -34,7 +34,7 @@ COLOR_DOWN=${COLOR_DOWN:-#FF0000}
 if [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]]; then
     echo "down"
     echo "down"
-    echo $COLOR_DOWN
+    # echo $COLOR_DOWN
     exit
 fi
 
