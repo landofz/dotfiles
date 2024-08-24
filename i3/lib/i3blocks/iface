@@ -82,7 +82,7 @@ then
   fi
 else
   message="$LABEL $IPADDR"
-  message="eth"
+  message="$LABEL up"
 fi
 
 #------------------------------------------------------------------------
