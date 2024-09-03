@@ -1,8 +1,20 @@
-#!/bin/bash
+#!/bin/sh
 
 # update environment used for D-Bus session services
 dbus-update-activation-environment --systemd DISPLAY
 systemctl --user import-environment DISPLAY
+# dbus-update-activation-environment DISPLAY XAUTHORITY WAYLAND_DISPLAY
+# systemctl --user import-environment DBUS_SESSION_BUS_ADDRESS XAUTHORITY DISPLAY XDG_SESSION_ID
+
+# merge in defaults and keymaps
+# sysresources=/etc/X11/xinit/.Xresources
+# sysmodmap=/etc/X11/xinit/.Xmodmap
+# if [ -f $sysresources ]; then
+#     xrdb -merge $sysresources
+# fi
+# if [ -f $sysmodmap ]; then
+#     xmodmap $sysmodmap
+# fi
 
 # /usr/bin/gnome-keyring-daemon --start --components=secrets
 lxqt-policykit-agent &
