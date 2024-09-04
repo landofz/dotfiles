@@ -152,6 +152,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"ansiblels",
+					"docker_compose_language_service",
 					"dockerls",
 					"elmls",
 					"gopls",
