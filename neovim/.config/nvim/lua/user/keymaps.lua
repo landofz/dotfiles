@@ -5,6 +5,8 @@ local map = vim.keymap.set
 -- better escape
 keymap("i", "jj", "<Esc>", opts)
 keymap("c", "jj", "<Esc>", opts)
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>") -- clear highlights on search
 
 -- general
 keymap("n", "<leader>w", "<cmd>w<CR>", opts) -- write buffer
