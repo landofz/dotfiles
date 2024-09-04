@@ -2,11 +2,6 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 local map = vim.keymap.set
 
--- leader key
-keymap("", ",", "<Nop>", opts)
-vim.g.mapleader = ","
-vim.g.maplocalleader = ","
-
 -- better escape
 keymap("i", "jj", "<Esc>", opts)
 keymap("c", "jj", "<Esc>", opts)

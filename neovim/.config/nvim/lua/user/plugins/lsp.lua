@@ -1,6 +1,4 @@
-local M = {}
-
-M.setup = function()
+local function setup_diagnostics_layout()
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
 		{ name = "DiagnosticSignWarn", text = "" },
@@ -106,7 +104,7 @@ local function lsp_keymaps(bufnr)
 	end, {})
 end
 
-M.on_attach = function(client, bufnr)
+local function on_attach(client, bufnr)
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 
@@ -122,12 +120,141 @@ M.on_attach = function(client, bufnr)
 	end
 end
 
--- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-	return
-end
-M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+return {
+	{
+		"neovim/nvim-lspconfig", -- collection of configurations for built-in LSP client
+		dependencies = {
+			"williamboman/mason.nvim", -- external dependencies installer
+			"williamboman/mason-lspconfig.nvim", -- bridges mason.nvim with lspconfig
+			{
+				"simrat39/symbols-outline.nvim",
+				config = function()
+					require("symbols-outline").setup()
+					vim.keymap.set("n", "<leader>do", [[:SymbolsOutline<CR>]])
+				end,
+			}, -- display symbols using LSP
+			"folke/neodev.nvim", -- setup for init.lua and plugin development
+			{ "j-hui/fidget.nvim", opts = {} }, -- UI for nvim-lsp progress
+			"b0o/schemastore.nvim", -- SchemaStore catalog for use with jsonls and yamlls
 
-return M
+			"jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
+		},
+		lazy = false,
+		config = function()
+			require("neodev").setup({})
+			-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+			if status_ok then
+				capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+			end
+			require("mason").setup({})
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"ansiblels",
+					"dockerls",
+					"elmls",
+					"gopls",
+					"lua_ls",
+					"purescriptls",
+					"pyright",
+					"rust_analyzer",
+					"terraformls",
+					"tsserver",
+				},
+			})
+			local lspconfig = require("lspconfig")
+			lspconfig.ansiblels.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+			lspconfig.dockerls.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+			lspconfig.elmls.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+				settings = {
+					Lua = {
+						runtime = {
+							version = "LuaJIT",
+						},
+						diagnostics = {
+							-- get the language server to recognize the `vim` global
+							globals = { "vim" },
+						},
+						workspace = {
+							-- disable automatic detection and adaptation of third-party libraries
+							checkThirdParty = false,
+							-- make the server aware of Neovim runtime files
+							library = vim.api.nvim_get_runtime_file("", true),
+						},
+						-- do not send telemetry data containing a randomized but unique identifier
+						telemetry = {
+							enable = false,
+						},
+					},
+				},
+			})
+			lspconfig.terraformls.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+			lspconfig.tsserver.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+			lspconfig.gopls.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+				settings = {
+					gopls = {
+						analyses = {
+							unusedparams = true,
+						},
+						staticcheck = true,
+					},
+				},
+			})
+			lspconfig.purescriptls.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+			lspconfig.rust_analyzer.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+			lspconfig.pyright.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+			setup_diagnostics_layout()
+			require("fidget").setup({})
+			-- null-ls setup
+			local null_ls = require("null-ls")
+			local formatting = null_ls.builtins.formatting
+			null_ls.setup({
+				debug = false,
+				on_attach = on_attach,
+				sources = {
+					formatting.prettierd,
+					-- formatting.standardjs,
+					formatting.black,
+					formatting.isort,
+					formatting.stylua,
+					formatting.elm_format,
+					-- diagnostics.flake8,
+				},
+			})
+			-- keymaps
+			local opts = { noremap = true, silent = true }
+			vim.api.nvim_set_keymap("n", "<leader>dii", "<cmd>LspInstallInfo<CR>", opts)
+			vim.api.nvim_set_keymap("n", "<leader>dig", "<cmd>LspInfo<CR>", opts)
+		end,
+	},
+}

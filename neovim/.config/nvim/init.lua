@@ -1,18 +1,10 @@
-require("user.keymaps") -- leader key should be set as a first thing so plugins set correct mappings
-require("user.plugins")
-require("user.options")
-require("user.colorscheme")
-require("user.autocommands")
+-- leader key should be set as a first thing so plugins set correct mappings
+vim.keymap.set("", ",", "<Nop>")
+vim.g.mapleader = ","
+vim.g.maplocalleader = "\\"
 
-require("user.statusline")
-require("user.treesitter")
-require("user.comment")
-require("user.indentline")
-require("user.gitsigns")
-require("user.telescope")
-require("user.lsp")
-require("user.cmp")
-require("user.leap")
-require("user.symbols-outline")
-require("user.hydra")
-require("user.autopairs")
+require("user.lazy")
+
+require("user.keymaps")
+require("user.options")
+require("user.autocommands")
