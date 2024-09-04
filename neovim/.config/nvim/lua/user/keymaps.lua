@@ -49,3 +49,4 @@ map("n", "<Leader>fh", [[:syntax sync fromstart<CR>]])
 -- invoking plugins
 map("n", "<leader>n", [[:Lexplore<CR>]])
 map("n", "<leader>u", [[:UndotreeToggle<CR>]])
+map("n", "<leader>?", "<CMD>WhichKey<CR>")
