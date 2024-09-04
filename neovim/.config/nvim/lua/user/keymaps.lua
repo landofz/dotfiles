@@ -44,7 +44,7 @@ map("n", "g*", "g*zz")
 map("n", "g#", "g#zz")
 
 -- manually fixing syntax highlighting going out of sync
-map("n", "<Leader>fh", [[:syntax sync fromstart<CR>]])
+map("n", "<Leader>xh", [[:syntax sync fromstart<CR>]], { desc = "Fix syntax highlighting" })
 
 -- invoking plugins
 map("n", "<leader>n", [[:Lexplore<CR>]])
