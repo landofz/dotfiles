@@ -24,5 +24,6 @@ require("lazy").setup({
 	-- colorscheme that will be used when installing plugins.
 	install = { colorscheme = { "gruvbox" } },
 	checker = { enabled = false },
+	change_detection = { enabled = false },
 	performance = { cache = { enabled = false } }, -- need to disable cache until filename length limit is fixed
 })
