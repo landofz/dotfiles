@@ -96,7 +96,7 @@ return {
 					{ "g", cmd("Telescope live_grep") },
 					{ "o", cmd("Telescope oldfiles"), { desc = "recently opened files" } },
 					{ "h", cmd("Telescope help_tags"), { desc = "vim help" } },
-					{ "m", cmd("MarksListBuf"), { desc = "marks" } },
+					{ "m", cmd("Telescope marks"), { desc = "marks" } },
 					{ "k", cmd("Telescope keymaps") },
 					{ "O", cmd("Telescope vim_options") },
 					{ "r", cmd("Telescope resume") },
