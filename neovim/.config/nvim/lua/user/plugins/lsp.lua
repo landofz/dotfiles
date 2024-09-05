@@ -41,19 +41,29 @@ local function setup_diagnostics_layout()
 	})
 end
 
-local function lsp_highlight_document(client)
-	-- Set autocommands conditional on server_capabilities
-	if client.server_capabilities.documentHighlightProvider then
-		vim.api.nvim_exec(
-			[[
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-      ]],
-			false
-		)
+-- for highlighting references of the word under the cursor
+local function lsp_highlight_document(client, bufnr)
+	if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+		local highlight_augroup = vim.api.nvim_create_augroup("loz-lsp-highlight", { clear = false })
+		vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+			buffer = bufnr,
+			group = highlight_augroup,
+			callback = vim.lsp.buf.document_highlight,
+		})
+
+		vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+			buffer = bufnr,
+			group = highlight_augroup,
+			callback = vim.lsp.buf.clear_references,
+		})
+
+		vim.api.nvim_create_autocmd("LspDetach", {
+			group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
+			callback = function(event2)
+				vim.lsp.buf.clear_references()
+				vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
+			end,
+		})
 	end
 end
 
@@ -106,7 +116,7 @@ end
 
 local function on_attach(client, bufnr)
 	lsp_keymaps(bufnr)
-	lsp_highlight_document(client)
+	lsp_highlight_document(client, bufnr)
 
 	if client.supports_method("textDocument/formatting") then
 		vim.api.nvim_clear_autocmds({ group = formattingAugroup, buffer = bufnr })
