@@ -136,6 +136,7 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim", -- external dependencies installer
 			"williamboman/mason-lspconfig.nvim", -- bridges mason.nvim with lspconfig
+			"WhoIsSethDaniel/mason-tool-installer.nvim", -- installs third-party tools
 			{
 				"simrat39/symbols-outline.nvim",
 				config = function()
@@ -172,6 +173,18 @@ return {
 					"rust_analyzer",
 					"terraformls",
 					"tsserver",
+				},
+			})
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					"ansible-lint",
+					"black",
+					"clangd",
+					"elm-format",
+					"isort",
+					"prettierd",
+					"standardjs",
+					"stylua",
 				},
 			})
 			local lspconfig = require("lspconfig")
