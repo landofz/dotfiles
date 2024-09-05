@@ -110,4 +110,10 @@ return {
 		end,
 	}, -- custom submodes and menus
 	{ "windwp/nvim-autopairs", opts = {} }, -- autoclose parens and similar constructs
+	{
+		"famiu/bufdelete.nvim",
+		config = function()
+			vim.keymap.set("n", "<leader>bd", require("bufdelete").bufdelete, { desc = "[b]uffer [d]elete" })
+		end,
+	},
 }
