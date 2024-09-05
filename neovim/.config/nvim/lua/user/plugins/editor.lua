@@ -48,6 +48,10 @@ return {
 			require("gitsigns").setup({
 				signs = {
 					add = { text = "+" },
+					change = { text = "~" },
+					delete = { text = "_" },
+					topdelete = { text = "‾" },
+					changedelete = { text = "~" },
 				},
 				on_attach = function(bufnr)
 					vim.api.nvim_buf_set_keymap(bufnr, "n", "]c", [[<cmd>lua require('gitsigns').next_hunk()<CR>]], {})
