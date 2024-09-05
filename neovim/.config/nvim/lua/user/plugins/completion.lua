@@ -1,6 +1,7 @@
 return {
 	{
 		"hrsh7th/nvim-cmp", -- autocompletion plugin
+		event = "InsertEnter",
 		dependencies = {
 			"onsails/lspkind.nvim", -- shows pictograms describing completion item category
 			"hrsh7th/cmp-buffer", -- buffer completions
@@ -50,12 +51,12 @@ return {
 					["<C-j>"] = cmp.mapping.select_next_item(),
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space>"] = cmp.mapping.complete(),
+					["<C-y>"] = cmp.mapping.confirm({ select = true }), -- accept the completion
+					["<C-Space>"] = cmp.mapping.complete(), -- manually trigger a completion
 					["<C-e>"] = cmp.mapping({
 						i = cmp.mapping.abort(),
 						c = cmp.mapping.close(),
 					}),
-					["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
@@ -84,6 +85,17 @@ return {
 						"i",
 						"s",
 					}),
+					-- move to the right/left of each of the expansion locations
+					["<C-l>"] = cmp.mapping(function()
+						if luasnip.expand_or_locally_jumpable() then
+							luasnip.expand_or_jump()
+						end
+					end, { "i", "s" }),
+					["<C-h>"] = cmp.mapping(function()
+						if luasnip.locally_jumpable(-1) then
+							luasnip.jump(-1)
+						end
+					end, { "i", "s" }),
 				},
 				formatting = {
 					format = function(entry, vim_item)
