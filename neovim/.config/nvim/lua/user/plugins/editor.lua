@@ -65,7 +65,6 @@ return {
 	},
 	"mbbill/undotree", -- undo history visualizer
 	"tpope/vim-fugitive", -- git wrapper
-	"rhysd/clever-f.vim", -- better repeat and marks for f and t mappings (https://github.com/ggandor/flit.nvim)
 	{
 		"ggandor/leap.nvim",
 		config = function()
