@@ -65,8 +65,6 @@ return {
 	},
 	"mbbill/undotree", -- undo history visualizer
 	"tpope/vim-fugitive", -- git wrapper
-	"tpope/vim-repeat", -- repeat plugin maps with '.'
-	"tpope/vim-surround", -- surrounding made easier
 	"rhysd/clever-f.vim", -- better repeat and marks for f and t mappings (https://github.com/ggandor/flit.nvim)
 	{
 		"ggandor/leap.nvim",
