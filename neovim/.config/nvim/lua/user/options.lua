@@ -53,13 +53,14 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
-vim.opt.shortmess:append("c")
+vim.opt.shortmess:append("c") -- don't give ins-completion-menu messages
 
-vim.g.python_host_prog = "/home/zoran/virtualenv/neovim_py2/bin/python"
-vim.g.python3_host_prog = "/home/zoran/virtualenv/neovim_py3/bin/python"
+-- disable remote plugin providers, if Python provider is needed it is a good
+-- idea to set it explicitly with something like:
+--   vim.g.python_host_prog = "<path_to_venv>/bin/python"
+--   vim.g.python3_host_prog = "<path_to_venv>/bin/python"
+vim.g.loaded_python_provider = 0
+vim.g.loaded_python3_provider = 0
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
-vim.g.go_gopls_enabled = 0
-
-vim.g.vim_markdown_folding_disabled = 1
