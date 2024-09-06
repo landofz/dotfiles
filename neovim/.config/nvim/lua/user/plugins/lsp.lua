@@ -67,7 +67,7 @@ local function lsp_highlight_document(client, bufnr)
 	end
 end
 
-local function lsp_keymaps(bufnr)
+local function lsp_keymaps(client, bufnr)
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_set_option_value("omnifunc", "v:lua.vim.lsp.omnifunc", { buf = bufnr })
 
@@ -93,10 +93,16 @@ local function lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>dq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+
+	if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+		vim.keymap.set("n", "<leader>th", function()
+			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }))
+		end, { buffer = bufnr, desc = "LSP: [T]oggle Inlay [H]ints" })
+	end
 end
 
 local function on_attach(client, bufnr)
-	lsp_keymaps(bufnr)
+	lsp_keymaps(client, bufnr)
 	lsp_highlight_document(client, bufnr)
 end
 
