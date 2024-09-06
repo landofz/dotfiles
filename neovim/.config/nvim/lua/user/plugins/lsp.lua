@@ -165,68 +165,72 @@ return {
 					"clangd",
 					"elm-format",
 					"isort",
+					"jsonls",
 					"prettierd",
 					"regols",
 					"standardjs",
 					"stylua",
+					"yamlls",
 				},
 			})
-			local lspconfig = require("lspconfig")
-			lspconfig.ansiblels.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
-			lspconfig.dockerls.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
-			lspconfig.elmls.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-				settings = {
-					Lua = {
-						-- do not send telemetry data containing a randomized but unique identifier
-						telemetry = {
-							enable = false,
+			-- this only needs to contain servers with extra config, capabilities and
+			-- on_attach will be added to all installed servers below
+			local servers = {
+				lua_ls = {
+					settings = {
+						Lua = {
+							-- do not send telemetry data containing a randomized but unique identifier
+							telemetry = {
+								enable = false,
+							},
 						},
 					},
 				},
-			})
-			lspconfig.terraformls.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
-			lspconfig.tsserver.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
-			lspconfig.gopls.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-				settings = {
-					gopls = {
-						analyses = {
-							unusedparams = true,
+				gopls = {
+					settings = {
+						gopls = {
+							analyses = {
+								unusedparams = true,
+							},
+							staticcheck = true,
 						},
-						staticcheck = true,
 					},
 				},
-			})
-			lspconfig.purescriptls.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
-			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
-			lspconfig.pyright.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
+				jsonls = {
+					settings = {
+						json = {
+							schemas = require("schemastore").json.schemas(),
+							validate = { enable = true },
+						},
+					},
+				},
+				yamlls = {
+					settings = {
+						yaml = {
+							schemaStore = {
+								-- You must disable built-in schemaStore support if you want to use
+								-- this plugin and its advanced options like `ignore`.
+								enable = false,
+								-- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+								url = "",
+							},
+							schemas = require("schemastore").yaml.schemas(),
+						},
+					},
+				},
+			}
+			require("mason-lspconfig").setup({
+				handlers = {
+					function(server_name)
+						local server = servers[server_name] or {}
+						-- This handles overriding only values explicitly passed
+						-- by the server configuration above. Useful when disabling
+						-- certain features of an LSP (for example, turning off formatting for tsserver)
+						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+						server.on_attach = on_attach
+						require("lspconfig")[server_name].setup(server)
+					end,
+				},
 			})
 			setup_diagnostics_layout()
 			require("fidget").setup({})
