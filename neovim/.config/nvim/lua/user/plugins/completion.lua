@@ -21,6 +21,7 @@ return {
 			end
 
 			local source_mapping = {
+				lazydev = "[Lazydev]",
 				nvim_lsp = "[LSP]",
 				nvim_lua = "[Nvim_Lua]",
 				luasnip = "[Snippet]",
@@ -105,6 +106,11 @@ return {
 					end,
 				},
 				sources = {
+					{
+						name = "lazydev",
+						-- set group index to 0 to skip loading LuaLS completions
+						group_index = 0,
+					},
 					{ name = "nvim_lua", keyword_length = 2 },
 					{ name = "nvim_lsp", keyword_length = 3 },
 					{ name = "nvim_lsp_signature_help" },

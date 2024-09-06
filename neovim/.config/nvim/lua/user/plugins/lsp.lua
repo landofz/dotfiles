@@ -102,6 +102,17 @@ end
 
 return {
 	{
+		"folke/lazydev.nvim", -- LuaLS setup for Neovim
+		ft = "lua", -- only load on lua files
+		opts = {
+			library = {
+				-- load luvit types when the `vim.uv` word is found
+				{ path = "luvit-meta/library", words = { "vim%.uv" } },
+			},
+		},
+	},
+	{ "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
+	{
 		"neovim/nvim-lspconfig", -- collection of configurations for built-in LSP client
 		dependencies = {
 			"williamboman/mason.nvim", -- external dependencies installer
@@ -114,13 +125,11 @@ return {
 					vim.keymap.set("n", "<leader>do", [[:SymbolsOutline<CR>]])
 				end,
 			}, -- display symbols using LSP
-			"folke/neodev.nvim", -- setup for init.lua and plugin development
 			{ "j-hui/fidget.nvim", opts = {} }, -- UI for nvim-lsp progress
 			"b0o/schemastore.nvim", -- SchemaStore catalog for use with jsonls and yamlls
 		},
 		lazy = false,
 		config = function()
-			require("neodev").setup({})
 			-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
