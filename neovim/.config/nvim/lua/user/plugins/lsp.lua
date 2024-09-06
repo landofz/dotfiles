@@ -67,21 +67,6 @@ local function lsp_highlight_document(client, bufnr)
 	end
 end
 
--- for formatting on save
-local lsp_formatting = function(bufnr)
-	if vim.api.nvim_buf_get_option(bufnr, "filetype") == "markdown" then
-		return
-	end
-	vim.lsp.buf.format({
-		filter = function(client)
-			return client.name ~= "tsserver" and client.name ~= "lua_ls"
-		end,
-		bufnr = bufnr,
-		timeout_ms = 2000, -- needed for standardjs
-	})
-end
-local formattingAugroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
 local function lsp_keymaps(bufnr)
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -102,32 +87,17 @@ local function lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>drn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>dca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>df", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
 	map("n", "gl", vim.diagnostic.open_float, { buffer = bufnr })
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>de", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>dq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-	vim.api.nvim_create_user_command("Format", function()
-		lsp_formatting(bufnr)
-	end, {})
 end
 
 local function on_attach(client, bufnr)
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client, bufnr)
-
-	if client.supports_method("textDocument/formatting") then
-		vim.api.nvim_clear_autocmds({ group = formattingAugroup, buffer = bufnr })
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			group = formattingAugroup,
-			buffer = bufnr,
-			callback = function()
-				lsp_formatting(bufnr)
-			end,
-		})
-	end
 end
 
 return {
@@ -147,8 +117,6 @@ return {
 			"folke/neodev.nvim", -- setup for init.lua and plugin development
 			{ "j-hui/fidget.nvim", opts = {} }, -- UI for nvim-lsp progress
 			"b0o/schemastore.nvim", -- SchemaStore catalog for use with jsonls and yamlls
-
-			"jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
 		},
 		lazy = false,
 		config = function()
@@ -259,22 +227,6 @@ return {
 			})
 			setup_diagnostics_layout()
 			require("fidget").setup({})
-			-- null-ls setup
-			local null_ls = require("null-ls")
-			local formatting = null_ls.builtins.formatting
-			null_ls.setup({
-				debug = false,
-				on_attach = on_attach,
-				sources = {
-					formatting.prettierd,
-					-- formatting.standardjs,
-					formatting.black,
-					formatting.isort,
-					formatting.stylua,
-					formatting.elm_format,
-					-- diagnostics.flake8,
-				},
-			})
 			-- keymaps
 			local opts = { noremap = true, silent = true }
 			vim.api.nvim_set_keymap("n", "<leader>dii", "<cmd>LspInstallInfo<CR>", opts)
