@@ -151,6 +151,7 @@ return {
 					"elm-format",
 					"isort",
 					"prettierd",
+					"regols",
 					"standardjs",
 					"stylua",
 				},
