@@ -11,8 +11,16 @@ return {
 			"hrsh7th/cmp-nvim-lua", -- neovim Lua API
 			"hrsh7th/cmp-nvim-lsp-signature-help", -- displaying function signatures with the current parameter emphasized
 			"saadparwaiz1/cmp_luasnip", -- snippets source for nvim-cmp
-			"L3MON4D3/LuaSnip", -- snippets plugin
-			"rafamadriz/friendly-snippets", -- a bunch of snippets to use
+			{
+				"L3MON4D3/LuaSnip", -- snippets plugin
+				build = "make install_jsregexp", -- for lsp-snippet-transformations
+				dependencies = {
+					"rafamadriz/friendly-snippets", -- a bunch of snippets to use
+				},
+				config = function()
+					require("luasnip.loaders.from_vscode").lazy_load()
+				end,
+			},
 		},
 		config = function()
 			local check_backspace = function()
@@ -36,6 +44,7 @@ return {
 				-- completion = {
 				--   autocomplete = false
 				-- },
+				---@diagnostic disable-next-line :missing-fields
 				performance = {
 					debounce = 500,
 				},
@@ -98,6 +107,7 @@ return {
 						end
 					end, { "i", "s" }),
 				},
+				---@diagnostic disable-next-line :missing-fields
 				formatting = {
 					format = function(entry, vim_item)
 						vim_item.kind = lspkind.presets.default[vim_item.kind]
