@@ -51,3 +51,4 @@ map("n", "<Leader>xh", [[:syntax sync fromstart<CR>]], { desc = "Fix syntax high
 -- invoking plugins
 map("n", "<leader>u", [[:UndotreeToggle<CR>]])
 map("n", "<leader>?", "<CMD>WhichKey<CR>")
+map("i", "<C-w>", require("which-key").show)

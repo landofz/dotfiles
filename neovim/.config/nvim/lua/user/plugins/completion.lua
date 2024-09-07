@@ -57,6 +57,9 @@ return {
 					documentation = cmp.config.window.bordered(),
 				},
 				mapping = {
+					["<C-w>"] = cmp.mapping(function()
+						require("which-key").show()
+					end),
 					["<C-u>"] = cmp.mapping.select_prev_item(),
 					["<C-d>"] = cmp.mapping.select_next_item(),
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
