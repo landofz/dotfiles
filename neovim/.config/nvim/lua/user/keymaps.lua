@@ -49,6 +49,5 @@ map("n", "g#", "g#zz")
 map("n", "<Leader>xh", [[:syntax sync fromstart<CR>]], { desc = "Fix syntax highlighting" })
 
 -- invoking plugins
-map("n", "<leader>n", [[:Lexplore<CR>]])
 map("n", "<leader>u", [[:UndotreeToggle<CR>]])
 map("n", "<leader>?", "<CMD>WhichKey<CR>")
