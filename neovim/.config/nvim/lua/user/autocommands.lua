@@ -1,14 +1,16 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
-local strip_whitespace = augroup("strip_whitespace", {})
+-- strip whitespace at EOL on save
+local strip_whitespace = augroup("loz-strip-whitespace", {})
 autocmd({ "BufWritePre" }, {
 	group = strip_whitespace,
 	pattern = "*",
 	command = "%s/\\s\\+$//e",
 })
 
-local yank_group = augroup("HighlightYank", {})
+-- highlight when yanking text
+local yank_group = augroup("loz-highlight-yank", {})
 autocmd("TextYankPost", {
 	group = yank_group,
 	pattern = "*",
@@ -20,12 +22,14 @@ autocmd("TextYankPost", {
 	end,
 })
 
-vim.cmd([[
-augroup _my_auto_resize
-  autocmd!
-  autocmd VimResized * tabdo wincmd =
-augroup end
+local resize_group = augroup("loz-auto-resize", {})
+autocmd("VimResized", {
+	group = resize_group,
+	pattern = "*",
+	command = "tabdo wincmd =",
+})
 
+vim.cmd([[
 augroup _my_filetype_indents
   autocmd!
   autocmd FileType javascript,typescript,typescriptreact setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -60,7 +64,7 @@ local new_zettel = function(opts)
 	local now = os.time()
 	local id = os.date("%Y%m%d%H%M%S", now)
 	local filename = vim.fn.expand("~/storage/Notebook/") .. id .. "_" .. dashed_title .. ".adoc"
-	vim.api.nvim_cmd({ cmd = "e", args = { filename } }, {})
+	vim.cmd({ cmd = "e", args = { filename } })
 	local buf = vim.api.nvim_get_current_buf()
 	local time = os.date("%Y-%m-%d %H:%M:%S", now)
 	vim.api.nvim_buf_set_lines(buf, 0, 1, false, {
