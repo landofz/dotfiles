@@ -9,6 +9,7 @@ return {
 				{ "<leader>g", group = "[G]it" },
 				{ "<leader>s", group = "[S]earch" },
 				{ "<leader>v", group = "Neo[v]im" },
+				{ "<leader>q", group = "[Q]uickfix" },
 				{ "<leader>x", group = "E[x]tra" },
 			},
 		},

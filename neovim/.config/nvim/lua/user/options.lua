@@ -23,8 +23,8 @@ local options = {
 	laststatus = 2, -- always show the status line
 	signcolumn = "yes", -- always show the sign column
 	showmode = false, -- mode is already shown in the status line
-	showcmd = true,
-	list = true,
+	showcmd = true, -- show command (or visual selection size) in the last line of the screen
+	list = true, -- display whitespace characters
 	listchars = { tab = "▸ ", trail = "·", eol = "¬", nbsp = "␣" },
 	-- ui
 	pumheight = 10, -- popup menu height
@@ -38,7 +38,7 @@ local options = {
 	showmatch = true,
 	lazyredraw = true,
 	updatetime = 250, -- decrease update time
-	timeoutlen = 300, -- decreate mapped sequence wait time, display which-key popup sooner
+	timeoutlen = 300, -- decrease mapped sequence wait time, display which-key popup sooner
 	inccommand = "split", -- preview substitutions live
 	-- search
 	incsearch = true, -- search dynamically while typing
