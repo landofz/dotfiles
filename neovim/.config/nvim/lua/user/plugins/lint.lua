@@ -5,7 +5,7 @@ return {
 		config = function()
 			local lint = require("lint")
 			lint.linters_by_ft = {
-				ansible = { "ansible_lint" },
+				["yaml.ansible"] = { "ansible_lint" },
 				javascript = { "standardjs" },
 			}
 			-- Create autocommand which carries out the actual linting
