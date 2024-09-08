@@ -26,9 +26,6 @@ shopt -s autocd
 # autocorrect minor spelling errors
 shopt -s dirspell
 shopt -s cdspell
-# use vars as cd destinations
-shopt -s cdable_vars
-export dotfiles=$HOME/dotfiles
 
 # make less more friendly for non-text input files, see lesspipe(1)
 if command -v lesspipe.sh > /dev/null; then eval "$(SHELL=/bin/sh lesspipe.sh)"; fi
@@ -59,10 +56,6 @@ else
 fi
 alias l='ls -CF'
 
-# alias cp='cp -i'
-# alias mv='mv -i'
-# alias rm='rm -i'
-
 if [[ -f $HOME/.nix-profile/share/bash-completion/bash_completion ]]; then
     . $HOME/.nix-profile/share/bash-completion/bash_completion
 fi
@@ -75,33 +68,20 @@ export VISUAL="$EDITOR"
 export BROWSER=browser.sh
 export LESS='--quit-if-one-screen --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 export PAGER=less
-# export WORKON_HOME=$HOME/virtualenv
 
-[[ -s $HOME/lib/up/up.sh ]] && source "$HOME/lib/up/up.sh"
-#[[ -s $HOME/.local/bin/virtualenvwrapper.sh ]] && source "$HOME/.local/bin/virtualenvwrapper.sh"
-#[[ -s $HOME/bash-powerline.sh ]] && source "$HOME/bash-powerline.sh"
-if command -v starship > /dev/null; then
-    eval "$(starship init bash)"
-fi
-[[ -s $HOME/.config/fzf/fzf.bash ]] && source "$HOME/.config/fzf/fzf.bash"
-[[ -s $HOME/lib/goto/goto.sh ]] && source "$HOME/lib/goto/goto.sh"
-
-alias gnvim='NVIM_TUI_ENABLE_TRUE_COLOR= nvim-wrapper'
+# ps
 alias psvim='ps aux | grep -v grep | grep vim'
 alias psbg='ps aux | grep "pts/[0-9]\+ \+T" | grep -v grep'
 alias psfg='ps aux | grep pts | grep -v "[/-]bash$" | grep "+" | grep -v tmux | grep -v grep | grep -v "ps aux"'
 alias psall='echo "--- BG ---"; psbg; echo "--- FG ---"; psfg'
+# config edit
 alias vibash="\$EDITOR \$HOME/.bashrc"
 alias vii3="cd \$HOME/.config/i3 && \$EDITOR config"
 alias vitmux="\$EDITOR \$HOME/.tmux.conf"
 alias vialacritty="\$EDITOR \$HOME/.config/alacritty/alacritty.toml"
 alias vimutt="cd \$HOME/.config/mutt && \$EDITOR muttrc"
 alias vivim="cd \$HOME/.config/nvim && \$EDITOR init.lua"
-alias ddgr="ddgr -n9"
-alias bat="bat -n"
-alias dpss='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
-alias yt='YTFZF_PLAYER=/usr/bin/mpv YTFZF_PLAYER_FORMAT="/usr/bin/mpv --ytdl-format=" ytfzf -f'
-
+# git
 alias gcm='git commit'
 alias gdf='git diff'
 alias gdm='git diff master'
@@ -112,12 +92,17 @@ alias gst='git status'
 alias gbv='git branch -vv'
 alias gpf='git push --force-with-lease'
 alias gun='git add -A && git commit -m "Update notes"'
-
 alias gad='git status | fpp -c "git add"'
 alias grh='git status | fpp -c "git reset HEAD"'
 alias gco='git status | fpp -c "git checkout"'
 alias gadp='git status | fpp -c "git add -p"'
 alias grs='git status | fpp -c "git restore"'
+# general
+alias bat="bat -n"
+alias dpss='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
+alias yt='YTFZF_PLAYER=/usr/bin/mpv YTFZF_PLAYER_FORMAT="/usr/bin/mpv --ytdl-format=" ytfzf -f'
+alias ddgr="ddgr -n9"
+alias gnvim='NVIM_TUI_ENABLE_TRUE_COLOR= nvim-wrapper'
 
 if [[ -f $HOME/.config/bash/private_aliases.sh ]]; then
     . $HOME/.config/bash/private_aliases.sh
@@ -126,6 +111,7 @@ if [[ -f $HOME/.config/bash/private_env.sh ]]; then
     . $HOME/.config/bash/private_env.sh
 fi
 
+# color man pages
 man() {
     env \
     LESS_TERMCAP_mb="$(printf "\e[1;31m")" \
@@ -180,6 +166,12 @@ export GHCUP_USE_XDG_DIRS=true
 
 unset -f pathadd
 
+[[ -s $HOME/lib/up/up.sh ]] && source "$HOME/lib/up/up.sh"
+if command -v starship > /dev/null; then
+    eval "$(starship init bash)"
+fi
+[[ -s $HOME/.config/fzf/fzf.bash ]] && source "$HOME/.config/fzf/fzf.bash"
+[[ -s $HOME/lib/goto/goto.sh ]] && source "$HOME/lib/goto/goto.sh"
 if command -v direnv > /dev/null; then
     eval "$(direnv hook bash)"
 fi
