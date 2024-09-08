@@ -1,8 +1,11 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 
+    # share goto database with bash
     set -g -x GOTO_DB $HOME/.config/goto
-    set -g -x MANPAGER "bat -l man"
+    # colored man pages
+    set -g -x MANPAGER "sh -c 'col -bx | bat -l man --theme Monokai\ Extended'"
+    set -g -x MANROFFOPT "-c"
 
     # ps
     abbr -a psvim 'ps aux | grep -v grep | grep vim'
