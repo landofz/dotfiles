@@ -44,9 +44,17 @@ if status is-interactive
     abbr -a dpss 'docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
     abbr -a yt 'YTFZF_PLAYER=/usr/bin/mpv YTFZF_PLAYER_FORMAT="/usr/bin/mpv --ytdl-format=" ytfzf -f'
 
-    source $HOME/lib/up/up.fish
+    # vim-like cursors
+    # set -g fish_key_bindings fish_vi_key_bindings
+    # set -g fish_cursor_default block blink
+    # set -g fish_cursor_insert line blink
+    # set -g fish_cursor_replace_one underscore blink
+    # set -g fish_cursor_visual block blink
+
+    # source $HOME/lib/up/up.fish
     fzf --fish | source
     starship init fish | source
     direnv hook fish | source
     atuin init fish | source
+    # atuin init fish --disable-up-arrow | source
 end
