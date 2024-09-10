@@ -44,6 +44,10 @@ if status is-interactive
     abbr -a dpss 'docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
     abbr -a yt 'YTFZF_PLAYER=/usr/bin/mpv YTFZF_PLAYER_FORMAT="/usr/bin/mpv --ytdl-format=" ytfzf -f'
 
+    if test -f "$HOME/.config/fish/local.fish"
+        source "$HOME/.config/fish/local.fish"
+    end
+
     # vim-like cursors
     # set -g fish_key_bindings fish_vi_key_bindings
     # set -g fish_cursor_default block blink
