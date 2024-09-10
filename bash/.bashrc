@@ -7,6 +7,7 @@
 # - keybinds
 # - shell bookmarks
 # - easier filetree navigation tools
+# - shell completions
 
 # if not running interactively, don't do anything
 [[ $- != *i* ]] && return
