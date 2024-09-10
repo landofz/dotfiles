@@ -10,7 +10,7 @@ if status is-interactive
     # ps
     abbr -a psvim 'ps aux | grep -v grep | grep vim'
     abbr -a psbg  'ps aux | grep "pts/[0-9]\+ \+T" | grep -v grep'
-    abbr -a psfg  'ps aux | grep pts | grep -v "[/-]bash$" | grep "+" | grep -v tmux | grep -v grep | grep -v "ps aux"'
+    abbr -a psfg  'ps aux | grep pts | grep -v "[/-]fish\$" | grep "+" | grep -v tmux | grep -v grep | grep -v "ps aux"'
     abbr -a psall 'echo "--- BG ---"; psbg; echo "--- FG ---"; psfg'
     # cofig edit
     abbr -a vibash      "\$EDITOR \$HOME/.bashrc"
