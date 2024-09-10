@@ -1,3 +1,13 @@
+# the purpose of this file is to set up interactive shell usage so it deals with:
+# - shell history
+# - prompt display
+# - aliases
+# - SSH agent
+# - direnv
+# - keybinds
+# - shell bookmarks
+# - easier filetree navigation tools
+
 # if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -31,6 +41,13 @@ shopt -s cdspell
 if command -v lesspipe.sh > /dev/null; then eval "$(SHELL=/bin/sh lesspipe.sh)"; fi
 
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+# start per system ssh-agent
+if command -v keychain > /dev/null; then
+    if [ -z "$SSH_AUTH_SOCK" ]; then
+        eval "$(keychain --eval --agents ssh)"
+    fi
+fi
 
 # enable color support of ls and also add handy aliases
 if command -v dircolors > /dev/null; then

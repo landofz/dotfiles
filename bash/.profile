@@ -14,7 +14,7 @@ umask 027
 # LC_TIME=en_GB.UTF-8 leads to yyyy-mm-dd hh:mm date/time output
 unset LC_ALL
 export LANG="hr_HR.UTF-8"
-export LC_CTYPE="C.UTF-8"
+export LC_CTYPE="C.UTF-8" # character classification rules (alpha, digit, ...) and text encoding
 export LC_MESSAGES="C.UTF-8"
 export LC_TIME="en_GB.UTF-8"
 # use machine's default time zone (man timezone)
@@ -32,12 +32,6 @@ pathadd() {
 if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi # added by Nix installer
 # mostly for shell completions
 export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
-
-if command -v keychain > /dev/null; then
-    if [ -z "$SSH_AUTH_SOCK" ]; then
-        eval "$(keychain --eval --agents ssh)"
-    fi
-fi
 
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/bin"
