@@ -111,7 +111,9 @@ return {
 	{
 		"ggandor/leap.nvim",
 		config = function()
-			require("leap").add_default_mappings()
+			vim.keymap.set({ "n", "x", "o" }, "<leader>e", "<Plug>(leap-forward)")
+			vim.keymap.set({ "n", "x", "o" }, "<leader>E", "<Plug>(leap-backward)")
+			vim.keymap.set({ "n", "x", "o" }, "gs", "<Plug>(leap-from-window)")
 		end,
 	}, -- make on-screen navigation quicker and more natural
 	{
