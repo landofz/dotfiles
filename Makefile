@@ -8,7 +8,7 @@ bash:
 .PHONY: bash
 
 fish:
-	mkdir -p $(HOME)/.config
+	mkdir -p $(HOME)/.config/fish
 	stow -t $(HOME) fish
 .PHONY: fish
 
