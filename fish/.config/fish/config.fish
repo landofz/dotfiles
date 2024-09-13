@@ -4,7 +4,7 @@ if status is-interactive
     # share goto database with bash
     set -g -x GOTO_DB $HOME/.config/goto
     # colored man pages
-    set -g -x MANPAGER "sh -c 'col -bx | bat -l man --theme Monokai\ Extended'"
+    set -g -x MANPAGER "sh -c 'col -bx | bat -l man --theme Monokai\ Extended --plain'"
     set -g -x MANROFFOPT "-c"
 
     # ps
