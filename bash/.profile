@@ -22,7 +22,7 @@ unset TZ
 
 pathadd() {
     case ":$PATH:" in
-        *":$1:"*) return ;;
+    *":$1:"*) return ;;
     esac
     if [ -d "$1" ]; then
         PATH="$1:$PATH"
@@ -31,7 +31,7 @@ pathadd() {
 
 if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi # added by Nix installer
 # mostly for shell completions
-export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
+if [ -d "$HOME/.nix-profile/share" ]; then export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"; fi
 
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/bin"
@@ -51,13 +51,13 @@ fi
 # https://sourceware.org/glibc/wiki/Release/2.27#Statically_compiled_applications_using_locales
 # for more info
 #export LOCALE_ARCHIVE_2_27="$(nix-build --no-out-link "<nixpkgs>" -A glibcLocales)/lib/locale/locale-archive"
-LOCALE_ARCHIVE_2_27="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
-export LOCALE_ARCHIVE_2_27
-export LOCALE_ARCHIVE="/usr/lib/locale"
+# LOCALE_ARCHIVE_2_27="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
+# export LOCALE_ARCHIVE_2_27
+# export LOCALE_ARCHIVE="/usr/lib/locale"
 
 if [ "$(tty)" = "/dev/tty1" ] && [ -z "${DISPLAY}" ]; then
     unicode_start
-    if command -v startx > /dev/null; then
+    if command -v startx >/dev/null; then
         startx
         logout
     fi
