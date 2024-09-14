@@ -161,6 +161,7 @@ return {
 			require("mason-tool-installer").setup({
 				ensure_installed = {
 					"ansible-lint",
+					"bashls",
 					"black",
 					"clangd",
 					"elm-format",
@@ -168,6 +169,8 @@ return {
 					"jsonls",
 					"prettierd",
 					"regols",
+					"shellcheck",
+					"shfmt",
 					"standardjs",
 					"stylua",
 					"yamlls",
