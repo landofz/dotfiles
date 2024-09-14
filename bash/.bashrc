@@ -39,19 +39,19 @@ shopt -s dirspell
 shopt -s cdspell
 
 # make less more friendly for non-text input files, see lesspipe(1)
-if command -v lesspipe.sh > /dev/null; then eval "$(SHELL=/bin/sh lesspipe.sh)"; fi
+if command -v lesspipe.sh >/dev/null; then eval "$(SHELL=/bin/sh lesspipe.sh)"; fi
 
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # start per system ssh-agent
-if command -v keychain > /dev/null; then
+if command -v keychain >/dev/null; then
     if [ -z "$SSH_AUTH_SOCK" ]; then
         eval "$(keychain --eval --agents ssh)"
     fi
 fi
 
 # enable color support of ls and also add handy aliases
-if command -v dircolors > /dev/null; then
+if command -v dircolors >/dev/null; then
     if [[ -r $HOME/.config/dircolors ]]; then
         eval "$(dircolors -b $HOME/.config/dircolors)"
     else
@@ -64,7 +64,7 @@ if command -v dircolors > /dev/null; then
     alias egrep='egrep --color=auto'
 fi
 
-if command -v exa > /dev/null; then
+if command -v exa >/dev/null; then
     alias ll='exa -lg'
     alias la='exa -a'
     alias lt='exa --tree'
@@ -132,23 +132,23 @@ fi
 # color man pages
 man() {
     env \
-    LESS_TERMCAP_mb="$(printf "\e[1;31m")" \
-    LESS_TERMCAP_md="$(printf "\e[1;31m")" \
-    LESS_TERMCAP_me="$(printf "\e[0m")" \
-    LESS_TERMCAP_se="$(printf "\e[0m")" \
-    LESS_TERMCAP_so="$(printf "\e[1;44;33m")" \
-    LESS_TERMCAP_ue="$(printf "\e[0m")" \
-    LESS_TERMCAP_us="$(printf "\e[1;32m")" \
-    man "${@}"
+        LESS_TERMCAP_mb="$(printf "\e[1;31m")" \
+        LESS_TERMCAP_md="$(printf "\e[1;31m")" \
+        LESS_TERMCAP_me="$(printf "\e[0m")" \
+        LESS_TERMCAP_se="$(printf "\e[0m")" \
+        LESS_TERMCAP_so="$(printf "\e[1;44;33m")" \
+        LESS_TERMCAP_ue="$(printf "\e[0m")" \
+        LESS_TERMCAP_us="$(printf "\e[1;32m")" \
+        man "${@}"
 }
 
 zet() {
-  nvim "+Zet $*"
+    nvim "+Zet $*"
 }
 
 pathadd() {
     case ":$PATH:" in
-        *":$1:"*) return ;;
+    *":$1:"*) return ;;
     esac
     if [ -d "$1" ]; then
         PATH="$1:$PATH"
@@ -185,11 +185,11 @@ export GHCUP_USE_XDG_DIRS=true
 unset -f pathadd
 
 [[ -s $HOME/lib/up/up.sh ]] && source "$HOME/lib/up/up.sh"
-if command -v starship > /dev/null; then
+if command -v starship >/dev/null; then
     eval "$(starship init bash)"
 fi
 [[ -s $HOME/.config/fzf/fzf.bash ]] && source "$HOME/.config/fzf/fzf.bash"
 [[ -s $HOME/lib/goto/goto.sh ]] && source "$HOME/lib/goto/goto.sh"
-if command -v direnv > /dev/null; then
+if command -v direnv >/dev/null; then
     eval "$(direnv hook bash)"
 fi
