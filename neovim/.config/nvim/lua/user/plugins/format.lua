@@ -45,6 +45,7 @@ return {
 				javascript = { "prettierd", "standardjs", stop_after_first = true },
 				typescript = { "prettierd" },
 				elm = { "elm-format" },
+				nix = { "nixpkgs_fmt" },
 			},
 		},
 	},

@@ -167,6 +167,8 @@ return {
 					"elm-format",
 					"isort",
 					"jsonls",
+					"nil_ls",
+					"nixpkgs-fmt",
 					"prettierd",
 					"regols",
 					"shellcheck",
