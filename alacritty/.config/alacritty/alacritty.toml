@@ -1,3 +1,6 @@
+[shell]
+program = "/usr/bin/fish"
+
 [colors.bright]
 black = "#555753"
 blue = "#729fcf"

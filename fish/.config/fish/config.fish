@@ -6,6 +6,8 @@ if status is-interactive
     # colored man pages
     set -g -x MANPAGER "sh -c 'col -bx | bat -l man --theme Monokai\ Extended --plain'"
     set -g -x MANROFFOPT "-c"
+    # set preferred shell to fish
+    set -g -x SHELL "$(status fish-path)"
 
     # ps
     abbr -a psvim 'ps aux | grep -v grep | grep vim'
