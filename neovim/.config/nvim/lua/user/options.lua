@@ -6,7 +6,7 @@ local options = {
 	undofile = true, -- save undo history
 	-- security
 	modelines = 0,
-	shell = "sh",
+	shell = "/bin/sh",
 	-- tabs/spaces
 	tabstop = 4,
 	shiftwidth = 4,
