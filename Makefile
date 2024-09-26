@@ -22,6 +22,11 @@ fzf:
 	stow -t $(HOME) fzf
 .PHONY: fzf
 
+rofi:
+	mkdir -p $(HOME)/.config/rofi
+	stow -t $(HOME) rofi
+.PHONY: rofi
+
 xdg:
 	mkdir -p $(HOME)/.config
 	stow -t $(HOME) xdg
