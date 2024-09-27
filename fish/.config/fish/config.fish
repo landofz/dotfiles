@@ -61,6 +61,7 @@ if status is-interactive
     # set -g fish_cursor_replace_one underscore blink
     # set -g fish_cursor_visual block blink
 
+    complete -c up -fa "(_up)"
     # source $HOME/lib/up/up.fish
     fzf --fish | source
     starship init fish | source
