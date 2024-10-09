@@ -115,7 +115,7 @@ return {
 			vim.keymap.set({ "n", "x", "o" }, "<leader>E", "<Plug>(leap-backward)")
 			vim.keymap.set({ "n", "x", "o" }, "gs", "<Plug>(leap-from-window)")
 		end,
-	}, -- make on-screen navigation quicker and more natural
+	}, -- make on-screen navigation quicker and more natural, an alternative is https://github.com/folke/flash.nvim
 	{
 		"anuvyklack/hydra.nvim",
 		config = function()
@@ -170,6 +170,26 @@ return {
 		"famiu/bufdelete.nvim",
 		config = function()
 			vim.keymap.set("n", "<leader>bd", require("bufdelete").bufdelete, { desc = "[b]uffer [d]elete" })
+		end,
+	},
+	{ -- a general purpose UI library with greeter functionality
+		"goolord/alpha-nvim",
+		-- config = function()
+		-- 	require("alpha").setup(require("alpha.themes.dashboard").config)
+		-- end,
+	},
+	{
+		"NvChad/nvim-colorizer.lua",
+		config = function()
+			vim.keymap.set("n", "<leader>xc", function()
+				local col = require("colorizer")
+				local opts = { mode = "background", css = true }
+				if col.is_buffer_attached(0) then
+					col.detach_from_buffer(0)
+				else
+					col.attach_to_buffer(0, opts)
+				end
+			end, { desc = "toggle colorizer" })
 		end,
 	},
 }
