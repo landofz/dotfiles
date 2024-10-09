@@ -46,6 +46,8 @@ return {
 				typescript = { "prettierd" },
 				elm = { "elm-format" },
 				nix = { "nixpkgs_fmt" },
+				yaml = { "prettierd" },
+				xml = { "prettierd" },
 			},
 		},
 	},
