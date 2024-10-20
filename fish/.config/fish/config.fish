@@ -1,6 +1,11 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 
+    # disable XON/XOFF flow control
+    stty -ixon
+    # disable sending of start/stop characters
+    stty -ixoff
+
     # share goto database with bash
     set -g -x GOTO_DB $HOME/.config/goto
     # colored man pages

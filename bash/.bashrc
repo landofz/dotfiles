@@ -38,6 +38,11 @@ shopt -s autocd
 shopt -s dirspell
 shopt -s cdspell
 
+# disable XON/XOFF flow control
+stty -ixon
+# disable sending of start/stop characters
+stty -ixoff
+
 # make less more friendly for non-text input files, see lesspipe(1)
 if command -v lesspipe.sh >/dev/null; then eval "$(SHELL=/bin/sh lesspipe.sh)"; fi
 
