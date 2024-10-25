@@ -12,6 +12,12 @@
 # if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# uncomment to exec into fish if interactive
+# if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]; then
+#     shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
+#     exec fish $LOGIN_OPTION
+# fi
+
 # don't record duplicate commands and ones starting with space
 HISTCONTROL='erasedups:ignoreboth'
 # don't record one and two letter commands
