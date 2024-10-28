@@ -1,4 +1,4 @@
-[shell]
+[terminal.shell]
 program = "/usr/bin/fish"
 
 [colors.bright]
@@ -56,3 +56,5 @@ mods = "Control|Shift"
 [hints.enabled.mouse]
 enabled = true
 mods = "Control"
+
+[terminal]
