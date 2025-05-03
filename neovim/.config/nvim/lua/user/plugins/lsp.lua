@@ -125,11 +125,13 @@ return {
 			"williamboman/mason-lspconfig.nvim", -- bridges mason.nvim with lspconfig
 			"WhoIsSethDaniel/mason-tool-installer.nvim", -- installs third-party tools
 			{
-				"simrat39/symbols-outline.nvim",
-				config = function()
-					require("symbols-outline").setup()
-					vim.keymap.set("n", "<leader>do", [[:SymbolsOutline<CR>]])
-				end,
+				"hedyhli/outline.nvim",
+				lazy = true,
+				cmd = { "Outline", "OutlineOpen" },
+				keys = {
+					{ "<leader>do", "<cmd>Outline<CR>", desc = "Toggle outline" },
+				},
+				opts = {},
 			}, -- display symbols using LSP
 			{ "j-hui/fidget.nvim", opts = {} }, -- UI for nvim-lsp progress
 			"b0o/schemastore.nvim", -- SchemaStore catalog for use with jsonls and yamlls
