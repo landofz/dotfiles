@@ -72,6 +72,7 @@ if status is-interactive
     starship init fish | source
     direnv hook fish | source
     atuin init fish | source
-    zoxide init fish | source
     # atuin init fish --disable-up-arrow | source
+    zoxide init fish | source
+    # pyenv init - fish | source # done by bash during login
 end
