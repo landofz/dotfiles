@@ -166,6 +166,7 @@ return {
 					"bashls",
 					"black",
 					"clangd",
+					"clang-format",
 					"elm-format",
 					"isort",
 					"jsonls",
