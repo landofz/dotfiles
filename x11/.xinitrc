@@ -29,6 +29,7 @@ XSECURELOCK_BLANK_TIMEOUT=10 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecu
 if [ -e "$HOME/Pictures/wall.jpg" ]; then
     xwallpaper --stretch "$HOME/Pictures/wall.jpg"
 fi
+# enable touchpad tap to click
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
 # picom &
