@@ -50,7 +50,11 @@ stty -ixon
 stty -ixoff
 
 # make less more friendly for non-text input files, see lesspipe(1)
-if command -v lesspipe.sh >/dev/null; then eval "$(SHELL=/bin/sh lesspipe.sh)"; fi
+if command -v lesspipe.sh >/dev/null; then
+    eval "$(SHELL=/bin/sh lesspipe.sh)"
+elif command -v lesspipe >/dev/null; then
+    eval "$(SHELL=/bin/sh lesspipe)"
+fi
 
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
