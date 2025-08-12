@@ -21,7 +21,7 @@
 # don't record duplicate commands and ones starting with space
 HISTCONTROL='erasedups:ignoreboth'
 # don't record one and two letter commands
-HISTIGNORE=?:??
+HISTIGNORE='?:??'
 # append to history file, don't overwrite
 shopt -s histappend
 # save multi-line commands as one command
@@ -68,7 +68,7 @@ fi
 # enable color support of ls and also add handy aliases
 if command -v dircolors >/dev/null; then
     if [[ -r $HOME/.config/dircolors ]]; then
-        eval "$(dircolors -b $HOME/.config/dircolors)"
+        eval "$(dircolors -b "$HOME/.config/dircolors")"
     else
         eval "$(dircolors -b)"
     fi
@@ -153,10 +153,12 @@ alias ddgr="ddgr -n9"
 alias gnvim='NVIM_TUI_ENABLE_TRUE_COLOR= nvim-wrapper'
 
 if [[ -f $HOME/.config/bash/private_aliases.sh ]]; then
-    . $HOME/.config/bash/private_aliases.sh
+    # shellcheck disable=SC1091
+    . "$HOME/.config/bash/private_aliases.sh"
 fi
 if [[ -f $HOME/.config/bash/private_env.sh ]]; then
-    . $HOME/.config/bash/private_env.sh
+    # shellcheck disable=SC1091
+    . "$HOME/.config/bash/private_env.sh"
 fi
 
 # color man pages
@@ -189,6 +191,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 if [[ -d $PYENV_ROOT ]]; then
     pathadd "$PYENV_ROOT/bin"
     pathadd "$PYENV_ROOT/shims"
+    # shellcheck disable=SC1091
     source "$PYENV_ROOT/completions/pyenv.bash"
 fi
 # goenv
@@ -196,6 +199,7 @@ export GOENV_ROOT="$HOME/.goenv"
 if [[ -d $GOENV_ROOT ]]; then
     pathadd "$GOENV_ROOT/bin"
     pathadd "$GOENV_ROOT/shims"
+    # shellcheck disable=SC1091
     source "$GOENV_ROOT/completions/goenv.bash"
 fi
 # plenv
