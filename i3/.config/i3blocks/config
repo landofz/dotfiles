@@ -182,3 +182,9 @@ interval=10
 #instance=NUM
 #interval=once
 #signal=11
+
+[separator]
+full_text=
+align=center
+color=#8ae234
+separator_block_width=1
