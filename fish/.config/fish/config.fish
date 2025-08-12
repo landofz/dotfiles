@@ -30,6 +30,7 @@ if status is-interactive
     abbr -a vialacritty "\$EDITOR \$HOME/.config/alacritty/alacritty.toml"
     abbr -a vimutt      "cd \$HOME/.config/mutt && \$EDITOR muttrc"
     abbr -a vivim       "cd \$HOME/.config/nvim && \$EDITOR init.lua"
+    abbr -a vifish      "cd \$HOME/.config/fish && \$EDITOR config.fish"
     # ls
     abbr -a ll 'exa -lg'
     abbr -a la 'exa -a'
@@ -51,7 +52,7 @@ if status is-interactive
     abbr -a gadp 'git status | fpp -c "git add -p"'
     abbr -a grs  'git status | fpp -c "git restore"'
     # general
-    abbr -a bat "bat -n"
+    abbr -a batn "bat -n"
     abbr -a dpss 'docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
     abbr -a yt 'YTFZF_PLAYER=/usr/bin/mpv YTFZF_PLAYER_FORMAT="/usr/bin/mpv --ytdl-format=" ytfzf -f'
 

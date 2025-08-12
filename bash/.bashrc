@@ -129,6 +129,7 @@ alias vitmux="\$EDITOR \$HOME/.tmux.conf"
 alias vialacritty="\$EDITOR \$HOME/.config/alacritty/alacritty.toml"
 alias vimutt="cd \$HOME/.config/mutt && \$EDITOR muttrc"
 alias vivim="cd \$HOME/.config/nvim && \$EDITOR init.lua"
+alias vifish="cd \$HOME/.config/fish && \$EDITOR config.fish"
 # git
 alias gcm='git commit'
 alias gdf='git diff'
@@ -146,7 +147,7 @@ alias gco='git status | fpp -c "git checkout"'
 alias gadp='git status | fpp -c "git add -p"'
 alias grs='git status | fpp -c "git restore"'
 # general
-alias bat="bat -n"
+alias batn="bat -n"
 alias dpss='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
 alias yt='YTFZF_PLAYER=/usr/bin/mpv YTFZF_PLAYER_FORMAT="/usr/bin/mpv --ytdl-format=" ytfzf -f'
 alias ddgr="ddgr -n9"
