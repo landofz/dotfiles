@@ -1,3 +1,4 @@
+# https://github.com/matusf/goto/blob/master/functions/goto.fish
 function __goto_usage
     printf "\
  usage: goto [<option>] <alias> [<directory>]

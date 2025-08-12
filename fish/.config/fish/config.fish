@@ -60,12 +60,18 @@ if status is-interactive
         source "$HOME/.config/fish/local.fish"
     end
 
+    # vi mode
     # vim-like cursors
     # set -g fish_key_bindings fish_vi_key_bindings
     # set -g fish_cursor_default block blink
     # set -g fish_cursor_insert line blink
     # set -g fish_cursor_replace_one underscore blink
     # set -g fish_cursor_visual block blink
+    # switch to normal mode with `jj`
+    # more info at https://fishshell.com/docs/current/interactive.html#key-sequences
+    # bind -M insert -m default j,j cancel repaint-mode
+    # only wait 200ms for the second `j`
+    # set -g fish_sequence_key_delay_ms 200
 
     complete -c up -fa "(_up)"
     # source $HOME/lib/up/up.fish
