@@ -89,11 +89,25 @@ else
 fi
 alias l='ls -CF'
 
+if [[ -d $HOME/.nix-profile/share/bash-completion/completions ]]; then
+    for i in "$HOME"/.nix-profile/share/bash-completion/completions/*; do
+        if [[ -r $i ]]; then
+            # shellcheck disable=SC1090
+            . "$i"
+        fi
+    done
+    unset i
+fi
 if [[ -f $HOME/.nix-profile/share/bash-completion/bash_completion ]]; then
-    . $HOME/.nix-profile/share/bash-completion/bash_completion
+    # shellcheck disable=SC1091
+    . "$HOME/.nix-profile/share/bash-completion/bash_completion"
 fi
 if [[ -f /usr/share/bash-completion/bash_completion ]]; then
+    # shellcheck disable=SC1091
     . /usr/share/bash-completion/bash_completion
+elif [[ -f /etc/bash_completion ]]; then
+    # shellcheck disable=SC1091
+    . /etc/bash_completion
 fi
 
 # default programs
