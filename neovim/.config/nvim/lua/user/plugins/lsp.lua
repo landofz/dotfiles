@@ -227,19 +227,15 @@ return {
 					},
 				},
 			}
-			require("mason-lspconfig").setup({
-				handlers = {
-					function(server_name)
-						local server = servers[server_name] or {}
-						-- This handles overriding only values explicitly passed
-						-- by the server configuration above. Useful when disabling
-						-- certain features of an LSP (for example, turning off formatting for ts_ls)
-						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-						server.on_attach = on_attach
-						require("lspconfig")[server_name].setup(server)
-					end,
-				},
-			})
+			-- TODO: iterate over all installed servers, not just explicitly listed ones
+			for name, server in pairs(servers) do
+				-- This handles overriding only values explicitly passed
+				-- by the server configuration above. Useful when disabling
+				-- certain features of an LSP (for example, turning off formatting for ts_ls)
+				server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+				server.on_attach = on_attach
+				vim.lsp.config(name, server)
+			end
 			setup_diagnostics_layout()
 			require("fidget").setup({})
 			-- keymaps
