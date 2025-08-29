@@ -29,26 +29,54 @@ autocmd("VimResized", {
 	command = "tabdo wincmd =",
 })
 
-vim.cmd([[
-augroup _my_filetype_indents
-  autocmd!
-  autocmd FileType javascript,typescript,typescriptreact setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-  autocmd FileType json,html,htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-  autocmd FileType terraform setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-  autocmd FileType lua setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-  autocmd FileType scss setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-  autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-  autocmd FileType purescript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-augroup END
-
-augroup _my_filetype_generic
-  autocmd!
-  autocmd FileType mail setlocal spell
-  autocmd FileType gitcommit setlocal spell
-  autocmd FileType qf set nobuflisted
-  autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
-augroup END
-]])
+local indent_group = augroup("loz-filetype-indents", {})
+autocmd("FileType", {
+	group = indent_group,
+	pattern = {
+		"javascript",
+		"typescript",
+		"typescriptreact",
+		"json",
+		"html",
+		"htmldjango",
+		"terraform",
+		"lua",
+		"scss",
+		"yaml",
+		"purescript",
+	},
+	callback = function()
+		vim.opt_local.tabstop = 2
+		vim.opt_local.shiftwidth = 2
+		vim.opt_local.softtabstop = 2
+		vim.opt_local.expandtab = true
+	end,
+})
+local generic_group = augroup("loz-filetype-generic", {})
+autocmd("FileType", {
+	group = generic_group,
+	pattern = { "mail", "gitcommit" },
+	callback = function()
+		vim.opt_local.spell = true
+	end,
+})
+autocmd("FileType", {
+	group = generic_group,
+	pattern = { "qf" },
+	callback = function()
+		vim.opt.buflisted = false
+	end,
+})
+autocmd("FileType", {
+	group = generic_group,
+	pattern = { "qf", "help", "man", "lspinfo" },
+	callback = function()
+		vim.keymap.set("n", "q", function()
+			vim.api.nvim_win_close(0, false)
+		end, { buffer = 0, silent = true })
+		vim.opt.buflisted = false
+	end,
+})
 
 local command = vim.api.nvim_create_user_command
 -- command flubs
