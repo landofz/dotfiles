@@ -31,19 +31,11 @@ local function setup_diagnostics_layout()
 	}
 
 	vim.diagnostic.config(config)
-
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-	})
-
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
-	})
 end
 
 -- for highlighting references of the word under the cursor
 local function lsp_highlight_document(client, bufnr)
-	if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+	if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
 		local highlight_augroup = vim.api.nvim_create_augroup("loz-lsp-highlight", { clear = false })
 		vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 			buffer = bufnr,
@@ -94,7 +86,7 @@ local function lsp_keymaps(client, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>dq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
-	if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+	if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
 		vim.keymap.set("n", "<leader>th", function()
 			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }))
 		end, { buffer = bufnr, desc = "LSP: [T]oggle Inlay [H]ints" })

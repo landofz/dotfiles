@@ -47,6 +47,7 @@ local options = {
 	smartcase = true,
 	-- diff
 	diffopt = "vertical,filler,context:3,indent-heuristic,algorithm:patience,internal",
+	winborder = "rounded",
 }
 
 for k, v in pairs(options) do
