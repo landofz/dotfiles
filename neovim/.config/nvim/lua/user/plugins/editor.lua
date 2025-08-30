@@ -12,6 +12,7 @@ return {
 	{
 		"numToStr/Comment.nvim",
 		config = function()
+			---@diagnostic disable-next-line: missing-fields
 			require("Comment").setup({
 				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 				-- pre_hook = function(ctx)
@@ -66,6 +67,7 @@ return {
 						if vim.wo.diff then
 							vim.cmd.normal({ "]c", bang = true })
 						else
+							---@diagnostic disable-next-line: param-type-mismatch
 							gitsigns.nav_hunk("next")
 						end
 					end, { desc = "Go to next hunk" })
@@ -73,6 +75,7 @@ return {
 						if vim.wo.diff then
 							vim.cmd.normal({ "[c", bang = true })
 						else
+							---@diagnostic disable-next-line: param-type-mismatch
 							gitsigns.nav_hunk("prev")
 						end
 					end, { desc = "Go to previous hunk" })
@@ -82,23 +85,22 @@ return {
 					map("n", "<leader>gr", gitsigns.reset_hunk, { desc = "Reset hunk" })
 					map("v", "<leader>gs", function()
 						gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-					end)
+					end, { desc = "Stage hunk" })
 					map("v", "<leader>gr", function()
 						gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-					end)
-					map("n", "<leader>gS", gitsigns.stage_buffer)
-					map("n", "<leader>gu", gitsigns.undo_stage_hunk)
-					map("n", "<leader>gR", gitsigns.reset_buffer)
-					map("n", "<leader>gp", gitsigns.preview_hunk)
+					end, { desc = "Reset hunk" })
+					map("n", "<leader>gS", gitsigns.stage_buffer, { desc = "Stage buffer" })
+					map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "Reset buffer" })
+					map("n", "<leader>gp", gitsigns.preview_hunk, { desc = "Preview hunk" })
 					map("n", "<leader>gb", function()
 						gitsigns.blame_line({ full = true })
-					end)
-					map("n", "<leader>gtb", gitsigns.toggle_current_line_blame)
-					map("n", "<leader>gd", gitsigns.diffthis)
+					end, { desc = "Blame line" })
+					map("n", "<leader>gB", gitsigns.toggle_current_line_blame, { desc = "Toggle current line blame" })
+					map("n", "<leader>gd", gitsigns.diffthis, { desc = "Diff against index" })
 					map("n", "<leader>gD", function()
+						---@diagnostic disable-next-line: param-type-mismatch
 						gitsigns.diffthis("~")
-					end)
-					map("n", "<leader>gtd", gitsigns.toggle_deleted)
+					end, { desc = "Diff against the last commit" })
 
 					-- Text object
 					map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
