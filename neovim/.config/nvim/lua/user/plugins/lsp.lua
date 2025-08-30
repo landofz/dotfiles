@@ -1,32 +1,30 @@
 local function setup_diagnostics_layout()
-	local signs = {
-		{ name = "DiagnosticSignError", text = "" },
-		{ name = "DiagnosticSignWarn", text = "" },
-		{ name = "DiagnosticSignHint", text = "" },
-		{ name = "DiagnosticSignInfo", text = "" },
-	}
-
-	for _, sign in ipairs(signs) do
-		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-	end
-
+	---@type vim.diagnostic.Opts
 	local config = {
 		-- disable virtual text
 		virtual_text = false,
 		-- show signs
 		signs = {
-			active = signs,
+			text = {
+				[vim.diagnostic.severity.ERROR] = "",
+				[vim.diagnostic.severity.WARN] = "",
+				[vim.diagnostic.severity.HINT] = "",
+				[vim.diagnostic.severity.INFO] = "",
+			},
+			linehl = {
+				[vim.diagnostic.severity.ERROR] = "ErrorMsg",
+			},
+			numhl = {
+				[vim.diagnostic.severity.WARN] = "WarningMsg",
+			},
 		},
 		update_in_insert = true,
 		underline = true,
 		severity_sort = true,
 		float = {
-			focusable = false,
-			style = "minimal",
 			border = "rounded",
-			source = "always",
+			source = true,
 			header = "",
-			prefix = "",
 		},
 	}
 
@@ -63,6 +61,7 @@ local function lsp_keymaps(client, bufnr)
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_set_option_value("omnifunc", "v:lua.vim.lsp.omnifunc", { buf = bufnr })
 
+	---@type vim.api.keyset.keymap
 	local opts = { noremap = true, silent = true }
 	local map = vim.keymap.set
 	-- Mappings.
@@ -105,7 +104,7 @@ return {
 		opts = {
 			library = {
 				-- load luvit types when the `vim.uv` word is found
-				{ path = "luvit-meta/library", words = { "vim%.uv" } },
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
 			},
 		},
 	},
@@ -175,6 +174,7 @@ return {
 			})
 			-- this only needs to contain servers with extra config, capabilities and
 			-- on_attach will be added to all installed servers below
+			---@type { [string]: vim.lsp.Config }
 			local servers = {
 				lua_ls = {
 					settings = {
@@ -231,6 +231,7 @@ return {
 			setup_diagnostics_layout()
 			require("fidget").setup({})
 			-- keymaps
+			---@type vim.api.keyset.keymap
 			local opts = { noremap = true, silent = true }
 			vim.api.nvim_set_keymap("n", "<leader>dii", "<cmd>LspInstallInfo<CR>", opts)
 			vim.api.nvim_set_keymap("n", "<leader>dig", "<cmd>LspInfo<CR>", opts)
