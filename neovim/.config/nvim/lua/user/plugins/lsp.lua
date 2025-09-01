@@ -137,38 +137,38 @@ return {
 			end
 			require("mason").setup({})
 			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"ansiblels",
-					"docker_compose_language_service",
-					"dockerls",
-					"elmls",
-					"gopls",
-					"lua_ls",
-					"purescriptls",
-					"pyright",
-					"rust_analyzer",
-					"terraformls",
-					"ts_ls",
-				},
+				ensure_installed = {}, -- explicitly set to empty table se we use mason-tool-installer
+				automatic_installation = false,
 			})
 			require("mason-tool-installer").setup({
 				ensure_installed = {
 					"ansible-lint",
+					"ansiblels",
 					"bashls",
 					"black",
 					"clangd",
 					"clang-format",
+					"docker_compose_language_service",
+					"dockerls",
 					"elm-format",
+					"elmls",
+					"gopls",
 					"isort",
 					"jsonls",
+					"lua_ls",
 					"nil_ls",
 					"nixpkgs-fmt",
 					"prettierd",
+					"purescriptls",
+					"pyright",
 					"regols",
+					"rust_analyzer",
 					"shellcheck",
 					"shfmt",
 					"standardjs",
 					"stylua",
+					"terraformls",
+					"ts_ls",
 					"yamlls",
 				},
 			})
