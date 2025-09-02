@@ -46,7 +46,7 @@ urxvt:
 
 neovim:
 	mkdir -p $(HOME)/bin
-	mkdir -p $(HOME)/.config/nvim
+	mkdir -p $(HOME)/.config
 	mkdir -p $(HOME)/.local/share/applications
 	mkdir -p $(HOME)/.local/share/icons
 	stow -t $(HOME) neovim
