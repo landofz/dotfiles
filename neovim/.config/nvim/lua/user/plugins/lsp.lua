@@ -11,12 +11,6 @@ local function setup_diagnostics_layout()
 				[vim.diagnostic.severity.HINT] = "",
 				[vim.diagnostic.severity.INFO] = "",
 			},
-			linehl = {
-				[vim.diagnostic.severity.ERROR] = "ErrorMsg",
-			},
-			numhl = {
-				[vim.diagnostic.severity.WARN] = "WarningMsg",
-			},
 		},
 		update_in_insert = true,
 		underline = true,
