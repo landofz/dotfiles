@@ -5,6 +5,7 @@ return {
 		config = function()
 			local lint = require("lint")
 			lint.linters_by_ft = {
+				lua = { "selene" },
 				["yaml.ansible"] = { "ansible_lint" },
 				javascript = { "standardjs" },
 			}

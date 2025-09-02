@@ -151,6 +151,7 @@ return {
 				"pyright",
 				"regols",
 				"rust_analyzer",
+				"selene",
 				"shellcheck",
 				"shfmt",
 				"standardjs",
