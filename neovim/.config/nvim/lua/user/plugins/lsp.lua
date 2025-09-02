@@ -135,45 +135,47 @@ return {
 			if status_ok then
 				capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 			end
+			local ensure_installed = {
+				"ansible-lint",
+				"ansiblels",
+				"bashls",
+				"black",
+				"clangd",
+				"clang-format",
+				"docker_compose_language_service",
+				"dockerls",
+				"elm-format",
+				"elmls",
+				"gopls",
+				"isort",
+				"jsonls",
+				"lua_ls",
+				"nil_ls",
+				"nixpkgs-fmt",
+				"prettierd",
+				"purescriptls",
+				"pyright",
+				"regols",
+				"rust_analyzer",
+				"shellcheck",
+				"shfmt",
+				"standardjs",
+				"stylua",
+				"terraformls",
+				"ts_ls",
+				"xmlformatter",
+				"yamlls",
+			}
 			require("mason").setup({})
+			require("mason-tool-installer").setup({
+				ensure_installed = ensure_installed,
+			})
 			require("mason-lspconfig").setup({
-				ensure_installed = {}, -- explicitly set to empty table se we use mason-tool-installer
+				ensure_installed = {}, -- explicitly set to empty table since we use mason-tool-installer
 				automatic_installation = false,
 			})
-			require("mason-tool-installer").setup({
-				ensure_installed = {
-					"ansible-lint",
-					"ansiblels",
-					"bashls",
-					"black",
-					"clangd",
-					"clang-format",
-					"docker_compose_language_service",
-					"dockerls",
-					"elm-format",
-					"elmls",
-					"gopls",
-					"isort",
-					"jsonls",
-					"lua_ls",
-					"nil_ls",
-					"nixpkgs-fmt",
-					"prettierd",
-					"purescriptls",
-					"pyright",
-					"regols",
-					"rust_analyzer",
-					"shellcheck",
-					"shfmt",
-					"standardjs",
-					"stylua",
-					"terraformls",
-					"ts_ls",
-					"yamlls",
-				},
-			})
-			-- this only needs to contain servers with extra config, capabilities and
-			-- on_attach will be added to all installed servers below
+			-- This only needs to contain servers with extra config. Capabilities and
+			-- on_attach will be added to all installed servers below.
 			---@type { [string]: vim.lsp.Config }
 			local servers = {
 				lua_ls = {
@@ -219,11 +221,15 @@ return {
 					},
 				},
 			}
-			-- TODO: iterate over all installed servers, not just explicitly listed ones
-			for name, server in pairs(servers) do
+			local installed = require("mason-lspconfig").get_installed_servers()
+			for _, name in pairs(installed) do
+				local server = {}
+				if servers[name] then
+					server = servers[name]
+				end
 				-- This handles overriding only values explicitly passed
 				-- by the server configuration above. Useful when disabling
-				-- certain features of an LSP (for example, turning off formatting for ts_ls)
+				-- certain features of an LSP (for example, turning off formatting for ts_ls).
 				server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 				server.on_attach = on_attach
 				vim.lsp.config(name, server)
