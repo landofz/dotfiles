@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if ! type config-changes >/dev/null; then
+    echo ""
+    echo ""
+    echo "#FF0000"
+    exit
+fi
+config-changes
