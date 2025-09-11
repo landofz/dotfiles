@@ -91,15 +91,17 @@ local new_zettel = function(opts)
 	local dashed_title = string.gsub(opts.args, " ", "-")
 	local now = os.time()
 	local id = os.date("%Y%m%d%H%M%S", now)
-	local filename = vim.fn.expand("~/storage/Notebook/") .. id .. "_" .. dashed_title .. ".adoc"
-	vim.cmd({ cmd = "e", args = { filename } })
-	local buf = vim.api.nvim_get_current_buf()
+	local filename = vim.fn.expand("~/storage/Notebook/") .. id .. "_" .. dashed_title .. ".md"
+	vim.cmd.edit(filename)
 	local time = os.date("%Y-%m-%d %H:%M:%S", now)
-	vim.api.nvim_buf_set_lines(buf, 0, 1, false, {
-		"= " .. opts.args,
-		":id: " .. id,
-		":time: " .. time,
-		":tags:",
+	vim.api.nvim_buf_set_lines(0, 0, 1, false, {
+		"---",
+		"title: " .. opts.args,
+		"date: " .. time,
+		"tags: []",
+		"---",
+		"",
+		"# " .. opts.args,
 	})
 end
 command("Zet", new_zettel, { nargs = "+" })
