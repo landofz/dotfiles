@@ -144,6 +144,7 @@ return {
 				"isort",
 				"jsonls",
 				"lua_ls",
+				"markdown_oxide",
 				"nil_ls",
 				"nixpkgs-fmt",
 				"prettierd",
