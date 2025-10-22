@@ -28,7 +28,8 @@ Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-! possible Xft.dpi values: 81, 96, 131, 163
+! i3 will use this to get desired DPI value
+! possible Xft.dpi values: 81, 96, 131, 163, 192
 Xft.dpi: 163
 ! Xcursor.theme: default
 Xcursor.theme: Vanilla-DMZ
