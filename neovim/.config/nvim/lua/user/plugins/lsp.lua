@@ -145,6 +145,7 @@ return {
 				"jsonls",
 				"lua_ls",
 				"markdown_oxide",
+				"neocmake",
 				"nil_ls",
 				"nixpkgs-fmt",
 				"prettierd",

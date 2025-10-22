@@ -17,6 +17,7 @@ return {
 					"bash",
 					"beancount",
 					"c",
+					"cmake",
 					"cpp",
 					"css",
 					"dockerfile",
